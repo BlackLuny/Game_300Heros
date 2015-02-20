@@ -1,5 +1,5 @@
-#Game_300Heros
+ï»¿#Game_300Heros
 
 
-launcher_hooks 300Ó¢ĞÛ¶à¿ªdll Ê¹launcher.exe¼ÓÔØ¼´¿É
-300hooks 300Ó¢ĞÛ ÓÎÏ··â°üÀ¹½Ø²âÊÔdll
+launcher_hooks 300è‹±é›„å¤šå¼€dll ä½¿launcher.exeåŠ è½½å³å¯
+300hooks 300è‹±é›„ æ¸¸æˆå°åŒ…æ‹¦æˆªæµ‹è¯•dll
