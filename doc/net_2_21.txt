@@ -1,0 +1,464 @@
+//ÊÍ·Å¼¼ÄÜ
+0018FA44  25 00 00 00 99 45 0C 00 FA 2A 00 99 45 0C 00 FF  %...™E..?.™E..ÿ
+0018FA54  FF FF FF E8 04 6A B6 25 43 56 AC 27 43 A8 A9 B2  ÿÿÿ?j?CV?C¨©?
+0018FA64  3E 7A E8 6F 3F AD 2E 04 44 83 4F 00 7A E8 6F 3F  >zèo??DƒO.zèo?
+
+0018FA44  25 00 00 00 99 45 0C 00 FA 2A 00 99 45 0C 00 FF  %...™E..?.™E..ÿ
+0018FA54  FF FF FF E4 04 17 BC 2A 43 54 8A 2D 43 84 29 25  ÿÿÿ??CT?C?%
+0018FA64  3F 5A 98 43 3F AD 2E 04 44 83 4F 00 5A 98 43 3F  ?Z˜C??DƒO.Z˜C?
+
+0018FA44  25 00 00 00 99 45 0C 00 FA 2A 00 99 45 0C 00 FF  %...™E..?.™E..ÿ
+0018FA54  FF FF FF E4 04 B3 E7 2A 43 06 6A 2E 43 25 45 B4  ÿÿÿ?³ç*Cj.C%E?
+0018FA64  BE 7A 9B 6F BF AD 2E 04 44 83 4F 00 7A 9B 6F BF  ¾z›o¿­.DƒO.z›o?
+
+//ÀäÈ´Íê³É
+0018EDC4  0D 00 00 00 00 00 00 00 23 2B 00 00 02           ........#+..
+0018EDC4  0D 00 00 00 00 00 00 00 23 2B 00 00 03           ........#+..
+
+
+
+
+/fkt1
+17090000    0D 00000000     or      eax, 0x0
+
+
+
+1AAC0000    9C              pushfd
+1AAC0001    60              pushad
+1AAC0002    E8 E9D8D7E5     call    300.0083D8F0
+1AAC0007    90              nop
+
+
+004F7BAB    8B10            mov     edx, dword ptr [eax]
+004F7BAD    8B52 0C         mov     edx, dword ptr [edx+0xC]
+004F7BB0    8D4C24 30       lea     ecx, dword ptr [esp+0x30]
+004F7BB4    51              push    ecx
+004F7BB5    8BC8            mov     ecx, eax
+004F7BB7    FFD2            call    edx
+
+
+
+
+//my·¢°üº¯Êý
+
+1AAC0000    55              push    ebp
+1AAC0001    8BEC            mov     ebp, esp
+1AAC0003    9C              pushfd
+1AAC0004    60              pushad
+1AAC0005    E8 E6D8D7E5     call    <300.Network::GetInstance()>     ; GetInstance
+1AAC000A    8B10            mov     edx, dword ptr [eax]
+1AAC000C    8B52 0C         mov     edx, dword ptr [edx+0xC]
+1AAC000F    8BC8            mov     ecx, eax
+1AAC0011    FF75 08         push    dword ptr [ebp+0x8]
+1AAC0014    FFD2            call    edx
+1AAC0016    61              popad
+1AAC0017    9D              popfd
+1AAC0018    C9              leave
+1AAC0019    C2 0400         retn    0x4
+
+
+
+1AAC002C    9C              pushfd
+
+
+
+5E 5B 5F B0 01 5D 83 C4 48 C2 18 00
+
+
+
+
+r_net_encode
+
+
+00D15B26                                   /74 05           je      short 00D15B2D
+00D15B28                                   |E9 82000000     jmp     00D15BAF
+00D15B2D                                   \8B45 D8         mov     eax, dword ptr [ebp-0x28]
+00D15B30                                    0FB688 95020000 movzx   ecx, byte ptr [eax+0x295]
+00D15B37                                    85C9            test    ecx, ecx
+00D15B39                                    74 6F           je      short 00D15BAA
+00D15B3B                                    8B4D D8         mov     ecx, dword ptr [ebp-0x28]
+00D15B3E                                    81C1 4C020000   add     ecx, 0x24C
+00D15B44                                    E8 37FDFEFF     call    00D05880
+00D15B49                                    8945 DC         mov     dword ptr [ebp-0x24], eax
+00D15B4C                                    8B4D D8         mov     ecx, dword ptr [ebp-0x28]
+00D15B4F                                    81C1 4C020000   add     ecx, 0x24C
+00D15B55                                    E8 E6FCFEFF     call    00D05840
+00D15B5A                                    8945 E0         mov     dword ptr [ebp-0x20], eax
+00D15B5D                                    8D55 E4         lea     edx, dword ptr [ebp-0x1C]
+00D15B60                                    52              push    edx
+00D15B61                                    8D45 DC         lea     eax, dword ptr [ebp-0x24]
+00D15B64                                    50              push    eax
+00D15B65                                    8B4D D8         mov     ecx, dword ptr [ebp-0x28]
+00D15B68                                    8B11            mov     edx, dword ptr [ecx]
+00D15B6A                                    8B4D D8         mov     ecx, dword ptr [ebp-0x28]
+00D15B6D                                    8B42 6C         mov     eax, dword ptr [edx+0x6C]
+00D15B70                                    FFD0            call    eax
+00D15B72                                    0FB6C8          movzx   ecx, al
+00D15B75                                    85C9            test    ecx, ecx
+00D15B77                                    75 23           jnz     short 00D15B9C
+00D15B79                                    8B55 D8         mov     edx, dword ptr [ebp-0x28]
+00D15B7C                                    8B02            mov     eax, dword ptr [edx]
+00D15B7E                                    8B4D D8         mov     ecx, dword ptr [ebp-0x28]
+00D15B81                                    8B50 08         mov     edx, dword ptr [eax+0x8]
+00D15B84                                    FFD2            call    edx
+00D15B86                                    68 B48CE500     push    00E58CB4                         ; cclientsession::onpreparesenddata -- encode error!
+00D15B8B                                    6A FF           push    -0x1
+00D15B8D                                    8B45 D8         mov     eax, dword ptr [ebp-0x28]
+00D15B90                                    8B10            mov     edx, dword ptr [eax]
+00D15B92                                    8B4D D8         mov     ecx, dword ptr [ebp-0x28]
+00D15B95                                    8B42 18         mov     eax, dword ptr [edx+0x18]
+00D15B98                                    FFD0            call    eax
+00D15B9A                                    EB 13           jmp     short 00D15BAF
+00D15B9C                                    8B4D D8         mov     ecx, dword ptr [ebp-0x28]
+00D15B9F                                    81C1 4C020000   add     ecx, 0x24C
+00D15BA5                                    E8 56FCFEFF     call    00D05800
+00D15BAA                                  ^ E9 4BFEFFFF     jmp     00D159FA
+00D15BAF                                    5E              pop     esi
+
+
+
+r_net_read:
+
+00D15D20                                    55              push    ebp
+00D15D21                                    8BEC            mov     ebp, esp
+00D15D23                                    83EC 28         sub     esp, 0x28
+00D15D26                                    56              push    esi
+00D15D27                                    894D DC         mov     dword ptr [ebp-0x24], ecx
+00D15D2A                                    8B45 08         mov     eax, dword ptr [ebp+0x8]
+00D15D2D                                    8945 F0         mov     dword ptr [ebp-0x10], eax
+00D15D30                                    8B4D 0C         mov     ecx, dword ptr [ebp+0xC]
+00D15D33                                    894D F4         mov     dword ptr [ebp-0xC], ecx
+00D15D36                                    8B55 DC         mov     edx, dword ptr [ebp-0x24]
+00D15D39                                    0FB682 95020000 movzx   eax, byte ptr [edx+0x295]
+00D15D40                                    85C0            test    eax, eax
+00D15D42                                    74 39           je      short 00D15D7D
+00D15D44                                    8D4D F8         lea     ecx, dword ptr [ebp-0x8]
+00D15D47                                    51              push    ecx
+00D15D48                                    8D55 F0         lea     edx, dword ptr [ebp-0x10]
+00D15D4B                                    52              push    edx
+00D15D4C                                    8B45 DC         mov     eax, dword ptr [ebp-0x24]
+00D15D4F                                    8B10            mov     edx, dword ptr [eax]
+00D15D51                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15D54                                    8B42 70         mov     eax, dword ptr [edx+0x70]
+00D15D57                                    FFD0            call    eax
+00D15D59                                    0FB6C8          movzx   ecx, al
+00D15D5C                                    85C9            test    ecx, ecx
+00D15D5E                                    75 1B           jnz     short 00D15D7B
+00D15D60                                    68 688BE500     push    00E58B68                         ; cclientsession::ongetdata -- decode error
+00D15D65                                    6A FF           push    -0x1
+00D15D67                                    8B55 DC         mov     edx, dword ptr [ebp-0x24]
+00D15D6A                                    8B02            mov     eax, dword ptr [edx]
+00D15D6C                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15D6F                                    8B50 18         mov     edx, dword ptr [eax+0x18]
+00D15D72                                    FFD2            call    edx
+00D15D74                                    32C0            xor     al, al
+00D15D76                                    E9 DF020000     jmp     00D1605A
+00D15D7B                                    EB 0C           jmp     short 00D15D89
+00D15D7D                                    8B45 F0         mov     eax, dword ptr [ebp-0x10]
+00D15D80                                    8945 F8         mov     dword ptr [ebp-0x8], eax
+00D15D83                                    8B4D F4         mov     ecx, dword ptr [ebp-0xC]
+00D15D86                                    894D FC         mov     dword ptr [ebp-0x4], ecx
+00D15D89                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15D8C                                    81C1 14020000   add     ecx, 0x214
+00D15D92                                    E8 A9FAFEFF     call    00D05840
+00D15D97                                    85C0            test    eax, eax
+00D15D99                                    0F85 B1000000   jnz     00D15E50
+00D15D9F                                    8B55 FC         mov     edx, dword ptr [ebp-0x4]
+00D15DA2                                    8955 EC         mov     dword ptr [ebp-0x14], edx
+00D15DA5                                    8D45 EC         lea     eax, dword ptr [ebp-0x14]
+00D15DA8                                    50              push    eax
+00D15DA9                                    8B4D F8         mov     ecx, dword ptr [ebp-0x8]
+00D15DAC                                    51              push    ecx
+00D15DAD                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15DB0                                    81C1 D8010000   add     ecx, 0x1D8
+00D15DB6                                    E8 15F1FFFF     call    00D14ED0
+00D15DBB                                    0FB6D0          movzx   edx, al
+00D15DBE                                    85D2            test    edx, edx
+00D15DC0                                    75 5B           jnz     short 00D15E1D
+00D15DC2                                    8B45 DC         mov     eax, dword ptr [ebp-0x24]
+00D15DC5                                    0FB688 94020000 movzx   ecx, byte ptr [eax+0x294]
+00D15DCC                                    85C9            test    ecx, ecx
+00D15DCE                                    74 2D           je      short 00D15DFD
+00D15DD0                                    68 948BE500     push    00E58B94                         ; cclientsession::ongetdata -- pushdata error1
+00D15DD5                                    6A FF           push    -0x1
+00D15DD7                                    8B55 DC         mov     edx, dword ptr [ebp-0x24]
+00D15DDA                                    8B02            mov     eax, dword ptr [edx]
+00D15DDC                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15DDF                                    8B50 18         mov     edx, dword ptr [eax+0x18]
+00D15DE2                                    FFD2            call    edx
+00D15DE4                                    8B45 DC         mov     eax, dword ptr [ebp-0x24]
+00D15DE7                                    8B10            mov     edx, dword ptr [eax]
+00D15DE9                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15DEC                                    8B42 08         mov     eax, dword ptr [edx+0x8]
+00D15DEF                                    FFD0            call    eax
+00D15DF1                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15DF4                                    C681 94020000 0>mov     byte ptr [ecx+0x294], 0x0
+00D15DFB                                    EB 1E           jmp     short 00D15E1B
+00D15DFD                                    68 C48BE500     push    00E58BC4                         ; cclientsession::ongetdata -- pushdata error2
+00D15E02                                    6A FF           push    -0x1
+00D15E04                                    8B55 DC         mov     edx, dword ptr [ebp-0x24]
+00D15E07                                    8B02            mov     eax, dword ptr [edx]
+00D15E09                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15E0C                                    8B50 18         mov     edx, dword ptr [eax+0x18]
+00D15E0F                                    FFD2            call    edx
+00D15E11                                    8B45 DC         mov     eax, dword ptr [ebp-0x24]
+00D15E14                                    C680 94020000 0>mov     byte ptr [eax+0x294], 0x1
+00D15E1B                                    EB 0A           jmp     short 00D15E27
+00D15E1D                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15E20                                    C681 94020000 0>mov     byte ptr [ecx+0x294], 0x0
+00D15E27                                    8B55 EC         mov     edx, dword ptr [ebp-0x14]
+00D15E2A                                    3B55 FC         cmp     edx, dword ptr [ebp-0x4]
+00D15E2D                                    73 1C           jnb     short 00D15E4B
+00D15E2F                                    8B45 FC         mov     eax, dword ptr [ebp-0x4]
+00D15E32                                    2B45 EC         sub     eax, dword ptr [ebp-0x14]
+00D15E35                                    50              push    eax
+00D15E36                                    8B4D F8         mov     ecx, dword ptr [ebp-0x8]
+00D15E39                                    034D EC         add     ecx, dword ptr [ebp-0x14]
+00D15E3C                                    51              push    ecx
+00D15E3D                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15E40                                    81C1 14020000   add     ecx, 0x214
+00D15E46                                    E8 15FBFEFF     call    00D05960
+00D15E4B                                    E9 D7010000     jmp     00D16027
+00D15E50                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15E53                                    81C1 14020000   add     ecx, 0x214
+00D15E59                                    E8 A2F9FEFF     call    00D05800
+00D15E5E                                    8BF0            mov     esi, eax
+00D15E60                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15E63                                    81C1 14020000   add     ecx, 0x214
+00D15E69                                    E8 D2F9FEFF     call    00D05840
+00D15E6E                                    2BF0            sub     esi, eax
+00D15E70                                    8975 E8         mov     dword ptr [ebp-0x18], esi
+00D15E73                                    8B55 E8         mov     edx, dword ptr [ebp-0x18]
+00D15E76                                    3B55 FC         cmp     edx, dword ptr [ebp-0x4]
+00D15E79                                    73 08           jnb     short 00D15E83
+00D15E7B                                    8B45 E8         mov     eax, dword ptr [ebp-0x18]
+00D15E7E                                    8945 D8         mov     dword ptr [ebp-0x28], eax
+00D15E81                                    EB 06           jmp     short 00D15E89
+00D15E83                                    8B4D FC         mov     ecx, dword ptr [ebp-0x4]
+00D15E86                                    894D D8         mov     dword ptr [ebp-0x28], ecx
+00D15E89                                    8B55 D8         mov     edx, dword ptr [ebp-0x28]
+00D15E8C                                    52              push    edx
+00D15E8D                                    8B45 F8         mov     eax, dword ptr [ebp-0x8]
+00D15E90                                    50              push    eax
+00D15E91                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15E94                                    81C1 14020000   add     ecx, 0x214
+00D15E9A                                    E8 C1FAFEFF     call    00D05960
+00D15E9F                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15EA2                                    81C1 14020000   add     ecx, 0x214
+00D15EA8                                    E8 93F9FEFF     call    00D05840
+00D15EAD                                    8945 E4         mov     dword ptr [ebp-0x1C], eax
+00D15EB0                                    8D4D E4         lea     ecx, dword ptr [ebp-0x1C]
+00D15EB3                                    51              push    ecx
+00D15EB4                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15EB7                                    81C1 14020000   add     ecx, 0x214
+00D15EBD                                    E8 BEF9FEFF     call    00D05880
+00D15EC2                                    50              push    eax
+00D15EC3                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15EC6                                    81C1 D8010000   add     ecx, 0x1D8
+00D15ECC                                    E8 FFEFFFFF     call    00D14ED0
+00D15ED1                                    0FB6D0          movzx   edx, al
+00D15ED4                                    85D2            test    edx, edx
+00D15ED6                                    75 5B           jnz     short 00D15F33
+00D15ED8                                    8B45 DC         mov     eax, dword ptr [ebp-0x24]
+00D15EDB                                    0FB688 94020000 movzx   ecx, byte ptr [eax+0x294]
+00D15EE2                                    85C9            test    ecx, ecx
+00D15EE4                                    74 2D           je      short 00D15F13
+00D15EE6                                    68 F48BE500     push    00E58BF4                         ; cclientsession::ongetdata -- pushdata error3
+00D15EEB                                    6A FF           push    -0x1
+00D15EED                                    8B55 DC         mov     edx, dword ptr [ebp-0x24]
+00D15EF0                                    8B02            mov     eax, dword ptr [edx]
+00D15EF2                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15EF5                                    8B50 18         mov     edx, dword ptr [eax+0x18]
+00D15EF8                                    FFD2            call    edx
+00D15EFA                                    8B45 DC         mov     eax, dword ptr [ebp-0x24]
+00D15EFD                                    8B10            mov     edx, dword ptr [eax]
+00D15EFF                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15F02                                    8B42 08         mov     eax, dword ptr [edx+0x8]
+00D15F05                                    FFD0            call    eax
+00D15F07                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15F0A                                    C681 94020000 0>mov     byte ptr [ecx+0x294], 0x0
+00D15F11                                    EB 1E           jmp     short 00D15F31
+00D15F13                                    68 248CE500     push    00E58C24                         ; cclientsession::ongetdata -- pushdata error4
+00D15F18                                    6A FF           push    -0x1
+00D15F1A                                    8B55 DC         mov     edx, dword ptr [ebp-0x24]
+00D15F1D                                    8B02            mov     eax, dword ptr [edx]
+00D15F1F                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15F22                                    8B50 18         mov     edx, dword ptr [eax+0x18]
+00D15F25                                    FFD2            call    edx
+00D15F27                                    8B45 DC         mov     eax, dword ptr [ebp-0x24]
+00D15F2A                                    C680 94020000 0>mov     byte ptr [eax+0x294], 0x1
+00D15F31                                    EB 0A           jmp     short 00D15F3D
+00D15F33                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15F36                                    C681 94020000 0>mov     byte ptr [ecx+0x294], 0x0
+00D15F3D                                    8B55 E4         mov     edx, dword ptr [ebp-0x1C]
+00D15F40                                    52              push    edx
+00D15F41                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15F44                                    81C1 14020000   add     ecx, 0x214
+00D15F4A                                    E8 C1FAFEFF     call    00D05A10
+00D15F4F                                    8B45 E8         mov     eax, dword ptr [ebp-0x18]
+00D15F52                                    3B45 FC         cmp     eax, dword ptr [ebp-0x4]
+00D15F55                                    0F83 CC000000   jnb     00D16027
+00D15F5B                                    8B4D FC         mov     ecx, dword ptr [ebp-0x4]
+00D15F5E                                    2B4D E8         sub     ecx, dword ptr [ebp-0x18]
+00D15F61                                    51              push    ecx
+00D15F62                                    8B55 F8         mov     edx, dword ptr [ebp-0x8]
+00D15F65                                    0355 E8         add     edx, dword ptr [ebp-0x18]
+00D15F68                                    52              push    edx
+00D15F69                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15F6C                                    81C1 14020000   add     ecx, 0x214
+00D15F72                                    E8 E9F9FEFF     call    00D05960
+00D15F77                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15F7A                                    81C1 14020000   add     ecx, 0x214
+00D15F80                                    E8 BBF8FEFF     call    00D05840
+00D15F85                                    8945 E0         mov     dword ptr [ebp-0x20], eax
+00D15F88                                    8D45 E0         lea     eax, dword ptr [ebp-0x20]
+00D15F8B                                    50              push    eax
+00D15F8C                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15F8F                                    81C1 14020000   add     ecx, 0x214
+00D15F95                                    E8 E6F8FEFF     call    00D05880
+00D15F9A                                    50              push    eax
+00D15F9B                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15F9E                                    81C1 D8010000   add     ecx, 0x1D8
+00D15FA4                                    E8 27EFFFFF     call    00D14ED0
+00D15FA9                                    0FB6C8          movzx   ecx, al
+00D15FAC                                    85C9            test    ecx, ecx
+00D15FAE                                    75 5B           jnz     short 00D1600B
+00D15FB0                                    8B55 DC         mov     edx, dword ptr [ebp-0x24]
+00D15FB3                                    0FB682 94020000 movzx   eax, byte ptr [edx+0x294]
+00D15FBA                                    85C0            test    eax, eax
+00D15FBC                                    74 2D           je      short 00D15FEB
+00D15FBE                                    68 548CE500     push    00E58C54                         ; cclientsession::ongetdata -- pushdata error5
+00D15FC3                                    6A FF           push    -0x1
+00D15FC5                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15FC8                                    8B11            mov     edx, dword ptr [ecx]
+00D15FCA                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15FCD                                    8B42 18         mov     eax, dword ptr [edx+0x18]
+00D15FD0                                    FFD0            call    eax
+00D15FD2                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15FD5                                    8B11            mov     edx, dword ptr [ecx]
+00D15FD7                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15FDA                                    8B42 08         mov     eax, dword ptr [edx+0x8]
+00D15FDD                                    FFD0            call    eax
+00D15FDF                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15FE2                                    C681 94020000 0>mov     byte ptr [ecx+0x294], 0x0
+00D15FE9                                    EB 1E           jmp     short 00D16009
+00D15FEB                                    68 848CE500     push    00E58C84                         ; cclientsession::ongetdata -- pushdata error6
+00D15FF0                                    6A FF           push    -0x1
+00D15FF2                                    8B55 DC         mov     edx, dword ptr [ebp-0x24]
+00D15FF5                                    8B02            mov     eax, dword ptr [edx]
+00D15FF7                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D15FFA                                    8B50 18         mov     edx, dword ptr [eax+0x18]
+00D15FFD                                    FFD2            call    edx
+00D15FFF                                    8B45 DC         mov     eax, dword ptr [ebp-0x24]
+00D16002                                    C680 94020000 0>mov     byte ptr [eax+0x294], 0x1
+00D16009                                    EB 0A           jmp     short 00D16015
+00D1600B                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D1600E                                    C681 94020000 0>mov     byte ptr [ecx+0x294], 0x0
+00D16015                                    8B55 E0         mov     edx, dword ptr [ebp-0x20]
+00D16018                                    52              push    edx
+00D16019                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D1601C                                    81C1 14020000   add     ecx, 0x214
+00D16022                                    E8 E9F9FEFF     call    00D05A10
+00D16027                                    8B45 DC         mov     eax, dword ptr [ebp-0x24]
+00D1602A                                    0FB688 02010000 movzx   ecx, byte ptr [eax+0x102]
+00D16031                                    85C9            test    ecx, ecx
+00D16033                                    74 23           je      short 00D16058
+00D16035                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D16038                                    81C1 D8010000   add     ecx, 0x1D8
+00D1603E                                    E8 1DE9FFFF     call    00D14960
+00D16043                                    8B55 DC         mov     edx, dword ptr [ebp-0x24]
+00D16046                                    3B82 90020000   cmp     eax, dword ptr [edx+0x290]
+00D1604C                                    72 0A           jb      short 00D16058
+00D1604E                                    6A 00           push    0x0
+00D16050                                    8B4D DC         mov     ecx, dword ptr [ebp-0x24]
+00D16053                                    E8 781BFFFF     call    00D07BD0
+00D16058                                    B0 01           mov     al, 0x1
+00D1605A                                    5E              pop     esi
+00D1605B                                    8BE5            mov     esp, ebp
+00D1605D                                    5D              pop     ebp
+00D1605E                                    C2 0800         retn    0x8
+
+
+
+
+game_tools
+
+·¢°ü£º
+
+0083D310      56            push    esi
+0083D311      8B7424 08     mov     esi, dword ptr [esp+0x8]
+0083D315      57            push    edi
+0083D316      8BF9          mov     edi, ecx
+0083D318   .  85F6          test    esi, esi
+0083D31A   .  75 17         jnz     short 0083D333
+0083D31C   .  68 DC6EE800   push    00E86EDC
+0083D321   .  8D4424 10     lea     eax, dword ptr [esp+0x10]
+0083D325   .  50            push    eax
+0083D326   .  C74424 14 384>mov     dword ptr [esp+0x14], 00DE4D38   ;  ASCII "Send NULL Msg"
+0083D32E   .  E8 44014300   call    00C6D477
+0083D333   >  8B17          mov     edx, dword ptr [edi]
+0083D335   .  8B42 10       mov     eax, dword ptr [edx+0x10]
+0083D338   .  FFD0          call    eax
+0083D33A   .  84C0          test    al, al
+0083D33C   .  74 2B         je      short 0083D369
+0083D33E   .  E8 EDFEFFFF   call    0083D230
+0083D343   .  8B10          mov     edx, dword ptr [eax]
+0083D345   .  8BC8          mov     ecx, eax
+0083D347   .  8B42 0C       mov     eax, dword ptr [edx+0xC]
+0083D34A   .  56            push    esi
+0083D34B   .  FFD0          call    eax
+0083D34D   .  84C0          test    al, al
+0083D34F   .  75 18         jnz     short 0083D369
+0083D351   .  6A 02         push    0x2
+0083D353   .  56            push    esi
+0083D354   .  E8 F72AFAFF   call    007DFE50
+0083D359   .  83C4 08       add     esp, 0x8
+0083D35C   .  56            push    esi
+0083D35D   .  8BCF          mov     ecx, edi
+0083D35F   .  E8 DC7E4D00   call    00D15240
+0083D364   .  5F            pop     edi
+0083D365   .  5E            pop     esi
+0083D366   .  C2 0400       retn    0x4
+0083D369   >  5F            pop     edi
+0083D36A   .  32C0          xor     al, al
+0083D36C   .  5E            pop     esi
+0083D36D   .  C2 0400       retn    0x4
+0083D370   .  C641 51 01    mov     byte ptr [ecx+0x51], 0x1
+0083D374   .  C3            retn
+
+
+
+
+next:
+
+00D16070  /$  55            push    ebp
+00D16071  |.  8BEC          mov     ebp, esp
+00D16073  |.  51            push    ecx
+00D16074  |.  894D FC       mov     [local.1], ecx
+00D16077  |.  8B4D FC       mov     ecx, [local.1]
+00D1607A  |.  81C1 9C010000 add     ecx, 0x19C
+00D16080  |.  E8 DBE8FFFF   call    00D14960
+00D16085  |.  8B4D FC       mov     ecx, [local.1]
+00D16088  |.  3B81 8C020000 cmp     eax, dword ptr [ecx+0x28C]
+00D1608E  |.  76 18         jbe     short 00D160A8
+00D16090  |.  68 388BE500   push    00E58B38                         ;  ASCII "CClientSession::SendMsgPack -- HighMsgPack Max"
+00D16095  |.  6A FF         push    -0x1
+00D16097  |.  8B55 FC       mov     edx, [local.1]
+00D1609A  |.  8B02          mov     eax, dword ptr [edx]
+00D1609C  |.  8B4D FC       mov     ecx, [local.1]
+00D1609F  |.  8B50 18       mov     edx, dword ptr [eax+0x18]
+00D160A2  |.  FFD2          call    edx
+00D160A4  |.  32C0          xor     al, al
+00D160A6  |.  EB 14         jmp     short 00D160BC
+00D160A8  |>  6A 00         push    0x0
+00D160AA  |.  8B45 08       mov     eax, [arg.1]
+00D160AD  |.  50            push    eax
+00D160AE  |.  8B4D FC       mov     ecx, [local.1]
+00D160B1  |.  81C1 9C010000 add     ecx, 0x19C
+00D160B7  |.  E8 64ECFFFF   call    00D14D20
+00D160BC  |>  8BE5          mov     esp, ebp
+00D160BE  |.  5D            pop     ebp
+00D160BF  \.  C2 0400       retn    0x4
+
+
+

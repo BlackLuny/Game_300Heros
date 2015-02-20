@@ -1,0 +1,127 @@
+[Project]
+Assembler=masm
+Type=Dll Project
+Description=300hooks
+Backup=$P\Bak\
+Group=1
+GroupExpand=1
+调试=0
+[Files]
+1=300hooks.Asm
+2=300hooks.Inc
+3=300hooks.Def
+4=300hooks.Txt
+[MakeFiles]
+0=300hooks.rap
+1=300hooks.rc
+2=300hooks.asm
+3=300hooks.obj
+4=300hooks.res
+5=300hooks.exe
+6=300hooks.def
+7=300hooks.dll
+8=300hooks.txt
+9=300hooks.lib
+10=300hooks.mak
+11=300hooks.hla
+12=300hooks.com
+13=300hooks.ocx
+14=300hooks.idl
+15=300hooks.tlb
+16=300hooks.sys
+[MakeDef]
+Menu=0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0
+1=4,O,$B\RC.EXE /v,1
+2=3,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",2
+3=7,O,$B\LINK.EXE /SUBSYSTEM:WINDOWS /DLL /DEF:$6 /LIBPATH:"$L" /DEBUG /OUT:"$7",3
+4=0,0,,5
+5=rsrc.obj,O,$B\CVTRES.EXE,rsrc.res
+6=*.obj,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",*.asm
+7=0,0,"$E\OllyDbg",5
+11=4,O,$B\RC.EXE /v,1
+12=3,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",2
+13=7,O,$B\LINK.EXE /SUBSYSTEM:WINDOWS /DEBUG /DLL /DEF:$6 /LIBPATH:"$L" /OUT:"$7",3
+14=0,0,,5
+15=rsrc.obj,O,$B\CVTRES.EXE,rsrc.res
+16=*.obj,O,$B\ML.EXE /c /coff /Cp /nologo /I"$I",*.asm
+17=0,0,"$E\OllyDbg",5
+[Resource]
+[StringTable]
+[VerInf]
+[Group]
+Group=Assembly,Resources,Misc
+1=2
+2=2
+3=4
+4=4
+[AutoLoad]
+AutoLoad=1,2
+[RADebugBP]
+2=
+1=
+[Find]
+1="UI_ShowData"
+2="cmp eax,0"
+[VersionControl]
+Settings=1246
+重要事件=129
+MilestoneEvery=10
+MilestoneEveryCurrent=0
+MilestoneOnBuild=0.0.0.0
+MilestoneOnTime=2
+MilestoneOnDate=0
+MilestoneOnDateWhen=1
+MilestoneOnDateStatus=0
+MilestoneOnDateDate=21
+MilestoneOnDateTimeYear=2015
+MilestoneOnDateTimeMonth=2
+MilestoneOnDateTimeDate=21
+MilestoneOnDateTimeHour=0
+MilestoneOnDateTimeMin=40
+MilestoneOnDateTimeSec=29
+MilestoneOnDateTimeStatus=0
+BackupLocation=C:\RadASM\Masm\Projects\VCBackups\
+CompressionLevel=0
+DefaultComment=工程 $N, $Z, 备份创建于 $D 在 $T.
+ExcludeExt1=\
+ExcludeExt2=\
+ExcludeExt3=\
+ExcludeExt4=\
+FileVerLength=4
+FileVer2Range=0
+FileVer3Range=0
+FileVer4Range=0
+ProductVerLength=4
+ProductVer2Range=0
+ProductVer3Range=0
+ProductVer4Range=0
+[Colref]
+0=00FFFFFF
+1=00FFFFFF
+2=00FFFFFF
+3=00FFFFFF
+4=00FFFFFF
+5=00FFFFFF
+6=00FFFFFF
+7=00FFFFFF
+[GroupExpand]
+GroupExpand=0,0,1,0
+[BookMark]
+0=
+1=
+2=
+3=
+4=
+5=
+6=
+7=
+8=
+9=
+[BreakPoint]
+0=
+[Collapse]
+1=
+2=
+[Size]
+1=0,0,0,0,1180
+2=0,0,0,0,482
