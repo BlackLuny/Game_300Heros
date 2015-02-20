@@ -11,9 +11,101 @@
 0018FA54  FF FF FF E4 04 B3 E7 2A 43 06 6A 2E 43 25 45 B4  ÿÿÿ?³ç*Cj.C%E?
 0018FA64  BE 7A 9B 6F BF AD 2E 04 44 83 4F 00 7A 9B 6F BF  ¾z›o¿­.DƒO.z›o?
 
+0018FA44  25 00 00 00 99 45 0C 00 FA 2A 00 99 45 0C 00 FF  %...™E..?.™E..ÿ
+0018FA54  FF FF FF E4 04 03 3C 62 43 9A 1F 61 43 00 00 80  ÿÿÿ?<bC?aC..€
+0018FA64  3F 00 00 80 BF AD 2F 04 44 83 4F 00 00 00 80 BF  ?..€¿­/DƒO...€?
+0018FA74  00 00 80 3F 03 3C 62 43 9A 1F 61 43 00 00 00 00  ..€?<bC?aC....
+
+
+
 //ÀäÈ´Íê³É
 0018EDC4  0D 00 00 00 00 00 00 00 23 2B 00 00 02           ........#+..
 0018EDC4  0D 00 00 00 00 00 00 00 23 2B 00 00 03           ........#+..
+
+
+localMessageReader:
+
+00D14B00   /$  55            push    ebp
+00D14B01   |.  8BEC          mov     ebp, esp
+00D14B03   |.  6A FF         push    -0x1
+00D14B05   |.  68 79E0D800   push    00D8E079                         ;  SE ´¦Àí³ÌÐò°²×°
+00D14B0A   |.  64:A1 0000000>mov     eax, dword ptr fs:[0]
+00D14B10   |.  50            push    eax
+00D14B11   |.  64:8925 00000>mov     dword ptr fs:[0], esp
+00D14B18   |.  81EC A0000000 sub     esp, 0xA0
+00D14B1E   |.  898D 54FFFFFF mov     [local.43], ecx
+00D14B24   |.  8B8D 54FFFFFF mov     ecx, [local.43]
+00D14B2A   |.  E8 A1FEFFFF   call    00D149D0
+00D14B2F   |.  8945 F0       mov     [local.4], eax
+00D14B32   |.  837D F0 00    cmp     [local.4], 0x0
+00D14B36   |.  75 07         jnz     short 00D14B3F
+00D14B38   |.  32C0          xor     al, al
+00D14B3A   |.  E9 D5000000   jmp     00D14C14
+00D14B3F   |>  837D 08 00    cmp     [arg.1], 0x0
+00D14B43   |.  74 15         je      short 00D14B5A
+00D14B45   |.  8B45 F0       mov     eax, [local.4]
+00D14B48   |.  8B4D 08       mov     ecx, [arg.1]
+00D14B4B   |.  0348 04       add     ecx, dword ptr [eax+0x4]
+00D14B4E   |.  8B55 F0       mov     edx, [local.4]
+00D14B51   |.  394A 08       cmp     dword ptr [edx+0x8], ecx
+00D14B54   |.  0F85 94000000 jnz     00D14BEE
+00D14B5A   |>  C745 E4 68D8D>mov     [local.7], 00DCD868
+00D14B61   |.  C745 E8 00000>mov     [local.6], 0x0
+00D14B68   |.  8B85 54FFFFFF mov     eax, [local.43]
+00D14B6E   |.  83C0 0C       add     eax, 0xC
+00D14B71   |.  8945 E8       mov     [local.6], eax
+00D14B74   |.  8B4D E8       mov     ecx, [local.6]
+00D14B77   |.  51            push    ecx                              ; /pCriticalSection
+00D14B78   |.  FF15 0071DA00 call    dword ptr [<&KERNEL32.EnterCriti>; \EnterCriticalSection
+00D14B7E   |.  C745 FC 00000>mov     [local.1], 0x0
+00D14B85   |.  8B8D 54FFFFFF mov     ecx, [local.43]
+00D14B8B   |.  83C1 24       add     ecx, 0x24
+00D14B8E   |.  E8 3D1E6FFF   call    004069D0
+00D14B93   |.  C745 FC FFFFF>mov     [local.1], -0x1
+00D14B9A   |.  C745 E4 68D8D>mov     [local.7], 00DCD868
+00D14BA1   |.  837D E8 00    cmp     [local.6], 0x0
+00D14BA5   |.  74 0A         je      short 00D14BB1
+00D14BA7   |.  8B55 E8       mov     edx, [local.6]
+00D14BAA   |.  52            push    edx                              ; /pCriticalSection
+00D14BAB   |.  FF15 FC70DA00 call    dword ptr [<&KERNEL32.LeaveCriti>; \LeaveCriticalSection
+00D14BB1   |>  8B45 F0       mov     eax, [local.4]
+00D14BB4   |.  8B48 08       mov     ecx, dword ptr [eax+0x8]
+00D14BB7   |.  83C1 15       add     ecx, 0x15
+00D14BBA   |.  894D EC       mov     [local.5], ecx
+00D14BBD   |.  817D EC 00020>cmp     [local.5], 0x200
+00D14BC4   |.  76 13         jbe     short 00D14BD9
+00D14BC6   |.  E8 651F6FFF   call    00406B30
+00D14BCB   |.  8B55 F0       mov     edx, [local.4]
+00D14BCE   |.  52            push    edx
+00D14BCF   |.  E8 EC1F6FFF   call    00406BC0
+00D14BD4   |.  83C4 04       add     esp, 0x4
+00D14BD7   |.  EB 11         jmp     short 00D14BEA
+00D14BD9   |>  E8 A21E6FFF   call    00406A80
+00D14BDE   |.  8B45 F0       mov     eax, [local.4]
+00D14BE1   |.  50            push    eax
+00D14BE2   |.  E8 79236FFF   call    00406F60
+00D14BE7   |.  83C4 04       add     esp, 0x4
+00D14BEA   |>  B0 01         mov     al, 0x1
+00D14BEC   |.  EB 26         jmp     short 00D14C14
+00D14BEE   |>  8B4D F0       mov     ecx, [local.4]
+00D14BF1   |.  8B55 08       mov     edx, [arg.1]
+00D14BF4   |.  0351 04       add     edx, dword ptr [ecx+0x4]
+00D14BF7   |.  8B45 F0       mov     eax, [local.4]
+00D14BFA   |.  3950 08       cmp     dword ptr [eax+0x8], edx
+00D14BFD   |.  73 04         jnb     short 00D14C03
+00D14BFF   |.  32C0          xor     al, al
+00D14C01   |.  EB 11         jmp     short 00D14C14
+00D14C03   |>  8B4D F0       mov     ecx, [local.4]
+00D14C06   |.  8B51 04       mov     edx, dword ptr [ecx+0x4]
+00D14C09   |.  0355 08       add     edx, [arg.1]
+00D14C0C   |.  8B45 F0       mov     eax, [local.4]
+00D14C0F   |.  8950 04       mov     dword ptr [eax+0x4], edx
+00D14C12   |.  B0 01         mov     al, 0x1
+00D14C14   |>  8B4D F4       mov     ecx, [local.3]
+00D14C17   |.  64:890D 00000>mov     dword ptr fs:[0], ecx
+00D14C1E   |.  8BE5          mov     esp, ebp
+00D14C20   |.  5D            pop     ebp
+00D14C21   \.  C2 0400       retn    0x4
 
 
 
