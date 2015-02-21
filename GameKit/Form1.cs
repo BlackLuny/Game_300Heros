@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
+using System.IO;
+
 namespace GameKit
 {
     public partial class Form1 : Form
@@ -70,28 +72,78 @@ namespace GameKit
         {
             Console.Title = "GameKit";
             this.Text = "GameKit_Protocol";
-
-
-            //listView1.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);
         }
 
         private void AddPackets(GameMessageData Data)
         {
-            if (Data.type == 0)
+            try
             {
-                if (checkBox2.Checked)
+                GamePacketTypes info = new GamePacketTypes();
+                BinaryReader sr = new BinaryReader(new MemoryStream(Data.buffer));
+                info.length = sr.ReadInt32();
+                info.timestamp = sr.ReadUInt32();
+                info.identifier = sr.ReadUInt16();
+
+
+
+                if (Data.type == 0)
                 {
-                    ListViewItem lv = listView1.Items.Add(Data.type.ToString());
-                    lv.SubItems.Add(BytesToString(Data.buffer));
+                    if (checkBox2.Checked)
+                    {
+                        if (checkBox4.Checked)
+                        {
+                            foreach (string s in listBox2.Items)
+                            {
+                                ushort i = Convert.ToUInt16(s, 16);
+                                if (i == info.identifier)
+                                {
+                                    return;
+                                }
+                            }
+
+                            ListViewItem lv = listView1.Items.Add(Data.type.ToString());
+                            lv.SubItems.Add(BytesToString(Data.buffer));
+                            lv.SubItems.Add(String.Format("{0:X4}", info.identifier));
+                        }
+                        else
+                        {
+                            ListViewItem lv = listView1.Items.Add(Data.type.ToString());
+                            lv.SubItems.Add(BytesToString(Data.buffer));
+                            lv.SubItems.Add(String.Format("{0:X4}", info.identifier));
+                        }
+                    }
+                }
+                else
+                {
+                    if (checkBox1.Checked)
+                    {
+                        if (checkBox3.Checked)
+                        {
+                            foreach (string s in listBox1.Items)
+                            {
+                                ushort i = Convert.ToUInt16(s, 16);
+                                if (i == info.identifier)
+                                {
+                                    return;
+                                }
+                            }
+
+                            ListViewItem lv = listView1.Items.Add(Data.type.ToString());
+                            lv.SubItems.Add(BytesToString(Data.buffer));
+                            lv.SubItems.Add(String.Format("{0:X4}", info.identifier));
+                        }
+                        else
+                        {
+                            ListViewItem lv = listView1.Items.Add(Data.type.ToString());
+                            lv.SubItems.Add(BytesToString(Data.buffer));
+                            lv.SubItems.Add(String.Format("{0:X4}", info.identifier));
+                        }
+                    }
                 }
             }
-            else
+            catch
             {
-                if (checkBox1.Checked)
-                {
-                    ListViewItem lv = listView1.Items.Add(Data.type.ToString());
-                    lv.SubItems.Add(BytesToString(Data.buffer));
-                }
+
             }
            
         }
@@ -197,6 +249,135 @@ namespace GameKit
             }
             catch
             {
+            }
+        }
+
+        private ushort GetTextBoxIdentifier()
+        {
+            ushort rs = 0;
+
+            try
+            {
+                rs = Convert.ToUInt16(textBox2.Text,16);
+            }
+            catch
+            {
+            }
+
+            return rs;
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ushort identifier = GetTextBoxIdentifier();
+
+            if (identifier != 0)
+            {
+                listBox1.Items.Add(String.Format("{0:X4}", identifier));
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ushort identifier = GetTextBoxIdentifier();
+
+            if (identifier != 0)
+            {
+                listBox2.Items.Add(String.Format("{0:X4}", identifier));
+            }
+        }
+
+        private void 删除ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedItem != null)
+            {
+                listBox1.Items.Remove(listBox1.SelectedItem);
+            }
+        }
+
+        private void 删除ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (listBox2.SelectedItem != null)
+            {
+                listBox2.Items.Remove(listBox2.SelectedItem);
+            }
+        }
+        public List<string> GetPacketArrays()
+        {
+            List<string> sl = new List<string>();
+
+
+            string[] x = textBox3.Text.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+
+            foreach (string i in x)
+            {
+                sl.Add(i);
+            }
+
+            return sl;
+        }
+        private void button7_Click(object sender, EventArgs e)
+        {
+            List<string> sl = GetPacketArrays();
+
+            foreach (string x in sl)
+            {
+                try
+                {
+                    byte[] data = HexToByte(x);
+
+                    COPYDATASTRUCT cds = new COPYDATASTRUCT();
+
+                    cds.dwData = (uint)1;
+
+                    cds.cbData = data.Length;
+
+                    cds.lpData = Marshal.AllocHGlobal(data.Length);
+
+                    Marshal.Copy(data, 0, cds.lpData, data.Length);
+
+                    int hWnd = FindWindow("WWW_JUMPW_COM", null);
+
+                    if (hWnd != 0)
+                    {
+                        SendMessage(hWnd, WM_COPYDATA, 0, ref cds);
+                    }
+                }
+                catch
+                {
+                }
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            List<string> sl = GetPacketArrays();
+
+            foreach (string x in sl)
+            {
+                try
+                {
+                    byte[] data = HexToByte(x);
+
+                    COPYDATASTRUCT cds = new COPYDATASTRUCT();
+
+                    cds.dwData = (uint)0;
+
+                    cds.cbData = data.Length;
+
+                    cds.lpData = Marshal.AllocHGlobal(data.Length);
+
+                    Marshal.Copy(data, 0, cds.lpData, data.Length);
+
+                    int hWnd = FindWindow("WWW_JUMPW_COM", null);
+
+                    if (hWnd != 0)
+                    {
+                        SendMessage(hWnd, WM_COPYDATA, 0, ref cds);
+                    }
+                }
+                catch
+                {
+                }
             }
         }
 
