@@ -6,4 +6,7 @@
 
 
 
-300hooks 300英雄 游戏封包拦截测试dll
+#300hooks 300英雄 游戏封包拦截测试dll
+#GameKit 封包测试工具 需要先注入dll
+
+#open_shop 战场打开商店
