@@ -196,6 +196,16 @@ namespace GameKit
             //Clipboard.SetFileDropList
         }
 
+
+        private void 复制IDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count != 0)
+            {
+                ListViewItem lv = listView1.SelectedItems[0];
+                Clipboard.SetDataObject(lv.SubItems[2].Text, true);
+            }
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             try
@@ -380,6 +390,7 @@ namespace GameKit
                 }
             }
         }
+
 
     }
 }

@@ -49,13 +49,14 @@
             this.删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.删除ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.listView1 = new GameKit.ListViewNF();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.复制IDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
             this.contextMenuStrip3.SuspendLayout();
@@ -64,14 +65,15 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.复制ToolStripMenuItem});
+            this.复制ToolStripMenuItem,
+            this.复制IDToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(101, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
             // 
             // 复制ToolStripMenuItem
             // 
             this.复制ToolStripMenuItem.Name = "复制ToolStripMenuItem";
-            this.复制ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.复制ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.复制ToolStripMenuItem.Text = "复制";
             this.复制ToolStripMenuItem.Click += new System.EventHandler(this.复制ToolStripMenuItem_Click);
             // 
@@ -233,6 +235,34 @@
             this.删除ToolStripMenuItem1.Text = "删除";
             this.删除ToolStripMenuItem1.Click += new System.EventHandler(this.删除ToolStripMenuItem1_Click);
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(12, 557);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(923, 134);
+            this.textBox3.TabIndex = 17;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(949, 629);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 19;
+            this.button6.Text = "recv";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(949, 589);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 18;
+            this.button7.Text = "send";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -264,33 +294,12 @@
             this.columnHeader3.Text = "identifier";
             this.columnHeader3.Width = 150;
             // 
-            // textBox3
+            // 复制IDToolStripMenuItem
             // 
-            this.textBox3.Location = new System.Drawing.Point(12, 557);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(923, 134);
-            this.textBox3.TabIndex = 17;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(949, 629);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 19;
-            this.button6.Text = "recv";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(949, 589);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 18;
-            this.button7.Text = "send";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.复制IDToolStripMenuItem.Name = "复制IDToolStripMenuItem";
+            this.复制IDToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.复制IDToolStripMenuItem.Text = "复制ID";
+            this.复制IDToolStripMenuItem.Click += new System.EventHandler(this.复制IDToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -354,5 +363,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.ToolStripMenuItem 复制IDToolStripMenuItem;
     }
 }
