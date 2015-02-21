@@ -33,6 +33,13 @@ namespace GameKit
             public uint type;
         }
 
+        public struct GamePacketTypes
+        {
+            public int length;
+            public uint timestamp;
+            public ushort identifier;
+        }
+
         private Queue<GameMessageData> MessageDataQueue = new Queue<GameMessageData>();
 
         public static string BytesToString(byte[] sb)
