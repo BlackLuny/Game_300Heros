@@ -1,0 +1,116 @@
+004DEB90  /$  55            push    ebp
+004DEB91  |.  8BEC          mov     ebp, esp
+004DEB93  |.  83E4 F8       and     esp, 0xFFFFFFF8
+004DEB96  |.  6A FF         push    -0x1
+004DEB98  |.  68 A1C3D200   push    00D2C3A1
+004DEB9D  |.  64:A1 0000000>mov     eax, dword ptr fs:[0]
+004DEBA3  |.  50            push    eax
+004DEBA4  |.  81EC F0020000 sub     esp, 0x2F0
+004DEBAA  |.  A1 BCD9F800   mov     eax, dword ptr [0xF8D9BC]
+004DEBAF  |.  33C4          xor     eax, esp
+004DEBB1  |.  898424 E80200>mov     dword ptr [esp+0x2E8], eax
+004DEBB8  |.  53            push    ebx
+004DEBB9  |.  56            push    esi
+004DEBBA  |.  57            push    edi
+004DEBBB  |.  A1 BCD9F800   mov     eax, dword ptr [0xF8D9BC]
+004DEBC0  |.  33C4          xor     eax, esp
+004DEBC2  |.  50            push    eax
+004DEBC3  |.  8D8424 000300>lea     eax, dword ptr [esp+0x300]
+004DEBCA  |.  64:A3 0000000>mov     dword ptr fs:[0], eax
+004DEBD0  |.  8B75 08       mov     esi, [arg.1]
+004DEBD3  |.  8BF9          mov     edi, ecx
+004DEBD5      85F6          test    esi, esi
+004DEBD7      0F84 1F0A0000 je      004DF5FC
+004DEBDD      FF05 80A01201 inc     dword ptr [0x112A080]
+004DEBE3  |.  0FB746 08     movzx   eax, word ptr [esi+0x8]
+004DEBE7  |.  0FB7D8        movzx   ebx, ax
+004DEBEA  |.  53            push    ebx
+004DEBEB  |.  8D8424 B80200>lea     eax, dword ptr [esp+0x2B8]
+004DEBF2  |.  68 A02CDB00   push    00DB2CA0                         ;  ASCII "Msg Type %u"
+004DEBF7  |.  50            push    eax
+004DEBF8  |.  E8 DDEB7800   call    <sprintf>
+004DEBFD  |.  83C4 0C       add     esp, 0xC
+004DEC00  |.  56            push    esi
+004DEC01  |.  E8 CA3B0600   call    005427D0
+004DEC06  |.  8BC8          mov     ecx, eax
+004DEC08  |.  E8 E3400600   call    00542CF0
+004DEC0D  |.  56            push    esi
+004DEC0E  |.  E8 0D71F7FF   call    00455D20
+004DEC13  |.  8BC8          mov     ecx, eax
+004DEC15  |.  E8 A6DE3600   call    0084CAC0
+004DEC1A  |.  56            push    esi
+004DEC1B  |.  B9 9CE8B601   mov     ecx, 01B6E89C
+004DEC20  |.  E8 BBE91900   call    0067D5E0
+004DEC25  |.  84C0          test    al, al
+004DEC27  |.  0F85 FC160000 jnz     004E0329
+004DEC2D  |.  56            push    esi
+004DEC2E  |.  E8 8D38FFFF   call    004D24C0
+004DEC33  |.  8BC8          mov     ecx, eax
+004DEC35  |.  E8 D61BFFFF   call    004D0810
+004DEC3A  |.  56            push    esi
+004DEC3B  |.  E8 7050FFFF   call    004D3CB0
+004DEC40  |.  8BC8          mov     ecx, eax
+004DEC42  |.  E8 191E1F00   call    006D0A60
+004DEC47  |.  56            push    esi
+004DEC48  |.  E8 330DF9FF   call    0046F980
+004DEC4D  |.  8BC8          mov     ecx, eax
+004DEC4F  |.  E8 AC371F00   call    006D2400
+004DEC54  |.  56            push    esi
+004DEC55  |.  E8 36F40C00   call    005AE090
+004DEC5A  |.  8BC8          mov     ecx, eax
+004DEC5C  |.  E8 2F960D00   call    005B8290
+004DEC61  |.  56            push    esi
+004DEC62  |.  B9 E86F8401   mov     ecx, 01846FE8
+004DEC67  |.  E8 040C4800   call    0095F870
+004DEC6C  |.  81FB 3F040000 cmp     ebx, 0x43F                       ;  Switch (cases 3F6..36B5)
+004DEC72  |.  0F85 09030000 jnz     004DEF81
+004DEC78  |.  0FB746 0B     movzx   eax, word ptr [esi+0xB]          ;  Case 43F of switch 004DEC6C
+004DEC7C  |.  3D E8030000   cmp     eax, 0x3E8                       ;  Switch (cases 0..3EC)
+004DEC81  |.  0F8F 2B010000 jg      004DEDB2
+004DEC87  |.  0F84 BE000000 je      004DED4B
+004DEC8D  |.  85C0          test    eax, eax
+004DEC8F  |.  0F85 94160000 jnz     004E0329
+004DEC95  |.  83C6 0D       add     esi, 0xD                         ;  Case 0 of switch 004DEC7C
+004DEC98  |.  56            push    esi
+004DEC99  |.  8BCF          mov     ecx, edi
+004DEC9B  |.  E8 A04DFEFF   call    004C3A40
+004DECA0  |.  8BC8          mov     ecx, eax
+004DECA2  |.  E8 A954FCFF   call    004A4150
+004DECA7  |.  E8 F45CF7FF   call    004549A0
+004DECAC  |.  8B0E          mov     ecx, dword ptr [esi]
+004DECAE  |.  05 C88E0000   add     eax, 0x8EC8
+004DECB3  |.  8908          mov     dword ptr [eax], ecx
+004DECB5  |.  8B56 04       mov     edx, dword ptr [esi+0x4]
+004DECB8  |.  8950 04       mov     dword ptr [eax+0x4], edx
+004DECBB  |.  8B4E 08       mov     ecx, dword ptr [esi+0x8]
+004DECBE  |.  8948 08       mov     dword ptr [eax+0x8], ecx
+004DECC1  |.  66:8B56 0C    mov     dx, word ptr [esi+0xC]
+004DECC5  |.  66:8950 0C    mov     word ptr [eax+0xC], dx
+004DECC9  |.  E8 D25CF7FF   call    004549A0
+004DECCE  |.  6A 00         push    0x0
+004DECD0  |.  6A 00         push    0x0
+004DECD2  |.  56            push    esi
+004DECD3  |.  B9 6814A901   mov     ecx, 01A91468
+004DECD8  |.  C680 D68E0000>mov     byte ptr [eax+0x8ED6], 0x0
+004DECDF  |.  E8 FC886900   call    00B775E0
+004DECE4  |.  68 882CDB00   push    00DB2C88                         ;  ASCII "eClient_ReNameSucceed"
+004DECE9  |.  8D4C24 20     lea     ecx, dword ptr [esp+0x20]
+004DECED  |.  E8 7E2E8300   call    00D11B70
+004DECF2  |.  C78424 080300>mov     dword ptr [esp+0x308], 0x5
+004DECFD  |.  D905 3CCFDA00 fld     dword ptr [0xDACF3C]
+004DED03  |.  6A 00         push    0x0
+004DED05  |.  51            push    ecx
+004DED06  |.  D91C24        fstp    dword ptr [esp]
+004DED09  |.  6A 00         push    0x0
+004DED0B  |.  6A 00         push    0x0
+004DED0D  |.  6A 00         push    0x0
+004DED0F  |.  6A 01         push    0x1
+004DED11  |.  6A 00         push    0x0
+004DED13  |.  8D4424 38     lea     eax, dword ptr [esp+0x38]
+004DED17  |.  68 358BE500   push    00E58B35
+004DED1C  |.  50            push    eax
+004DED1D  |.  E8 2E0DF7FF   call    0044FA50
+004DED22  |.  8BC8          mov     ecx, eax
+004DED24  |.  E8 D7741E00   call    006C6200
+004DED29  |.  50            push    eax
+

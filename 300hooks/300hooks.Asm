@@ -5,7 +5,7 @@ option casemap:none
 include 300hooks.inc
 
 .data
-g_szWindowClass db 'GameKit',0
+g_szWindowName db 'GameKit_Protocol',0
 g_szGameClassName db 'WWW_JUMPW_COM',0
 
 g_szNotifMessage db 'active',0
@@ -38,7 +38,7 @@ UI_ShowData proc uses edi esi,swapbuf,is_send
 	mov dword ptr [esi].dwData,eax
 	
 	
-	invoke FindWindow,offset g_szWindowClass,NULL
+	invoke FindWindow,NULL,offset g_szWindowName
 	test eax,eax
 	je @F
 	
@@ -90,6 +90,53 @@ NET_Send proc uses esi,param
 	ret
 NET_Send endp
 
+SYS_GetPlayerMngr proc
+	
+	mov eax,00454A80h
+	call eax
+	
+	ret
+
+SYS_GetPlayerMngr endp
+
+SYS_ProcessMessageReal proc
+	push ebp
+	mov ebp,esp
+	and esp, 0FFFFFFF8h
+	
+	push 004DEB96h
+	retn
+SYS_ProcessMessageReal endp
+
+SYS_ProcessMessage proc uses ecx,param
+	
+	push ecx
+	
+	push 0
+	push param
+	call UI_ShowData
+	
+	pop ecx
+	
+	push param
+	call SYS_ProcessMessageReal
+	
+	ret
+SYS_ProcessMessage endp
+
+SYS_SendProcessMessage proc param
+	
+	invoke SYS_GetPlayerMngr
+	mov ecx,eax
+	push param
+	call SYS_ProcessMessage
+	;mov eax,004DEB90h
+	;call eax
+	
+	ret
+
+SYS_SendProcessMessage endp
+
 
 
 DetourAttach proc uses esi,source,target
@@ -121,8 +168,12 @@ HOOK_WndProc proc uses edi esi,nCode:dword,wParam:dword,lParam:dword
 		mov esi,[edi].lParam
 		assume esi:ptr COPYDATASTRUCT
 		
-		
-		invoke NET_Send,[esi].lpData
+		.if [esi].dwData == 1
+			invoke NET_Send,[esi].lpData
+		.else
+			invoke SYS_SendProcessMessage,[esi].lpData
+		.endif
+		;
 		
 		
 		assume esi:nothing
@@ -143,6 +194,7 @@ HOOK_Attach proc
 	mov g_pPrevHooks,eax
 	
 	invoke DetourAttach,0083D310h,offset NET_Send
+	invoke DetourAttach,004DEB90h,offset SYS_ProcessMessage
 	
 	
 	ret
@@ -216,7 +268,7 @@ SYS_Attach proc uses esi
 	cmp eax,esi
 	je @OnCurThread
 	
-	invoke SYS_InvokeTo,eax,offset HOOK_Attach
+	invoke SYS_InvokeTo,esi,offset HOOK_Attach
 	jmp @F
 	
 @OnCurThread:

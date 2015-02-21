@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameKit", "GameKit.csproj", "{936A0F50-D11C-4D4C-9E5C-AB8E629F8B09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{936A0F50-D11C-4D4C-9E5C-AB8E629F8B09}.Debug|x86.ActiveCfg = Debug|x86
+		{936A0F50-D11C-4D4C-9E5C-AB8E629F8B09}.Debug|x86.Build.0 = Debug|x86
+		{936A0F50-D11C-4D4C-9E5C-AB8E629F8B09}.Release|x86.ActiveCfg = Release|x86
+		{936A0F50-D11C-4D4C-9E5C-AB8E629F8B09}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
