@@ -384,6 +384,9 @@ namespace GameKit
                     {
                         SendMessage(hWnd, WM_COPYDATA, 0, ref cds);
                     }
+
+                    Marshal.FreeHGlobal(cds.lpData);
+
                 }
                 catch
                 {
