@@ -1,0 +1,6 @@
+C:\Game_300Heros\GameKit\bin\Release\GameKit.exe
+C:\Game_300Heros\GameKit\bin\Release\GameKit.pdb
+C:\Game_300Heros\GameKit\obj\x86\Release\GameKit.Form1.resources
+C:\Game_300Heros\GameKit\obj\x86\Release\GameKit.csproj.GenerateResource.Cache
+C:\Game_300Heros\GameKit\obj\x86\Release\GameKit.exe
+C:\Game_300Heros\GameKit\obj\x86\Release\GameKit.pdb
