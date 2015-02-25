@@ -1,13 +1,14 @@
 #include "pch.h"
 #include "PSHelper.h"
-#include "GamePacket.h"
 
+#include "GameCamera.h"
 
 DWORD OriginEip;
 
 void Startup()
 {
-	GamePacket::GetInstance()->Attach();
+	
+	GameCamera::GetInstance()->Attach();
 }
 __declspec(naked)void _asm_Startup()
 {
