@@ -1,0 +1,2 @@
+减少nodejs在同步时过度占用内存的问题
+使用process.nextTick来异步执行好让nodejs有机会释放内存

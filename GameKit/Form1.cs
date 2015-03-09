@@ -164,9 +164,7 @@ namespace GameKit
                 MessageData.buffer = bufs;
                 MessageData.type = cds.dwData;
 
-                MessageDataQueue.Enqueue(MessageData);
-
-                //AddPackets(MessageData);
+				AddPackets(MessageData);
             }
             base.DefWndProc(ref m);
         }
@@ -176,15 +174,15 @@ namespace GameKit
             listView1.Items.Clear();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            //listView1.BeginUpdate();
-            while (MessageDataQueue.Count > 0)
-            {
-                AddPackets(MessageDataQueue.Dequeue());
-            }
-            //listView1.EndUpdate();
-        }
+		//private void timer1_Tick(object sender, EventArgs e)
+		//{
+		//    //listView1.BeginUpdate();
+		//    while (MessageDataQueue.Count > 0)
+		//    {
+		//        AddPackets(MessageDataQueue.Dequeue());
+		//    }
+		//    //listView1.EndUpdate();
+		//}
 
         private void 复制ToolStripMenuItem_Click(object sender, EventArgs e)
         {

@@ -1,0 +1,4 @@
+LIBRARY extdll
+
+EXPORTS
+game_hook
