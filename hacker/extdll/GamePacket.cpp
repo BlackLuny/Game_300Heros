@@ -54,12 +54,18 @@ void GamePacket::Attach()
 	m_pPrevHook = SetWindowsHookExA(WH_CALLWNDPROC,HOOK_WndProc,NULL,GetCurrentThreadId());
 }
 #pragma pack(1)
+struct vector2d
+{
+	float x;
+	float y;
+};
 struct st_skill_info
 {
-	
-	unsigned char u[5];
-	int delta;
+	bool u;
+	vector2d target;
 	unsigned short id;
+	vector2d source;
+	vector2d u2;
 };
 #pragma pack()
 
@@ -77,7 +83,6 @@ void GamePacket::SwapMessage(net_packet_t* packet,BOOL IsSend)
 			if(start->id == source_id)
 			{
 				memcpy(start,buf,sizeof(buf));
-				start->delta = -1;
 				start->id = target_id;
 			}
 		}
