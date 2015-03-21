@@ -1,0 +1,9 @@
+C:\Game_300Heros\MythBox\bin\Debug\MythBox.exe
+C:\Game_300Heros\MythBox\bin\Debug\MythBox.pdb
+C:\Game_300Heros\MythBox\obj\x86\Debug\MythBox.Form1.resources
+C:\Game_300Heros\MythBox\obj\x86\Debug\MythBox.Properties.Resources.resources
+C:\Game_300Heros\MythBox\obj\x86\Debug\MythBox.csproj.GenerateResource.Cache
+C:\Game_300Heros\MythBox\obj\x86\Debug\MythBox.exe
+C:\Game_300Heros\MythBox\obj\x86\Debug\MythBox.pdb
+C:\Game_300Heros\MythBox\bin\Debug\MythBox.exe.config
+C:\Game_300Heros\MythBox\obj\x86\Debug\MythBox.Form2.resources

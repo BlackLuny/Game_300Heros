@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
 using System.IO;
+using System.Threading;
 
 namespace GameKit
 {
@@ -19,28 +20,14 @@ namespace GameKit
 
         [DllImport("user32.dll")]
         private static extern Int32 FindWindow(String classname, String text);
+
+		public delegate void DelAddPackets(GameMessageData Data);
+
+		public Thread ts;
+		public Thread ts2;
+
+		public static Queue<GameMessageData> MsgQueue = new Queue<GameMessageData>();
         
-        const int WM_COPYDATA = 0x004A;
-        [StructLayout(LayoutKind.Sequential)]
-        public struct COPYDATASTRUCT
-        {
-            public uint dwData;
-            public int cbData;
-            public IntPtr lpData;
-        }
-
-        public class GameMessageData
-        {
-            public byte[] buffer;
-            public uint type;
-        }
-
-        public struct GamePacketTypes
-        {
-            public int length;
-            public uint timestamp;
-            public ushort identifier;
-        }
 
         private Queue<GameMessageData> MessageDataQueue = new Queue<GameMessageData>();
 
@@ -66,12 +53,17 @@ namespace GameKit
         public Form1()
         {
             InitializeComponent();
+			ts = new Thread(new ThreadStart(mystart));
+			ts.IsBackground = true;
+			ts2 = new Thread(new ThreadStart(queueMsg));
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             Console.Title = "GameKit";
-            this.Text = "GameKit_Protocol";
+			ts.Start();
+			ts2.Start();
+
         }
 
         private void AddPackets(GameMessageData Data)
@@ -83,8 +75,6 @@ namespace GameKit
                 info.length = sr.ReadInt32();
                 info.timestamp = sr.ReadUInt32();
                 info.identifier = sr.ReadUInt16();
-
-
 
                 if (Data.type == 0)
                 {
@@ -145,13 +135,13 @@ namespace GameKit
             {
 
             }
-           
+
         }
 
 
         protected override void DefWndProc(ref Message m)
         {
-            if (m.Msg == WM_COPYDATA)
+            if (m.Msg == Windows.WM_COPYDATA)
             {
                 COPYDATASTRUCT cds = new COPYDATASTRUCT();
                 Type mytype = cds.GetType();
@@ -164,7 +154,7 @@ namespace GameKit
                 MessageData.buffer = bufs;
                 MessageData.type = cds.dwData;
 
-				AddPackets(MessageData);
+				//AddPackets(MessageData);
             }
             base.DefWndProc(ref m);
         }
@@ -224,7 +214,7 @@ namespace GameKit
 
                 if (hWnd != 0)
                 {
-                    SendMessage(hWnd, WM_COPYDATA, 0, ref cds);
+                    SendMessage(hWnd, Windows.WM_COPYDATA, 0, ref cds);
                 }
                 Marshal.FreeHGlobal(cds.lpData);
             }
@@ -253,7 +243,7 @@ namespace GameKit
 
                 if (hWnd != 0)
                 {
-                    SendMessage(hWnd, WM_COPYDATA, 0, ref cds);
+					SendMessage(hWnd, Windows.WM_COPYDATA, 0, ref cds);
                 }
                 Marshal.FreeHGlobal(cds.lpData);
             }
@@ -349,7 +339,7 @@ namespace GameKit
 
                     if (hWnd != 0)
                     {
-                        SendMessage(hWnd, WM_COPYDATA, 0, ref cds);
+						SendMessage(hWnd, Windows.WM_COPYDATA, 0, ref cds);
                     }
                     Marshal.FreeHGlobal(cds.lpData);
                 }
@@ -383,7 +373,7 @@ namespace GameKit
 
                     if (hWnd != 0)
                     {
-                        SendMessage(hWnd, WM_COPYDATA, 0, ref cds);
+						SendMessage(hWnd, Windows.WM_COPYDATA, 0, ref cds);
                     }
 
                     Marshal.FreeHGlobal(cds.lpData);
@@ -395,6 +385,37 @@ namespace GameKit
             }
         }
 
+		private void Form1_Shown(object sender, EventArgs e)
+		{
+			
+		}
 
-    }
+		public void mystart()
+		{
+			Form2 f = new Form2();
+			f.ShowDialog();
+		}
+
+		public void queueMsg()
+		{
+			while (true)
+			{
+				lock (MsgQueue)
+				{
+					while (MsgQueue.Count > 0)
+					{
+						this.Invoke(new DelAddPackets(AddPackets), MsgQueue.Dequeue());
+					}
+				}
+
+				Thread.Sleep(10);
+			}
+		}
+
+		private void timer1_Tick(object sender, EventArgs e)
+		{
+			
+		}
+
+	}
 }
