@@ -14,3 +14,4 @@ C:\Game_300Heros\MythBox\MythBox\obj\x86\Release\MythBox.pdb
 C:\Game_300Heros\300Sharp\MythBox.exe.config
 C:\Game_300Heros\300Sharp\MythBox.exe
 C:\Game_300Heros\300Sharp\MythBox.pdb
+C:\Game_300Heros\MythBox\MythBox\obj\x86\Release\MythBox.csprojResolveAssemblyReference.cache

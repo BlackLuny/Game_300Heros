@@ -15,6 +15,15 @@ namespace MythBox.View.Debug
 {
     public partial class Analysis : Form
     {
+        public List<ushort> RecvFilterList = new List<ushort>();
+        public List<ushort> SendFilterList = new List<ushort>();
+
+        public Queue<ListViewItem> RefreshListViewQueue = new Queue<ListViewItem>();
+        public Analysis()
+        {
+            InitializeComponent();
+        }
+
         public delegate void Delegate_PostMessageHandler(object sender, Model.Plugin.SDK.Events.MessagePostArgs e);
         public static string BytesToString(byte[] sb)
         {
@@ -26,6 +35,7 @@ namespace MythBox.View.Debug
             return temp;
         }
 
+
         private static byte[] HexToByte(string hexString)
         {
             string newstr = hexString.Replace(" ", "");
@@ -33,12 +43,10 @@ namespace MythBox.View.Debug
             for (int i = 0; i < returnBytes.Length; i++)
                 returnBytes[i] = Convert.ToByte(newstr.Substring(i * 2, 2), 16);
             return returnBytes;
+            
         }
 
-        public Analysis()
-        {
-            InitializeComponent();
-        }
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -78,7 +86,37 @@ namespace MythBox.View.Debug
                 AddPackets(e.Message, 0);
             }
         }
+        public void SyncMemData()
+        {
+            RecvFilterList.Clear();
 
+            foreach (string s in listBox2.Items)
+            {
+                ushort i = Convert.ToUInt16(s, 16);
+                RecvFilterList.Add(i);
+            }
+
+            SendFilterList.Clear();
+
+            foreach (string s in listBox1.Items)
+            {
+                ushort i = Convert.ToUInt16(s, 16);
+                SendFilterList.Add(i);
+            }
+        }
+
+        private void AddListView(Model.Data.Message Message, int IsSend)
+        {
+            ListViewItem lv = new ListViewItem();
+            lv.SubItems[0].Text = IsSend.ToString();
+            lv.SubItems.Add(BytesToString(Message.data));
+            lv.SubItems.Add(String.Format("{0:X4}", Message.identifier));
+
+            lock (RefreshListViewQueue)
+            {
+                RefreshListViewQueue.Enqueue(lv);
+            }
+        }
         private void AddPackets(Model.Data.Message Message, int IsSend)
         {
             try
@@ -89,24 +127,19 @@ namespace MythBox.View.Debug
                     {
                         if (checkBox4.Checked)
                         {
-                            foreach (string s in listBox2.Items)
+                            foreach (ushort i in RecvFilterList)
                             {
-                                ushort i = Convert.ToUInt16(s, 16);
                                 if (i == Message.identifier)
                                 {
                                     return;
                                 }
                             }
 
-                            ListViewItem lv = listView1.Items.Add(IsSend.ToString());
-                            lv.SubItems.Add(BytesToString(Message.data));
-                            lv.SubItems.Add(String.Format("{0:X4}", Message.identifier));
+                            AddListView(Message, IsSend);
                         }
                         else
                         {
-                            ListViewItem lv = listView1.Items.Add(IsSend.ToString());
-                            lv.SubItems.Add(BytesToString(Message.data));
-                            lv.SubItems.Add(String.Format("{0:X4}", Message.identifier));
+                            AddListView(Message, IsSend);
                         }
                     }
                 }
@@ -116,24 +149,19 @@ namespace MythBox.View.Debug
                     {
                         if (checkBox3.Checked)
                         {
-                            foreach (string s in listBox1.Items)
+                            foreach (ushort i in SendFilterList)
                             {
-                                ushort i = Convert.ToUInt16(s, 16);
                                 if (i == Message.identifier)
                                 {
                                     return;
                                 }
                             }
 
-                            ListViewItem lv = listView1.Items.Add(IsSend.ToString());
-                            lv.SubItems.Add(BytesToString(Message.data));
-                            lv.SubItems.Add(String.Format("{0:X4}", Message.identifier));
+                            AddListView(Message, IsSend);
                         }
                         else
                         {
-                            ListViewItem lv = listView1.Items.Add(IsSend.ToString());
-                            lv.SubItems.Add(BytesToString(Message.data));
-                            lv.SubItems.Add(String.Format("{0:X4}", Message.identifier));
+                            AddListView(Message, IsSend);
                         }
                     }
                 }
@@ -229,6 +257,8 @@ namespace MythBox.View.Debug
             {
                 listBox1.Items.Add(String.Format("{0:X4}", identifier));
             }
+
+            SyncMemData();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -239,6 +269,8 @@ namespace MythBox.View.Debug
             {
                 listBox2.Items.Add(String.Format("{0:X4}", identifier));
             }
+
+            SyncMemData();
         }
 
         private void 删除ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -246,6 +278,7 @@ namespace MythBox.View.Debug
             if (listBox1.SelectedItem != null)
             {
                 listBox1.Items.Remove(listBox1.SelectedItem);
+                SyncMemData();
             }
         }
 
@@ -254,6 +287,7 @@ namespace MythBox.View.Debug
             if (listBox2.SelectedItem != null)
             {
                 listBox2.Items.Remove(listBox2.SelectedItem);
+                SyncMemData();
             }
         }
         public List<string> GetPacketArrays()
@@ -319,7 +353,17 @@ namespace MythBox.View.Debug
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            lock (RefreshListViewQueue)
+            {
+                listView1.BeginUpdate();
 
+                while (RefreshListViewQueue.Count > 0)
+                {
+                    listView1.Items.Add(RefreshListViewQueue.Dequeue());
+                }
+
+                listView1.EndUpdate();
+            }
         }
 
 

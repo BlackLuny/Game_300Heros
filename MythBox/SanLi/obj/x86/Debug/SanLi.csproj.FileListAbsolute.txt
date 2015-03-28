@@ -1,5 +1,0 @@
-C:\Game_300Heros\300Sharp\plugins\SanLi.dll
-C:\Game_300Heros\300Sharp\plugins\SanLi.pdb
-C:\Game_300Heros\MythBox\SanLi\obj\x86\Debug\SanLi.csprojResolveAssemblyReference.cache
-C:\Game_300Heros\MythBox\SanLi\obj\x86\Debug\SanLi.dll
-C:\Game_300Heros\MythBox\SanLi\obj\x86\Debug\SanLi.pdb

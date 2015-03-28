@@ -1,5 +1,0 @@
-C:\Game_300Heros\SanLi\bin\Release\SanLi.dll
-C:\Game_300Heros\SanLi\bin\Release\SanLi.pdb
-C:\Game_300Heros\SanLi\obj\Release\SanLi.csprojResolveAssemblyReference.cache
-C:\Game_300Heros\SanLi\obj\Release\SanLi.dll
-C:\Game_300Heros\SanLi\obj\Release\SanLi.pdb
