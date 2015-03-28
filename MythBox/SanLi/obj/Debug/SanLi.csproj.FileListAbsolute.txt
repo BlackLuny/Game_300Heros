@@ -1,0 +1,14 @@
+C:\Game_300Heros\SanLi\bin\Debug\SanLi.dll
+C:\Game_300Heros\SanLi\bin\Debug\SanLi.pdb
+C:\300Sharp\plugins\SanLi.dll
+C:\300Sharp\plugins\SanLi.pdb
+C:\Game_300Heros\SanLi\obj\Debug\SanLi.csprojResolveAssemblyReference.cache
+C:\Game_300Heros\SanLi\obj\Debug\SanLi.dll
+C:\Game_300Heros\SanLi\obj\Debug\SanLi.pdb
+C:\Game_300Heros\MythBox\300Sharp\plugins\SanLi.dll
+C:\Game_300Heros\MythBox\300Sharp\plugins\SanLi.pdb
+C:\Game_300Heros\300Sharp\plugins\SanLi.dll
+C:\Game_300Heros\300Sharp\plugins\SanLi.pdb
+C:\Game_300Heros\MythBox\SanLi\obj\Debug\SanLi.csprojResolveAssemblyReference.cache
+C:\Game_300Heros\MythBox\SanLi\obj\Debug\SanLi.dll
+C:\Game_300Heros\MythBox\SanLi\obj\Debug\SanLi.pdb

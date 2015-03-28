@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="zlib.net">
+</Property><Property Name="解决方案文件" Value="C:\Game_300Heros\zlib.net\zlib.net.sln">
+</Property><Property Name="Date" Value="2015年3月27日">
+</Property><Property Name="Time" Value="16:58">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="zlib.net.sln" Description="文件已成功备份为 C:\Game_300Heros\zlib.net\Backup\zlib.net.sln">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="zlib.net.csproj" Description="项目文件已成功备份为 C:\Game_300Heros\zlib.net\Backup\zlib.net.csproj">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="Adler32.cs" Description="文件已成功备份为 C:\Game_300Heros\zlib.net\Backup\Adler32.cs">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="AssemblyInfo.cs" Description="文件已成功备份为 C:\Game_300Heros\zlib.net\Backup\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="Deflate.cs" Description="文件已成功备份为 C:\Game_300Heros\zlib.net\Backup\Deflate.cs">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="InfBlocks.cs" Description="文件已成功备份为 C:\Game_300Heros\zlib.net\Backup\InfBlocks.cs">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="InfCodes.cs" Description="文件已成功备份为 C:\Game_300Heros\zlib.net\Backup\InfCodes.cs">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="Inflate.cs" Description="文件已成功备份为 C:\Game_300Heros\zlib.net\Backup\Inflate.cs">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="InfTree.cs" Description="文件已成功备份为 C:\Game_300Heros\zlib.net\Backup\InfTree.cs">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="StaticTree.cs" Description="文件已成功备份为 C:\Game_300Heros\zlib.net\Backup\StaticTree.cs">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="SupportClass.cs" Description="文件已成功备份为 C:\Game_300Heros\zlib.net\Backup\SupportClass.cs">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="Tree.cs" Description="文件已成功备份为 C:\Game_300Heros\zlib.net\Backup\Tree.cs">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="ZInputStream.cs" Description="文件已成功备份为 C:\Game_300Heros\zlib.net\Backup\ZInputStream.cs">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="Zlib.cs" Description="文件已成功备份为 C:\Game_300Heros\zlib.net\Backup\Zlib.cs">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="ZOutputStream.cs" Description="文件已成功备份为 C:\Game_300Heros\zlib.net\Backup\ZOutputStream.cs">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="ZStream.cs" Description="文件已成功备份为 C:\Game_300Heros\zlib.net\Backup\ZStream.cs">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="ZStreamException.cs" Description="文件已成功备份为 C:\Game_300Heros\zlib.net\Backup\ZStreamException.cs">
+</Event><Event ErrorLevel="1" Project="zlib.net" Source="zlib.net.csproj" Description="您的项目以 .NET Framework 2.0 或 3.0 为目标。如果您的项目使用的程序集需要更新的 .NET Framework，则项目生成将失败。通过单击项目菜单上的“属性”，然后在“.NET Framework”下拉框中选择一个新版本，可以更改 .NET Framework 的版本。(在 Visual Basic 中，可在单击“高级编辑器选项...”按钮时显示的“编译”选项卡上找到此下拉框。)">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="zlib.net.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="zlib.net" Source="zlib.net.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="zlib.net.sln" Description="成功转换解决方案">
+</Event><Event ErrorLevel="3" Project="" Source="zlib.net.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="zlib.net" Source="zlib.net.csproj" Description="扫描完成: 项目文件不需要升级。">
+</Event></UpgradeLog>

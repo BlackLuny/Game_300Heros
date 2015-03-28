@@ -1,0 +1,7 @@
+C:\Game_300Heros\300Sharp\plugins\PluginLibaray.dll
+C:\Game_300Heros\300Sharp\plugins\PluginLibaray.pdb
+C:\Game_300Heros\MythBox\GarbageAD\obj\Debug\GarbageAD.csprojResolveAssemblyReference.cache
+C:\Game_300Heros\MythBox\GarbageAD\obj\Debug\PluginLibaray.Form1.resources
+C:\Game_300Heros\MythBox\GarbageAD\obj\Debug\GarbageAD.csproj.GenerateResource.Cache
+C:\Game_300Heros\MythBox\GarbageAD\obj\Debug\PluginLibaray.dll
+C:\Game_300Heros\MythBox\GarbageAD\obj\Debug\PluginLibaray.pdb

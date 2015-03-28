@@ -1,0 +1,4 @@
+C:\Game_300Heros\zlib.net\bin\Debug\zlib.net.dll
+C:\Game_300Heros\zlib.net\bin\Debug\zlib.net.pdb
+C:\Game_300Heros\zlib.net\obj\Debug\zlib.net.dll
+C:\Game_300Heros\zlib.net\obj\Debug\zlib.net.pdb

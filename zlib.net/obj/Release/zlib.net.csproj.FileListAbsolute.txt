@@ -1,0 +1,2 @@
+C:\Game_300Heros\zlib.net\bin\Release\zlib.net.dll
+C:\Game_300Heros\zlib.net\obj\Release\zlib.net.dll
