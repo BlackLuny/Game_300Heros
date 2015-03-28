@@ -54,18 +54,18 @@ void GamePacket::Attach()
 }
 void GamePacket::SwapMessage(net_packet_t* packet,BOOL IsSend)
 {
-	//COPYDATASTRUCT copy_buf;
+	COPYDATASTRUCT copy_buf;
 
-	//copy_buf.dwData = IsSend;
-	//copy_buf.cbData = packet->length;
-	//copy_buf.lpData = packet;
+	copy_buf.dwData = IsSend;
+	copy_buf.cbData = packet->length;
+	copy_buf.lpData = packet;
 
-	//HWND swap_window = FindWindow(NULL,"GameKit_Protocol");
+	HWND swap_window = FindWindow(NULL,"GameKit_Protocol");
 
-	//if(swap_window)
-	//{
-	//	SendMessage(swap_window,WM_COPYDATA,NULL,(LPARAM)&copy_buf);
-	//}
+	if(swap_window)
+	{
+		SendMessage(swap_window,WM_COPYDATA,NULL,(LPARAM)&copy_buf);
+	}
 }
 void __stdcall GamePacket::PreRecvMessage(net_packet_t* packet)
 {
