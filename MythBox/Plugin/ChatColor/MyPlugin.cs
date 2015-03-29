@@ -18,7 +18,7 @@ namespace ChatColor
         /// <summary>
         /// 插件版本
         /// </summary>
-        public override string pluginVersion { get { return "1.0"; } }
+        public override string pluginVersion { get { return "1.1"; } }
 
         /// <summary>
         /// 插件作者
@@ -50,8 +50,8 @@ namespace ChatColor
                         byte unknownA = sr.ReadByte();
                         byte messageType = sr.ReadByte();
 
-                        byte[] fillByteA = sr.ReadBytes(11);   //ignore unknown
-
+                        byte[] fillByteA = sr.ReadBytes(8);   //ignore unknown
+                        string targetPlayer = sr.ReadString();
                         string playerName = sr.ReadString();
 
                         byte unknownB = sr.ReadByte();
@@ -65,6 +65,7 @@ namespace ChatColor
                             sw.Write(unknownA);
                             sw.Write(messageType);
                             sw.Write(fillByteA);
+                            sw.Write(targetPlayer);
                             sw.Write(playerName);
 
                             sw.Write(unknownB);

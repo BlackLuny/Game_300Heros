@@ -301,9 +301,9 @@ namespace skill_modifier
                 //21 号角
                 buf.Write(msgType);  //msg type
                 buf.Write(new byte[] { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00 });
-                buf.Write("");
+                buf.Write("");              //发送人
                 buf.Write((ushort)0xFFFF);
-                buf.Write(textBox1.Text);
+                buf.Write(textBox1.Text);   //发送的内容
                 buf.Write(new byte[] { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 });
 
                 SendBuffer(buf.GetBuffer(), 1);

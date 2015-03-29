@@ -16,3 +16,8 @@ C:\Game_300Heros\MythBox\Plugin\GarbageAD\obj\x86\Release\GarbageAD.dll
 C:\Game_300Heros\MythBox\Plugin\GarbageAD\obj\x86\Release\GarbageAD.pdb
 C:\Users\201724\Desktop\300Sharp\plugins\GarbageAD.dll
 C:\Users\201724\Desktop\300Sharp\plugins\GarbageAD.pdb
+C:\Users\201724\Desktop\300Sharp\SDK\Samples\GarbageAD\obj\x86\Release\GarbageAD.csprojResolveAssemblyReference.cache
+C:\Users\201724\Desktop\300Sharp\SDK\Samples\GarbageAD\obj\x86\Release\GarbageAD.Form1.resources
+C:\Users\201724\Desktop\300Sharp\SDK\Samples\GarbageAD\obj\x86\Release\GarbageAD.csproj.GenerateResource.Cache
+C:\Users\201724\Desktop\300Sharp\SDK\Samples\GarbageAD\obj\x86\Release\GarbageAD.dll
+C:\Users\201724\Desktop\300Sharp\SDK\Samples\GarbageAD\obj\x86\Release\GarbageAD.pdb

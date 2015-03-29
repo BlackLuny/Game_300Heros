@@ -25,14 +25,14 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\..\..\Users\201724\Desktop\300Sharp\plugins\</OutputPath>
+    <OutputPath>..\..\..\plugins\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MythBox">
-      <HintPath>..\..\..\..\Users\201724\Desktop\300Sharp\MythBox.exe</HintPath>
+      <HintPath>..\..\..\MythBox.exe</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />

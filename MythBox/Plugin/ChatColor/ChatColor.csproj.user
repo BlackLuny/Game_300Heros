@@ -5,4 +5,9 @@
     <StartProgram>C:\Users\201724\Desktop\300Sharp\MythBox.exe</StartProgram>
     <StartWorkingDirectory>C:\Users\201724\Desktop\300Sharp\</StartWorkingDirectory>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Users\201724\Desktop\300Sharp\MythBox.exe</StartProgram>
+    <StartWorkingDirectory>C:\Users\201724\Desktop\300Sharp</StartWorkingDirectory>
+  </PropertyGroup>
 </Project>
