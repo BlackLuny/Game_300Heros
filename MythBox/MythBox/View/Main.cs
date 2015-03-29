@@ -91,13 +91,20 @@ namespace MythBox.View
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-            string GamePath = Model.Service.GetInstance().Profile.GetValue("system", "GamePath");
-            if (GamePath == "")
+            try
+            {
+                string GamePath = Model.Service.GetInstance().Profile.GetValue("system", "GamePath");
+                if (GamePath == "")
+                {
+                    MessageBox.Show("找不到游戏路径,请手动设置游戏路径！");
+                    return;
+                }
+                Process.Start(GamePath, "LauncherShellExecuteGame");
+            }
+            catch
             {
                 MessageBox.Show("找不到游戏路径,请手动设置游戏路径！");
-                return;
             }
-            Process.Start(GamePath, "LauncherShellExecuteGame");
 		}
 
         private void 调试模式ToolStripMenuItem_Click(object sender, EventArgs e)
