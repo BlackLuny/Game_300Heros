@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MythBox.Model.Data
 {
-    public class MessageSender
+    class MessageSender
     {
         public int IsSend;
         public byte[] data;

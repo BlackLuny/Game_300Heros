@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace MythBox.View
 {
-	public partial class Profile : Form
+	partial class Profile : Form
 	{
 		public Profile()
 		{

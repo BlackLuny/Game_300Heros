@@ -16,7 +16,7 @@ namespace MythBox.Model.Data
         /// <summary>
         /// 包标记
         /// </summary>
-        public int magic;
+        public uint magic;
 
         /// <summary>
         /// 包ID
@@ -40,7 +40,7 @@ namespace MythBox.Model.Data
                 using (BinaryReader sr = new BinaryReader(new MemoryStream(data)))
                 {
                     msg.length = sr.ReadInt32();
-                    msg.magic = sr.ReadInt32();
+                    msg.magic = sr.ReadUInt32();
                     msg.identifier = sr.ReadUInt16();
 
                     int headerSize = sizeof(int) + sizeof(int) + sizeof(ushort);

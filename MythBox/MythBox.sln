@@ -4,11 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "300hooks", "300hooks\300hooks.vcxproj", "{A9D9B31F-E3F9-4441-B88D-FFF7005152B0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MythBox", "MythBox\MythBox.csproj", "{4F4AE63A-8A01-482A-8F4D-35F473EECB99}"
-	ProjectSection(ProjectDependencies) = postProject
-		{A9D9B31F-E3F9-4441-B88D-FFF7005152B0} = {A9D9B31F-E3F9-4441-B88D-FFF7005152B0}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GarbageAD", "GarbageAD\GarbageAD.csproj", "{85C2070B-E133-46E8-B349-F7EF9CE52F71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,14 +33,6 @@ Global
 		{4F4AE63A-8A01-482A-8F4D-35F473EECB99}.Release|Mixed Platforms.ActiveCfg = Release|x86
 		{4F4AE63A-8A01-482A-8F4D-35F473EECB99}.Release|Mixed Platforms.Build.0 = Release|x86
 		{4F4AE63A-8A01-482A-8F4D-35F473EECB99}.Release|Win32.ActiveCfg = Release|x86
-		{85C2070B-E133-46E8-B349-F7EF9CE52F71}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{85C2070B-E133-46E8-B349-F7EF9CE52F71}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{85C2070B-E133-46E8-B349-F7EF9CE52F71}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{85C2070B-E133-46E8-B349-F7EF9CE52F71}.Debug|Win32.ActiveCfg = Debug|x86
-		{85C2070B-E133-46E8-B349-F7EF9CE52F71}.Release|Any CPU.ActiveCfg = Release|x86
-		{85C2070B-E133-46E8-B349-F7EF9CE52F71}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{85C2070B-E133-46E8-B349-F7EF9CE52F71}.Release|Mixed Platforms.Build.0 = Release|x86
-		{85C2070B-E133-46E8-B349-F7EF9CE52F71}.Release|Win32.ActiveCfg = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

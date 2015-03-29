@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MythBox.Model.Debug
 {
-    public class Events
+    class Events
     {
         /// <summary>
         /// 调用游戏之后处理收到消息

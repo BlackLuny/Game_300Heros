@@ -10,7 +10,7 @@ using System.IO.Pipes;
 
 namespace MythBox.Model
 {
-    public class Service
+    class Service
     {
         /// <summary>
         /// 程序配置

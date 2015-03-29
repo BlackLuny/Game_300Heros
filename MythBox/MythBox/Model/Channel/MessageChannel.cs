@@ -12,7 +12,7 @@ using System.Diagnostics;
 
 namespace MythBox.Model.Channel
 {
-    public class MessageChannel
+    class MessageChannel
     {
         private const byte CH_CALL = 0x01;
         private const byte CH_RET = 0x2;

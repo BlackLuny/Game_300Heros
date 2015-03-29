@@ -9,7 +9,7 @@ using System.Data.Common;
 
 namespace MythBox.Model.Data
 {
-	public class Profile
+	class Profile
 	{
 		private SQLiteConnection DbConn;
 

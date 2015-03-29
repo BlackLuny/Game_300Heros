@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 
 namespace MythBox.Model.Game
 {
-    public class Backdoor
+    class Backdoor
     {
         /// <summary>
         /// 注入DLL到游戏

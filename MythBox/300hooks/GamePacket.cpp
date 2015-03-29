@@ -51,11 +51,13 @@ bool GamePacket::InvokePreSendMessage(net_packet_t* input,net_packet_t*& output,
 
 	if(g_Channel.CallApi("PKT_PreSendMessage",InputMessage,OutputMessage))
 	{
-		if(OutputMessage.m_uSize == (InputMessage.m_uSize + sizeof(BOOL)))
+		if(OutputMessage.m_uSize > 0)
 		{
-			output = (net_packet_t*)malloc(InputMessage.m_uSize);
+			DWORD dwLength = OutputMessage.m_uSize - sizeof(BOOL);
+
 			Blocked = *(BOOL*)OutputMessage.m_pData;
-			memcpy(output,&OutputMessage.m_pData[sizeof(BOOL)],InputMessage.m_uSize);
+			output = (net_packet_t*)malloc(dwLength);
+			memcpy(output,&OutputMessage.m_pData[sizeof(BOOL)],dwLength);
 			return true;
 		}
 	}
@@ -90,11 +92,13 @@ bool GamePacket::InvokePreReceiveMessage(net_packet_t* input,net_packet_t*& outp
 
 	if(g_Channel.CallApi("PKT_PreReceiveMessage",InputMessage,OutputMessage))
 	{
-		if(OutputMessage.m_uSize == (InputMessage.m_uSize + sizeof(BOOL)))
+		if(OutputMessage.m_uSize > 0)
 		{
-			output = (net_packet_t*)malloc(InputMessage.m_uSize);
+			DWORD dwLength = OutputMessage.m_uSize - sizeof(BOOL);
+
 			Blocked = *(BOOL*)OutputMessage.m_pData;
-			memcpy(output,&OutputMessage.m_pData[sizeof(BOOL)],InputMessage.m_uSize);
+			output = (net_packet_t*)malloc(dwLength);
+			memcpy(output,&OutputMessage.m_pData[sizeof(BOOL)],dwLength);
 			return true;
 		}
 	}

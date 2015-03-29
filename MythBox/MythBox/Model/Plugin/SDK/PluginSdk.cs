@@ -136,7 +136,7 @@ namespace MythBox.Model.Plugin.SDK
                     OnPreReceiveMessage(e);
                     break;
                 case PluginEvent.PreSendMessage:
-                    OnPostSendMessage(e);
+                    OnPreSendMessage(e);
                     break;
                 case PluginEvent.PostReceiveMessage:
                     OnPostReceiveMessage(e);

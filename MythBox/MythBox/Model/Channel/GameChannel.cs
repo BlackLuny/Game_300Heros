@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using System.IO;
 namespace MythBox.Model.Channel
 {
-    public class GameChannel : MessageChannel
+    class GameChannel : MessageChannel
     {
         private Service sv;
 
@@ -81,17 +81,22 @@ namespace MythBox.Model.Channel
 
                     plugin.OnEvent(e);
 
+
+
+                    using (BinaryWriter output = new BinaryWriter(new MemoryStream()))
+                    {
+                        output.Write(Convert.ToInt32(e.Blocked));
+                        output.Write(e.result);
+
+                        output.Flush();
+
+                        caller.result = GetBytes(output.BaseStream);
+                    }
+
+                    caller.param = e.result;
+
                     if (e.Cancel == true)
                     {
-                        using (BinaryWriter output = new BinaryWriter(new MemoryStream()))
-                        {
-                            output.Write(Convert.ToInt32(e.Blocked));
-                            output.Write(e.result);
-
-                            output.Flush();
-
-                            caller.result = GetBytes(output.BaseStream);
-                        }
                         return;
                     }
                 }
@@ -135,7 +140,7 @@ namespace MythBox.Model.Channel
                 }
             }
 
-            
+
         }
 
         public void PKT_PreReceiveMessage(ChannelInstance ch, APICaller caller)
@@ -153,18 +158,20 @@ namespace MythBox.Model.Channel
 
                     plugin.OnEvent(e);
 
+                    using (BinaryWriter output = new BinaryWriter(new MemoryStream()))
+                    {
+                        output.Write(Convert.ToInt32(e.Blocked));
+                        output.Write(e.result);
+
+                        output.Flush();
+
+                        caller.result = GetBytes(output.BaseStream);
+                    }
+
+                    caller.param = e.result;
 
                     if (e.Cancel == true)
                     {
-                        using (BinaryWriter output = new BinaryWriter(new MemoryStream()))
-                        {
-                            output.Write(Convert.ToInt32(e.Blocked));
-                            output.Write(e.result);
-
-                            output.Flush();
-
-                            caller.result = GetBytes(output.BaseStream);
-                        }
                         return;
                     }
                 }
@@ -178,7 +185,7 @@ namespace MythBox.Model.Channel
             Plugin.SDK.Events.MessagePostArgs notif = new Plugin.SDK.Events.MessagePostArgs(caller.param, ch);
             notif.Event = Plugin.SDK.PluginEvent.PostReceiveMessage;
             sv.DebugEvents.OnEvent(notif);
-            
+
         }
 
         public void PKT_PostReceiveMessage(ChannelInstance ch, APICaller caller)
@@ -210,7 +217,7 @@ namespace MythBox.Model.Channel
             }
 
 
-           
+
         }
 
         public void SYS_Update(ChannelInstance ch, APICaller caller)

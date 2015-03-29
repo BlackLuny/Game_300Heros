@@ -13,7 +13,7 @@ using System.Threading;
 
 namespace MythBox.View.Debug
 {
-    public partial class Analysis : Form
+    partial class Analysis : Form
     {
         public List<ushort> RecvFilterList = new List<ushort>();
         public List<ushort> SendFilterList = new List<ushort>();

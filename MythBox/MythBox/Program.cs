@@ -13,9 +13,22 @@ namespace MythBox
 		[STAThread]
 		static void Main()
 		{
-			Application.EnableVisualStyles();
-			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new View.Main());
+            bool isRuned;
+            System.Threading.Mutex mutex = new System.Threading.Mutex(true, "300HeroBox", out isRuned);
+            if (isRuned)
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new View.Main());
+
+                mutex.ReleaseMutex();
+            }
+            else
+            {
+                MessageBox.Show("程序已启动!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+			
 		}
 	}
 }

@@ -9,7 +9,7 @@ using MythBox.Model.Plugin.SDK;
 
 namespace MythBox.Model.Plugin
 {
-    public class Manager
+    class Manager
     {
         public List<PluginSdk> pluginList = new List<PluginSdk>();
 

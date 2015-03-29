@@ -1,9 +1,0 @@
-C:\Game_300Heros\MythBox\GarbageAD\bin\x86\Release\GarbageAD.dll
-C:\Game_300Heros\MythBox\GarbageAD\bin\x86\Release\GarbageAD.pdb
-C:\Game_300Heros\MythBox\GarbageAD\obj\x86\Release\GarbageAD.csprojResolveAssemblyReference.cache
-C:\Game_300Heros\MythBox\GarbageAD\obj\x86\Release\GarbageAD.Form1.resources
-C:\Game_300Heros\MythBox\GarbageAD\obj\x86\Release\GarbageAD.csproj.GenerateResource.Cache
-C:\Game_300Heros\MythBox\GarbageAD\obj\x86\Release\GarbageAD.dll
-C:\Game_300Heros\MythBox\GarbageAD\obj\x86\Release\GarbageAD.pdb
-C:\Game_300Heros\300Sharp\plugins\GarbageAD.dll
-C:\Game_300Heros\300Sharp\plugins\GarbageAD.pdb

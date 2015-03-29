@@ -5,7 +5,7 @@ using System.Text;
 using System.IO.Pipes;
 namespace MythBox.Model.Data
 {
-    public class ChannelQueue
+    class ChannelQueue
     {
         public Queue<MessageSender> senderQueue;
 

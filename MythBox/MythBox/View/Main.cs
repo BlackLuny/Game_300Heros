@@ -15,7 +15,7 @@ using System.Runtime.InteropServices;
 
 namespace MythBox.View
 {
-	public partial class Main : Form
+	partial class Main : Form
 	{
 		public Main()
 		{
