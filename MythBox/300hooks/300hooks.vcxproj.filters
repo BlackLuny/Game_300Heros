@@ -36,6 +36,9 @@
     <ClCompile Include="GameCamera.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="ChatFixer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -60,6 +63,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="GameCamera.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ChatFixer.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

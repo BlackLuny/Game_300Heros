@@ -81,6 +81,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AppEntry.cpp" />
+    <ClCompile Include="ChatFixer.cpp" />
     <ClCompile Include="CSigMngr.cpp" />
     <ClCompile Include="GameCamera.cpp" />
     <ClCompile Include="GamePacket.cpp" />
@@ -89,6 +90,7 @@
     <ClCompile Include="PSHelper.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ChatFixer.h" />
     <ClInclude Include="CSigMngr.h" />
     <ClInclude Include="detours.h" />
     <ClInclude Include="GameCamera.h" />

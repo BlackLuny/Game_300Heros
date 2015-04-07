@@ -6,6 +6,7 @@
 #include "GamePacket.h"
 #include "GameTimer.h"
 #include "GameCamera.h"
+#include "ChatFixer.h"
 
 
 HMODULE g_hModule;
@@ -21,6 +22,7 @@ void Startup()
 	GamePacket::GetInstance()->Attach();
 	GameTimer::GetInstance()->Attach();
 	GameCamera::GetInstance()->Attach();
+	ChatFixer::GetInstance()->Attach();
 }
 __declspec(naked)void _asm_Startup()
 {
