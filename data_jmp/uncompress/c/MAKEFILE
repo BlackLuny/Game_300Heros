@@ -1,4 +1,4 @@
-main.exe:main.obj
-	link /subsystem:console /nodefaultlib:msvcrt main.obj 
-main.obj:main.c
-	cl /c main.c
+uncompress: main_mac.o
+	gcc -o uncompress main_mac.o ./zlib/lib/libz.a
+main_mac.o: main_mac.c
+	gcc -c -O3 -I ./zlib/include main_mac.c
