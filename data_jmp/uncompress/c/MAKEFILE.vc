@@ -1,0 +1,4 @@
+main.exe:main.obj
+	link /subsystem:console /nodefaultlib:msvcrt main.obj 
+main.obj:main.c
+	cl /c main.c
