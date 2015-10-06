@@ -46,7 +46,7 @@ void __declspec(naked) ChatFixer::Proc()
 		CMP DWORD PTR [ESI] ,0;
 		JNZ _BreakPatch;
 
-		MOV DWORD PTR [ESI],0x3C
+		MOV DWORD PTR [ESI],0x3C;
 
 _BreakPatch:
 
