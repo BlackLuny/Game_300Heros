@@ -25,7 +25,10 @@ public:
 
 	DECLARE_INSTANCE(GamePacket);
 
-	void* FindPlayerMngr();
+	PVOID GetCNetwork();
+	PVOID GetCPlayerMngr();
+	PVOID GetSendFunc();
+	PVOID GetReceiveFunc();
 
 	static void __stdcall PreRecvMessage(net_packet_t* packet);
 	static void __stdcall PreSendMessage(net_packet_t* packet);

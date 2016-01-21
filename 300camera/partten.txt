@@ -1,0 +1,117 @@
+/*
+camera:
+
+004946A2    E8 49A05500     call    009EE6F0
+004946A7    8BC8            mov     ecx, eax
+004946A9    E8 72665500     call    009EAD20
+004946AE    E8 0D955300     call    009CDBC0
+004946B3    D980 80010000   fld     dword ptr [eax+0x180]	
+004946B9    D91D 2C8AE500   fstp    dword ptr [0xE58A2C]
+004946BF    D905 2C8AE500   fld     dword ptr [0xE58A2C]
+004946C5    DD5C24 20       fstp    qword ptr [esp+0x20]
+004946C9    E8 F2945300     call    009CDBC0
+004946CE    D980 E4010000   fld     dword ptr [eax+0x1E4]
+004946D4    DC5C24 20       fcomp   qword ptr [esp+0x20]
+004946D8    DFE0            fstsw   ax
+004946DA    F6C4 05         test    ah, 0x5
+004946DD    7A 11           jpe     short 004946F0
+004946DF    E8 DC945300     call    009CDBC0
+004946E4    D980 E4010000   fld     dword ptr [eax+0x1E4]
+004946EA    D91D 2C8AE500   fstp    dword ptr [0xE58A2C]
+004946F0    D905 2C8AE500   fld     dword ptr [0xE58A2C]
+004946F6    DC15 A8E4BF00   fcom    qword ptr [0xBFE4A8]
+004946FC    DFE0            fstsw   ax
+004946FE    F6C4 05         test    ah, 0x5
+00494701    7A 14           jpe     short 00494717
+00494703    DDD8            fstp    st
+00494705    D905 8C58CA00   fld     dword ptr [0xCA588C]
+0049470B    D91D 2C8AE500   fstp    dword ptr [0xE58A2C]
+00494711    D905 2C8AE500   fld     dword ptr [0xE58A2C]
+
+
+
+8B 80 54 BF 02 00 52 51 8D 54 24 20 52 8D 4C 24 2C 51 8D 94 24 84 00 00 00 52 8B C8
+
+
+004D1BFB    8B80 54BF0200   mov     eax, dword ptr [eax+0x2BF54]
+004D1B4F    E8 6CC04F00     call    009CDBC0
+ - 0xAC => Jump => +1 => Ptr
+
+
+pointB:
+
+004D1AC0    6A FF           push    -0x1
+004D1AC2    68 BCC9B700     push    00B7C9BC
+004D1AC7    64:A1 00000000  mov     eax, dword ptr fs:[0]
+004D1ACD    50              push    eax
+004D1ACE    81EC 98010000   sub     esp, 0x198
+004D1AD4    A1 3CFFDC00     mov     eax, dword ptr [0xDCFF3C]
+004D1AD9    33C4            xor     eax, esp
+004D1ADB    898424 94010000 mov     dword ptr [esp+0x194], eax
+004D1AE2    53              push    ebx
+004D1AE3    55              push    ebp
+004D1AE4    56              push    esi
+004D1AE5    57              push    edi
+004D1AE6    A1 3CFFDC00     mov     eax, dword ptr [0xDCFF3C]
+004D1AEB    33C4            xor     eax, esp
+004D1AED    50              push    eax
+004D1AEE    8D8424 AC010000 lea     eax, dword ptr [esp+0x1AC]
+004D1AF5    64:A3 00000000  mov     dword ptr fs:[0], eax
+004D1AFB    8BF1            mov     esi, ecx
+004D1AFD    8A86 BE280000   mov     al, byte ptr [esi+0x28BE]
+004D1B03    84C0            test    al, al
+004D1B05    0F85 33090000   jnz     004D243E
+004D1B0B    0FB786 32290000 movzx   eax, word ptr [esi+0x2932]
+004D1B12    0FB7C8          movzx   ecx, ax
+004D1B15    66:83F9 0A      cmp     cx, 0xA
+004D1B19    0F84 1F090000   je      004D243E
+004D1B1F    0FB7C0          movzx   eax, ax
+004D1B22    B9 10000000     mov     ecx, 0x10
+004D1B27    66:3BC8         cmp     cx, ax
+004D1B2A    0F84 0E090000   je      004D243E
+004D1B30    8DBE 78310000   lea     edi, dword ptr [esi+0x3178]
+004D1B36    33ED            xor     ebp, ebp
+004D1B38    3BFD            cmp     edi, ebp
+004D1B3A    0F84 FE080000   je      004D243E
+004D1B40    E8 7BC04F00     call    009CDBC0
+004D1B45    D980 80010000   fld     dword ptr [eax+0x180]
+004D1B4B    DD5C24 4C       fstp    qword ptr [esp+0x4C]
+004D1B4F    E8 6CC04F00     call    009CDBC0
+004D1B54    D980 EC010000   fld     dword ptr [eax+0x1EC]		//Z轴最小
+004D1B5A    DC6C24 4C       fsubr   qword ptr [esp+0x4C]
+004D1B5E    DD5C24 5C       fstp    qword ptr [esp+0x5C]
+004D1B62    E8 59C04F00     call    009CDBC0
+004D1B67    D980 E4010000   fld     dword ptr [eax+0x1E4]		//Z轴最大
+004D1B6D    DD5C24 4C       fstp    qword ptr [esp+0x4C]
+004D1B71    E8 4AC04F00     call    009CDBC0
+004D1B76    D980 EC010000   fld     dword ptr [eax+0x1EC]
+004D1B7C    56              push    esi
+004D1B7D    DC6C24 50       fsubr   qword ptr [esp+0x50]
+004D1B81    DC7C24 60       fdivr   qword ptr [esp+0x60]
+004D1B85    D9E8            fld1
+004D1B87    DEE1            fsubrp  st(1), st
+004D1B89    D95C24 20       fstp    dword ptr [esp+0x20]
+004D1B8D    E8 FE62FFFF     call    004C7E90
+004D1B92    D80D A4C6DA00   fmul    dword ptr [0xDAC6A4]
+004D1B98    83C4 04         add     esp, 0x4
+004D1B9B    D95C24 20       fstp    dword ptr [esp+0x20]
+004D1B9F    D947 5C         fld     dword ptr [edi+0x5C]
+004D1BA2    D84424 20       fadd    dword ptr [esp+0x20]
+004D1BA6    D94424 1C       fld     dword ptr [esp+0x1C]
+004D1BAA    DC0D 6059CA00   fmul    qword ptr [0xCA5960]
+004D1BB0    DEC1            faddp   st(1), st
+004D1BB2    D95C24 18       fstp    dword ptr [esp+0x18]
+004D1BB6    D986 A4000000   fld     dword ptr [esi+0xA4]
+004D1BBC    D95C24 20       fstp    dword ptr [esp+0x20]
+004D1BC0    D986 A8000000   fld     dword ptr [esi+0xA8]
+004D1BC6    D95C24 1C       fstp    dword ptr [esp+0x1C]
+004D1BCA    D94424 20       fld     dword ptr [esp+0x20]
+004D1BCE    896C24 20       mov     dword ptr [esp+0x20], ebp
+004D1BD2    D95C24 74       fstp    dword ptr [esp+0x74]
+004D1BD6    D94424 1C       fld     dword ptr [esp+0x1C]
+004D1BDA    D95C24 78       fstp    dword ptr [esp+0x78]
+004D1BDE    D94424 18       fld     dword ptr [esp+0x18]
+004D1BE2    896C24 18       mov     dword ptr [esp+0x18], ebp
+004D1BE6    D95C24 7C       fstp    dword ptr [esp+0x7C]
+004D1BEA    E8 F14AF9FF     call    004666E0
+*/

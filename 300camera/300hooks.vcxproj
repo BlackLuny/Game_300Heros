@@ -91,6 +91,9 @@
   <ItemGroup>
     <Library Include="detours.lib" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="partten.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
