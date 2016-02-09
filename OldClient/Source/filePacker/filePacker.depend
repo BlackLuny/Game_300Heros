@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1453378122 source:c:\users\numbe\desktop\filepacker\filesystem.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"filesystem.h"
+	"zlib.h"
+
+1453378122 c:\users\numbe\desktop\filepacker\filesystem.h
+
+1453378122 c:\users\numbe\desktop\filepacker\zlib.h
+	"zconf.h"
+
+1453378122 c:\users\numbe\desktop\filepacker\zconf.h
+	<windows.h>
+	<limits.h>
+	<sys/types.h>
+	<stdarg.h>
+	<stddef.h>
+	<unistd.h>
+	<unixio.h>
+
+1454642754 source:c:\users\numbe\desktop\filepacker\main.c
+	<stdio.h>
+	<stdlib.h>
+	<io.h>
+	"filesystem.h"
+

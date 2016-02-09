@@ -1,0 +1,4 @@
+uncompress: main_mac.o
+	gcc -o uncompress main_mac.o ./zlib/lib/libz.a
+main_mac.o: main_mac.c
+	gcc -c -O3 -I ./zlib/include main_mac.c
