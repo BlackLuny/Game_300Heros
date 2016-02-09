@@ -26,3 +26,24 @@
 	<io.h>
 	"filesystem.h"
 
+1453378122 source:c:\users\numbe\documents\game_300heros\oldclient\source\filepacker\filesystem.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"filesystem.h"
+	"zlib.h"
+
+1453378122 c:\users\numbe\documents\game_300heros\oldclient\source\filepacker\filesystem.h
+
+1453378122 c:\users\numbe\documents\game_300heros\oldclient\source\filepacker\zlib.h
+	"zconf.h"
+
+1453378122 c:\users\numbe\documents\game_300heros\oldclient\source\filepacker\zconf.h
+	<windows.h>
+	<limits.h>
+	<sys/types.h>
+	<stdarg.h>
+	<stddef.h>
+	<unistd.h>
+	<unixio.h>
+

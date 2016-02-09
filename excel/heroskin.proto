@@ -1,0 +1,22 @@
+message heroskin {
+          required int32 hero_index = 1;
+          optional int32 skin_index = 2;
+          optional string resource = 3;
+          optional string head_img_pos = 8;
+          optional string box_pos = 9;
+          optional string str3 = 10;
+          optional string str4 = 11;
+          optional int32 type = 12;
+          optional string str5 = 13;
+          optional string str6 = 14;
+          optional string str7 = 15;
+          optional string head_img_wh = 16;
+          optional string box_wh = 17;
+          optional string card_pos = 18;
+          optional string card_wh = 19;
+          optional int32 unk = 20;
+}
+
+message heroskin_c {
+          repeated heroskin skins = 1;
+}
