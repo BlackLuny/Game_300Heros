@@ -74,7 +74,7 @@ unsigned long fs_disk_flength(const char* path){
 }
 void fs_putfile(const char* path,const char* f_name){
 	unsigned long f_length;
-	
+
 
 	if(f_wrtnode){
 		f_length = fs_disk_flength(path);
@@ -139,6 +139,7 @@ void fs_save(){
 		fwrite(&f_header,sizeof(f_header),1,fd);
 
 		for(i = 0;i<f_header.f_count;i++){
+                printf("compress file:%s\n",f_wrtnode[i].f_name);
 			fs_compr_readdisk(f_wrtnode[i].f_diskpath,&f_comprbuf,&f_comprlength);
 
 			if(f_comprbuf && f_comprlength){
@@ -148,7 +149,7 @@ void fs_save(){
 				f_builder[i].position = f_startpos;
 				f_builder[i].source_size = f_wrtnode[i].source_size;
 				f_builder[i].compr_size = f_comprlength;
-				
+
 				fwrite(f_comprbuf,f_comprlength,1,fd);
 				f_startpos += f_comprlength;
 			}

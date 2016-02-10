@@ -26,7 +26,7 @@
 	<io.h>
 	"filesystem.h"
 
-1453378122 source:c:\users\numbe\documents\game_300heros\oldclient\source\filepacker\filesystem.c
+1455083550 source:c:\users\numbe\documents\game_300heros\oldclient\source\filepacker\filesystem.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -46,4 +46,11 @@
 	<stddef.h>
 	<unistd.h>
 	<unixio.h>
+
+1455083410 source:c:\users\numbe\documents\game_300heros\oldclient\source\filepacker\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<io.h>
+	"filesystem.h"
 
