@@ -131,13 +131,14 @@ bool SendDestroyPacket(BOOL b, BYTE *p)
 	return true;
 }
 
-
 void Initialize()
 {
 	*(DWORD*)&pSendDestroyPacket = 0x00520130;
 	DetourTransactionBegin();
 	DetourAttach((void**)&pSendDestroyPacket, SendDestroyPacket);
 	DetourTransactionCommit();
+
+	LoadLibraryA("300hooks.dll");
 }
 
 void UnInitialize()

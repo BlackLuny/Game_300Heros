@@ -39,7 +39,4 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
-  <ItemGroup>
-    <Library Include="..\protobuf-2.4.1\vsprojects\Debug\libprotobuf.lib" />
-  </ItemGroup>
 </Project>
