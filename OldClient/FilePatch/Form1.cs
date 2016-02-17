@@ -47,6 +47,11 @@ namespace FilePatch
                 MessageBox.Show("无效的文件包");
                 Application.Exit();
             }
+            catch (IOException)
+            {
+                MessageBox.Show("Data.jmp文件被占用,请确认是否开启了300英雄或补丁程序.");
+                Application.Exit();
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("未知错误" + ex.ToString());
@@ -68,11 +73,25 @@ namespace FilePatch
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (!File.Exists(System.IO.Directory.GetCurrentDirectory() + "\\ICSharpCode.SharpZipLib.dll"))
+            {
+                MessageBox.Show("ICSharpCode.SharpZipLib.dll不存在。程序无法运行。");
+                Application.Exit();
+            }
+
             ReOpen();
 
-            Log("300英雄补丁安装器 V1.1");
+            Log("300英雄补丁安装器 V1.2");
             Log("Author:201724");
             Log("Q群:528991906");
+
+            Log("");
+
+            Log("V1.2更新:");
+            Log("[!]修复打补丁时未选择文件报错的BUG");
+            Log("[!]增加检测ICSharpCode.SharpZipLib.dll文件");
+
+            Log("");
 
             Log("V1.1更新:");
             Log("[!]修复打补丁日志框闪烁问题");
@@ -128,11 +147,9 @@ namespace FilePatch
                             Log("补丁文件:" + newName);
                         }
                     }
-                    //
                     jumpArc.Save();
                     Log("补丁安装成功");
                     this.BeginInvoke(new showTipDelegate(showTip), new object[] { "补丁安装成功" });
-                    ;
                 }
             }
             catch (Exception ex)
@@ -147,6 +164,7 @@ namespace FilePatch
             if (!File.Exists(textBox1.Text))
             {
                 MessageBox.Show("补丁文件不存在!", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             FileStream fileStream = File.OpenRead(textBox1.Text);
