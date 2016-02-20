@@ -5,6 +5,7 @@
 void Initialize();
 void UnInitialize();
 bool (*pSendDestroyPacket)(BOOL b, BYTE *p);
+bool (__stdcall *pReceive)(net_header *hdr);
 
 BOOL APIENTRY DllMain(HMODULE hModule,
 	DWORD  ul_reason_for_call,
@@ -30,12 +31,12 @@ public:
 	virtual void none1() = 0;
 	virtual void none2() = 0;
 	virtual void none3() = 0;
-	virtual void Send(net_header *hdr) = 0;
+	virtual void send(net_header *hdr) = 0;
 };
 
 CNetwork *pNetwork;
 
-CNetwork *GetNetworkClass() {
+CNetwork *network() {
 	CNetwork *_pNetwork;
 	__asm
 	{
@@ -48,10 +49,6 @@ CNetwork *GetNetworkClass() {
 	return _pNetwork;
 }
 
-void SendPacket(net_header *hdr) {
-	pNetwork = GetNetworkClass();
-	pNetwork->Send(hdr);
-}
 
 DWORD GetPlayerRole() {
 	DWORD result = 0;
@@ -102,7 +99,7 @@ VOID BuildDestroyPacket(uint8_t serial, uint8_t* index)
 		pkt.check2 = *(DWORD*)(dwResult + 0x9);
 	}
 
-	SendPacket(&pkt.hdr);
+	network()->send(&pkt.hdr);
 }
 unsigned char GetSerial()
 {
@@ -131,19 +128,102 @@ bool SendDestroyPacket(BOOL b, BYTE *p)
 	return true;
 }
 
+
+void *windowUIClass;
+
+void SetScreenNonBlock()
+{
+	if (!windowUIClass) {
+		return;
+	}
+
+	__asm
+	{
+		pushfd;
+		pushad;
+
+		push 0;
+		push 0;
+		mov ecx, windowUIClass;
+		mov eax, 0x004C1D60;
+		call eax;
+
+		popad;
+		popfd;
+	}
+}
+
+void HeroDieCheck(net_header *hdr)
+{
+	unsigned char sig[] = { 0x17,0x00,0x00,0x00,0x8D,0xB4,0x04,0xC0,0x19,0x2B,0x00,0x0B,0x08,0xB1,0x24,0x30,0x8D,0xE9,0x92,0x80,0x0C,0x38,0x00 };
+	if (hdr->idenfitier == 0x2B19)
+	{
+		if (memcmp(sig, hdr, sizeof(sig)) == 0)
+		{
+			SetScreenNonBlock();
+		}
+	}
+}
+
+void *pRecordwindowUIClass;
+__declspec(naked) void __asm_RecordwindowUIClass()
+{
+	__asm
+	{
+		pushad;
+		pushfd;
+
+		mov windowUIClass, esi;
+
+		popfd;
+		popad;
+		jmp pRecordwindowUIClass;
+	}
+}
+
+__declspec(naked) void __asm_Receive()
+{
+	__asm
+	{
+		push ebp;
+		mov ebp, esp;
+
+		pushfd;
+		pushad;
+
+		push dword ptr[ebp + 8];
+		call HeroDieCheck;
+		add esp, 4;
+
+		popad;
+		popfd;
+
+
+		mov esp, ebp;
+		pop ebp;
+		jmp pReceive;
+	}
+
+}
 void Initialize()
 {
 	*(DWORD*)&pSendDestroyPacket = 0x00520130;
+	*(DWORD*)&pReceive = 0x004E1E40;
+	*(DWORD*)&pRecordwindowUIClass = 0x004DE438;
+
 	DetourTransactionBegin();
 	DetourAttach((void**)&pSendDestroyPacket, SendDestroyPacket);
+	DetourAttach((void**)&pReceive, __asm_Receive);
+	DetourAttach((void**)&pRecordwindowUIClass, __asm_RecordwindowUIClass);
 	DetourTransactionCommit();
 
-	LoadLibraryA("300hooks.dll");
 }
 
 void UnInitialize()
 {
 	DetourTransactionBegin();
 	DetourDetach((void**)&pSendDestroyPacket, SendDestroyPacket);
+	DetourDetach((void**)&pReceive, __asm_Receive);
+	DetourDetach((void**)&pRecordwindowUIClass, __asm_RecordwindowUIClass);
 	DetourTransactionCommit();
 }

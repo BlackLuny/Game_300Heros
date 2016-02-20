@@ -1,0 +1,6 @@
+message chat_pack
+{
+ 	required int64 zero = 3;
+	required string sender = 1;
+	required string content = -1;
+};
