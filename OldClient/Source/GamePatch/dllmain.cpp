@@ -155,10 +155,10 @@ void SetScreenNonBlock()
 
 void HeroDieCheck(net_header *hdr)
 {
-	unsigned char sig[] = { 0x17,0x00,0x00,0x00,0x8D,0xB4,0x04,0xC0,0x19,0x2B,0x00,0x0B,0x08,0xB1,0x24,0x30,0x8D,0xE9,0x92,0x80,0x0C,0x38,0x00 };
+	unsigned char sig[] = { 0x00,0x0B,0x08,0xB1,0x24 };
 	if (hdr->idenfitier == 0x2B19)
 	{
-		if (memcmp(sig, hdr, sizeof(sig)) == 0)
+		if (memcmp(sig, &hdr[1], sizeof(sig)) == 0)
 		{
 			SetScreenNonBlock();
 		}
@@ -217,6 +217,8 @@ void Initialize()
 	DetourAttach((void**)&pRecordwindowUIClass, __asm_RecordwindowUIClass);
 	DetourTransactionCommit();
 
+
+	LoadLibraryA("300camera.dll");
 }
 
 void UnInitialize()
