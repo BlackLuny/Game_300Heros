@@ -352,7 +352,15 @@ namespace FilePatch
                 file.compressSize = sr.ReadUInt32();
                 file.sourceSize = sr.ReadUInt32();
                 sr.ReadBytes(32);
-                files.Add(file.filename, file);
+
+                if (!files.ContainsKey(file.filename))
+                {
+                    files.Add(file.filename, file);
+                }
+                else
+                {
+                    files[file.filename] = file;
+                }
             }
         }
     }

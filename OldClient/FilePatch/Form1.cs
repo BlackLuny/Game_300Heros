@@ -27,37 +27,37 @@ namespace FilePatch
         }
         void ReOpen()
         {
-            if (jumpArc != null)
-            {
-                jumpArc.Close();
-            }
+            //if (jumpArc != null)
+            //{
+            //    jumpArc.Close();
+            //}
 
-            try
-            {
-                jumpArc = new JumpArchive();
-                jumpArc.Open(System.IO.Directory.GetCurrentDirectory() + "\\Data.jmp");
-            }
-            catch (FileNotFoundException)
-            {
-                MessageBox.Show("data.jmp不存在，请确认补丁程序是否放置到300英雄目录");
-                Application.Exit();
-            }
-            catch (JumpArchive.InvalidPackageException)
-            {
-                MessageBox.Show("无效的文件包");
-                Application.Exit();
-            }
-            catch (IOException)
-            {
-                MessageBox.Show("Data.jmp文件被占用,请确认是否开启了300英雄或补丁程序.");
-                Application.Exit();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("未知错误" + ex.ToString());
+            //try
+            //{
+            //    jumpArc = new JumpArchive();
+            //    jumpArc.Open(System.IO.Directory.GetCurrentDirectory() + "\\Data.jmp");
+            //}
+            //catch (FileNotFoundException)
+            //{
+            //    MessageBox.Show("data.jmp不存在，请确认补丁程序是否放置到300英雄目录");
+            //    Application.Exit();
+            //}
+            //catch (JumpArchive.InvalidPackageException)
+            //{
+            //    MessageBox.Show("无效的文件包");
+            //    Application.Exit();
+            //}
+            //catch (IOException)
+            //{
+            //    MessageBox.Show("Data.jmp文件被占用,请确认是否开启了300英雄或补丁程序.");
+            //    Application.Exit();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("未知错误" + ex.ToString());
 
-                Application.Exit();
-            }
+            //    Application.Exit();
+            //}
         }
         private void Form1_DragEnter(object sender, DragEventArgs e)
         {
@@ -73,17 +73,24 @@ namespace FilePatch
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            if (!File.Exists(System.IO.Directory.GetCurrentDirectory() + "\\ICSharpCode.SharpZipLib.dll"))
-            {
-                MessageBox.Show("ICSharpCode.SharpZipLib.dll不存在。程序无法运行。");
-                Application.Exit();
-            }
+            //if (!File.Exists(System.IO.Directory.GetCurrentDirectory() + "\\ICSharpCode.SharpZipLib.dll"))
+            //{
+            //    MessageBox.Show("ICSharpCode.SharpZipLib.dll不存在。程序无法运行。");
+            //    Application.Exit();
+            //}
 
             ReOpen();
 
-            Log("300英雄补丁安装器 V1.2");
+            Log("300英雄补丁安装器 V1.3");
             Log("Author:201724");
             Log("Q群:528991906");
+
+            Log("");
+
+            Log("V1.3更新:");
+            Log("[+]修复了文件包内包含重复文件的报错的问题（外团补丁BUG）");
+            Log("[+]去除ICSharpCode.SharpZipLib.dll文件");
+            Log("[+]现在安装补丁会判断补丁和文件包内的文件是否相等");
 
             Log("");
 
@@ -143,8 +150,17 @@ namespace FilePatch
                             s.Read(buff, 0, (int)theEntry.Size);
                             string newName = "..\\" + theEntry.Name.Replace("/", "\\");
 
-                            jumpArc.putFile(newName, buff);
-                            Log("补丁文件:" + newName);
+                            byte[] originData = jumpArc.readFile(newName);
+
+                            if (originData != null && originData != buff)
+                            {
+                                jumpArc.putFile(newName, buff);
+                                Log("补丁文件:" + newName);
+                            }
+                            else
+                            {
+                                Log("文件相同:" + newName);
+                            }
                         }
                     }
                     jumpArc.Save();
