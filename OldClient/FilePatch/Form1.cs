@@ -27,37 +27,37 @@ namespace FilePatch
         }
         void ReOpen()
         {
-            //if (jumpArc != null)
-            //{
-            //    jumpArc.Close();
-            //}
+            if (jumpArc != null)
+            {
+                jumpArc.Close();
+            }
 
-            //try
-            //{
-            //    jumpArc = new JumpArchive();
-            //    jumpArc.Open(System.IO.Directory.GetCurrentDirectory() + "\\Data.jmp");
-            //}
-            //catch (FileNotFoundException)
-            //{
-            //    MessageBox.Show("data.jmp不存在，请确认补丁程序是否放置到300英雄目录");
-            //    Application.Exit();
-            //}
-            //catch (JumpArchive.InvalidPackageException)
-            //{
-            //    MessageBox.Show("无效的文件包");
-            //    Application.Exit();
-            //}
-            //catch (IOException)
-            //{
-            //    MessageBox.Show("Data.jmp文件被占用,请确认是否开启了300英雄或补丁程序.");
-            //    Application.Exit();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("未知错误" + ex.ToString());
+            try
+            {
+                jumpArc = new JumpArchive();
+                jumpArc.Open(System.IO.Directory.GetCurrentDirectory() + "\\Data.jmp");
+            }
+            catch (FileNotFoundException)
+            {
+                MessageBox.Show("data.jmp不存在，请确认补丁程序是否放置到300英雄目录");
+                Application.Exit();
+            }
+            catch (JumpArchive.InvalidPackageException)
+            {
+                MessageBox.Show("无效的文件包");
+                Application.Exit();
+            }
+            catch (IOException)
+            {
+                MessageBox.Show("Data.jmp文件被占用,请确认是否开启了300英雄或补丁程序.");
+                Application.Exit();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("未知错误" + ex.ToString());
 
-            //    Application.Exit();
-            //}
+                Application.Exit();
+            }
         }
         private void Form1_DragEnter(object sender, DragEventArgs e)
         {
