@@ -81,10 +81,14 @@ namespace FilePatch
 
             ReOpen();
 
-            Log("300英雄补丁安装器 V1.3");
+            Log("300英雄补丁安装器 V1.4");
             Log("Author:201724");
             Log("Q群:528991906");
 
+            Log("");
+
+            Log("V1.4更新:");
+            Log("[+]修复1.3的BUG");
             Log("");
 
             Log("V1.3更新:");
@@ -150,17 +154,8 @@ namespace FilePatch
                             s.Read(buff, 0, (int)theEntry.Size);
                             string newName = "..\\" + theEntry.Name.Replace("/", "\\");
 
-                            byte[] originData = jumpArc.readFile(newName);
-
-                            if (originData != null && originData != buff)
-                            {
-                                jumpArc.putFile(newName, buff);
-                                Log("补丁文件:" + newName);
-                            }
-                            else
-                            {
-                                Log("文件相同:" + newName);
-                            }
+                            jumpArc.putFile(newName, buff);
+                            Log("补丁文件:" + newName);
                         }
                     }
                     jumpArc.Save();

@@ -57,7 +57,9 @@ int main(int args, char* argv[]) {
 		return -1;
 	}
 
-	cout << "Write to file: " << "test.dat" << " successfully" << endl; 
+	cout << "Write to file: " << "heroskin_c.dat" << " successfully" << endl; 
+
+	output.flush();
 
 	/*heroskin_c skins;
 	fstream input("heroskin_c.dat", ios::in | ios::binary);
