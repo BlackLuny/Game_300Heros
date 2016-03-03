@@ -73,12 +73,6 @@ namespace FilePatch
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //if (!File.Exists(System.IO.Directory.GetCurrentDirectory() + "\\ICSharpCode.SharpZipLib.dll"))
-            //{
-            //    MessageBox.Show("ICSharpCode.SharpZipLib.dll不存在。程序无法运行。");
-            //    Application.Exit();
-            //}
-
             ReOpen();
 
             Log("300英雄补丁安装器 V1.4");
@@ -137,6 +131,40 @@ namespace FilePatch
         private void showTip(string s)
         {
             MessageBox.Show(s);
+        }
+
+        public bool installPatch(string path)
+        {
+            FileStream fileStream = File.OpenRead(path);
+            try
+            {
+                ReOpen();
+
+                using (ZipInputStream s = new ZipInputStream(fileStream))
+                {
+                    ZipEntry theEntry;
+                    while ((theEntry = s.GetNextEntry()) != null)
+                    {
+                        if (theEntry.IsFile)
+                        {
+                            byte[] buff = new byte[theEntry.Size];
+                            s.Read(buff, 0, (int)theEntry.Size);
+                            string newName = "..\\" + theEntry.Name.Replace("/", "\\");
+                            jumpArc.putFile(newName, buff);
+                            Console.WriteLine("补丁文件:" + newName);
+                        }
+                    }
+                    jumpArc.Save();
+                }
+                Console.WriteLine("补丁安装成功");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("补丁安装失败" + ex.ToString());
+            }
+
+            return false;
         }
         private void patchThread(object obj)
         {
