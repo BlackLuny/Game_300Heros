@@ -36,6 +36,17 @@ int main(int args, char* argv[]) {
 		
 		cout << skin->DebugString() << endl;
 
+		if (skin->hero_index() == 191 && skin->skin_index() == 1)
+		{
+			skin->set_head_img_pos("221;0");
+			skin->set_head_img_wh("357;640");
+
+			skin->set_box_pos("295;23");
+			skin->set_box_wh("161;161");
+			skin->set_card_pos("221;14");
+			skin->set_card_wh("357;625");
+		}
+
 		//cout << skin->hero_index() << endl;
 
 		//cout << skin->resource() << endl;

@@ -207,6 +207,8 @@ __declspec(naked) void __asm_Receive()
 }
 void Initialize()
 {
+	return;
+
 	*(DWORD*)&pSendDestroyPacket = 0x00520130;
 	*(DWORD*)&pReceive = 0x004E1E40;
 	*(DWORD*)&pRecordwindowUIClass = 0x004DE438;
@@ -223,6 +225,8 @@ void Initialize()
 
 void UnInitialize()
 {
+	return;
+
 	DetourTransactionBegin();
 	DetourDetach((void**)&pSendDestroyPacket, SendDestroyPacket);
 	DetourDetach((void**)&pReceive, __asm_Receive);
