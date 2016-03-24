@@ -1,0 +1,70 @@
+//0A F4 01 08 04 10 00 18  01 20 00 28 00 30 01 38
+//00 48 01 52 07 72 65 73  74 6F 72 65 58 00 60 00 
+//68 01 70 01 78 00 80 01  00 88 01 00 90 01 00 98 
+//01 00 A0 01 01 A8 01 00  B0 01 00 BA 01 08 D3 C0 
+//BA E3 BA C5 BD C7 C2 01  2E CA B9 D3 C3 BA F3 BF 
+//C9 D2 D4 B7 A2 B2 BC CB  F9 D3 D0 B7 FE CE F1 C6 
+//F7 B6 BC BF C9 BC FB B5  C4 C1 C4 CC EC D0 C5 CF 
+//A2 A1 A3 5C 6E 5C 6E C8  01 01 D2 01 1A 5C 55 49 
+//5C 49 63 6F 6E 5C 65 71  75 69 70 5C 68 61 6F 6A 
+//69 61 6F 2E 64 64 73 E0  01 AD 4D EA 01 04 C6 D5 
+//CD A8 F0 01 85 21 F8 01  01 98 02 E8 07 A0 02 00 
+//A8 02 00 B2 02 2A 2E 2E  5C 44 61 74 61 5C 53 63 
+//65 6E 65 6F 62 6A 73 5C  43 6F 6D 6D 6F 6E 5C 64 
+//69 61 6F 6C 75 6F 5C 64  69 61 6F 6C 75 6F 2E 78 
+//B8 02 01 C8 02 00 D2 02  08 30 2E 30 30 30 30 30 
+//30 D8 02 00 E0 02 04 0A  EE 01 08 05 10 00 18 01 
+//20 00 28 00 30 01 38 00  48 01 52 07 72 65 73 74 
+
+
+message item_item
+{
+	required int32 item_id = 1;	//8
+	required bool unk_1 = 2;	//10
+	required bool unk_2 = 3;	//18
+	required bool unk_3 = 4;	//20
+	required bool unk_4 = 5;	//28
+	required bool unk_5 = 6;	//30
+	required bool unk_6 = 7;	//38
+	optional bool unk_6x = 8;	//40
+	optional bool unk_i_6 = 9;	//48
+	required string item_type = 10;	//52
+	required bool unk_11 = 11;	//48
+	required bool unk_12 = 12;	//48
+	required bool unk_13 = 13;	//48
+	required bool unk_14 = 14;	//48
+	required bool unk_15 = 15;	//48
+	required bool unk_16 = 16;	//48
+	required bool unk_17 = 17;	//48
+	required bool unk_18 = 18;	//48
+	required bool unk_19 = 19;	//48
+	required bool unk_20 = 20;	//48
+	required bool unk_21 = 21;	//48
+	required bool unk_22 = 22;	//48
+	optional bytes name = 23;	//48
+	optional bytes desc = 24;	//48
+	required bool unk_25 = 25;
+	required string ico = 26;
+	required int32 unk_id = 28;
+	optional bytes shop_type = 29;	//48
+	optional int32 unk_30 = 30;
+	optional int32 unk_31 = 31;
+	optional int32 unk_32 = 32;
+	optional int32 unk_33 = 33;
+	optional int32 unk_34 = 34;
+	optional int32 unk_35 = 35;
+	optional int32 unk_36 = 36;
+	optional int32 unk_37 = 37;
+	optional string scene = 38;
+	optional int32 unk_39 = 39;
+	optional string unk_40 = 40;
+	optional int32 unk_41 = 41;
+	optional string ff = 42;
+	optional int32 unk_43 = 43;
+	optional int32 unk_44 = 44;
+}
+
+message item_item_c
+{
+	repeated item_item items = 1;
+}

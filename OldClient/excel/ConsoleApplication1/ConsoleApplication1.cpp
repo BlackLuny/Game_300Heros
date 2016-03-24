@@ -8,7 +8,20 @@
 using namespace std;
 #include "heroskin.pb.h"
 
+string convert_to_dds(string org)
+{
+	int x,y;
+	char ss[32];
+	
+	sscanf(org.c_str(),"%d;%d",&x,&y);
+	x *= 0.8f;
+	y *= 0.8f;
+	
+	sprintf(ss,"%d;%d",x,y);
+	
+	return ss;
 
+}
 
 int main(int args, char* argv[]) {
 	fstream input("heroskin_c_new.dat", ios::in | ios::binary);
@@ -17,7 +30,6 @@ int main(int args, char* argv[]) {
 	heroskin_c skins, skins_old;
 	skins.ParseFromIstream(&input);
 	skins_old.ParseFromIstream(&input_old);
-
 
 	for (int i = skins_old.skins_size(); i < skins.skins_size(); i++) {
 		heroskin* skin = skins_old.add_skins();
@@ -36,20 +48,25 @@ int main(int args, char* argv[]) {
 		
 		cout << skin->DebugString() << endl;
 
-		if (skin->hero_index() == 191 && skin->skin_index() == 1)
-		{
-			skin->set_head_img_pos("221;0");
-			skin->set_head_img_wh("357;640");
+		skin->set_select_card_pos(convert_to_dds(skin->select_card_pos()));
+		skin->set_select_card_wh(convert_to_dds(skin->select_card_wh()));
+		skin->set_head_box_pos(convert_to_dds(skin->head_box_pos()));
+		skin->set_head_box_wh(convert_to_dds(skin->head_box_wh()));
+		skin->set_shop_card_pos(skin->select_card_pos());
+		skin->set_shop_card_wh(skin->select_card_wh());
 
-			skin->set_box_pos("295;23");
-			skin->set_box_wh("161;161");
-			skin->set_card_pos("221;14");
-			skin->set_card_wh("357;625");
+		if(skin->hero_index() == 168){
+			skin->set_head_box_pos("320;51");
+			skin->set_head_box_wh("118;118");
 		}
 
-		//cout << skin->hero_index() << endl;
+		if(skin->hero_index() == 192){
+			skin->set_head_box_pos("470;100");
+			skin->set_head_box_wh("102;102");
+		}
 
-		//cout << skin->resource() << endl;
+		//
+
 	}
 
 	if (!skins_old.SerializeToOstream(&output)) {

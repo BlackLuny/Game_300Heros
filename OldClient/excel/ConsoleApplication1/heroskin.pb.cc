@@ -36,18 +36,18 @@ void protobuf_AssignDesc_heroskin_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(heroskin, hero_index_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(heroskin, skin_index_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(heroskin, resource_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(heroskin, head_img_pos_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(heroskin, box_pos_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(heroskin, select_card_pos_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(heroskin, head_box_pos_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(heroskin, str3_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(heroskin, str4_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(heroskin, type_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(heroskin, str5_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(heroskin, str6_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(heroskin, str7_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(heroskin, head_img_wh_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(heroskin, box_wh_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(heroskin, card_pos_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(heroskin, card_wh_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(heroskin, select_card_wh_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(heroskin, head_box_wh_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(heroskin, shop_card_pos_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(heroskin, shop_card_wh_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(heroskin, unk_),
   };
   heroskin_reflection_ =
@@ -110,15 +110,16 @@ void protobuf_AddDesc_heroskin_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\016heroskin.proto\"\224\002\n\010heroskin\022\022\n\nhero_in"
-    "dex\030\001 \002(\005\022\022\n\nskin_index\030\002 \001(\005\022\020\n\010resourc"
-    "e\030\003 \001(\t\022\024\n\014head_img_pos\030\010 \001(\t\022\017\n\007box_pos"
-    "\030\t \001(\t\022\014\n\004str3\030\n \001(\t\022\014\n\004str4\030\013 \001(\t\022\014\n\004ty"
-    "pe\030\014 \001(\005\022\014\n\004str5\030\r \001(\t\022\014\n\004str6\030\016 \001(\t\022\014\n\004"
-    "str7\030\017 \001(\t\022\023\n\013head_img_wh\030\020 \001(\t\022\016\n\006box_w"
-    "h\030\021 \001(\t\022\020\n\010card_pos\030\022 \001(\t\022\017\n\007card_wh\030\023 \001"
-    "(\t\022\013\n\003unk\030\024 \001(\005\"&\n\nheroskin_c\022\030\n\005skins\030\001"
-    " \003(\0132\t.heroskin", 335);
+    "\n\016heroskin.proto\"\256\002\n\010heroskin\022\022\n\nhero_in"
+    "dex\030\001 \002(\005\022\022\n\nskin_index\030\002 \002(\005\022\020\n\010resourc"
+    "e\030\003 \002(\t\022\027\n\017select_card_pos\030\010 \001(\t\022\024\n\014head"
+    "_box_pos\030\t \001(\t\022\014\n\004str3\030\n \001(\t\022\014\n\004str4\030\013 \001"
+    "(\t\022\014\n\004type\030\014 \001(\005\022\014\n\004str5\030\r \001(\t\022\014\n\004str6\030\016"
+    " \001(\t\022\014\n\004str7\030\017 \001(\t\022\026\n\016select_card_wh\030\020 \001"
+    "(\t\022\023\n\013head_box_wh\030\021 \001(\t\022\025\n\rshop_card_pos"
+    "\030\022 \001(\t\022\024\n\014shop_card_wh\030\023 \001(\t\022\013\n\003unk\030\024 \001("
+    "\005\"&\n\nheroskin_c\022\030\n\005skins\030\001 \003(\0132\t.heroski"
+    "n", 361);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "heroskin.proto", &protobuf_RegisterTypes);
   heroskin::default_instance_ = new heroskin();
@@ -142,18 +143,18 @@ struct StaticDescriptorInitializer_heroskin_2eproto {
 const int heroskin::kHeroIndexFieldNumber;
 const int heroskin::kSkinIndexFieldNumber;
 const int heroskin::kResourceFieldNumber;
-const int heroskin::kHeadImgPosFieldNumber;
-const int heroskin::kBoxPosFieldNumber;
+const int heroskin::kSelectCardPosFieldNumber;
+const int heroskin::kHeadBoxPosFieldNumber;
 const int heroskin::kStr3FieldNumber;
 const int heroskin::kStr4FieldNumber;
 const int heroskin::kTypeFieldNumber;
 const int heroskin::kStr5FieldNumber;
 const int heroskin::kStr6FieldNumber;
 const int heroskin::kStr7FieldNumber;
-const int heroskin::kHeadImgWhFieldNumber;
-const int heroskin::kBoxWhFieldNumber;
-const int heroskin::kCardPosFieldNumber;
-const int heroskin::kCardWhFieldNumber;
+const int heroskin::kSelectCardWhFieldNumber;
+const int heroskin::kHeadBoxWhFieldNumber;
+const int heroskin::kShopCardPosFieldNumber;
+const int heroskin::kShopCardWhFieldNumber;
 const int heroskin::kUnkFieldNumber;
 #endif  // !_MSC_VER
 
@@ -176,18 +177,18 @@ void heroskin::SharedCtor() {
   hero_index_ = 0;
   skin_index_ = 0;
   resource_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-  head_img_pos_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-  box_pos_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  select_card_pos_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  head_box_pos_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   str3_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   str4_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   type_ = 0;
   str5_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   str6_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   str7_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-  head_img_wh_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-  box_wh_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-  card_pos_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-  card_wh_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  select_card_wh_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  head_box_wh_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  shop_card_pos_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+  shop_card_wh_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   unk_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
@@ -200,11 +201,11 @@ void heroskin::SharedDtor() {
   if (resource_ != &::google::protobuf::internal::kEmptyString) {
     delete resource_;
   }
-  if (head_img_pos_ != &::google::protobuf::internal::kEmptyString) {
-    delete head_img_pos_;
+  if (select_card_pos_ != &::google::protobuf::internal::kEmptyString) {
+    delete select_card_pos_;
   }
-  if (box_pos_ != &::google::protobuf::internal::kEmptyString) {
-    delete box_pos_;
+  if (head_box_pos_ != &::google::protobuf::internal::kEmptyString) {
+    delete head_box_pos_;
   }
   if (str3_ != &::google::protobuf::internal::kEmptyString) {
     delete str3_;
@@ -221,17 +222,17 @@ void heroskin::SharedDtor() {
   if (str7_ != &::google::protobuf::internal::kEmptyString) {
     delete str7_;
   }
-  if (head_img_wh_ != &::google::protobuf::internal::kEmptyString) {
-    delete head_img_wh_;
+  if (select_card_wh_ != &::google::protobuf::internal::kEmptyString) {
+    delete select_card_wh_;
   }
-  if (box_wh_ != &::google::protobuf::internal::kEmptyString) {
-    delete box_wh_;
+  if (head_box_wh_ != &::google::protobuf::internal::kEmptyString) {
+    delete head_box_wh_;
   }
-  if (card_pos_ != &::google::protobuf::internal::kEmptyString) {
-    delete card_pos_;
+  if (shop_card_pos_ != &::google::protobuf::internal::kEmptyString) {
+    delete shop_card_pos_;
   }
-  if (card_wh_ != &::google::protobuf::internal::kEmptyString) {
-    delete card_wh_;
+  if (shop_card_wh_ != &::google::protobuf::internal::kEmptyString) {
+    delete shop_card_wh_;
   }
   if (this != default_instance_) {
   }
@@ -266,14 +267,14 @@ void heroskin::Clear() {
         resource_->clear();
       }
     }
-    if (has_head_img_pos()) {
-      if (head_img_pos_ != &::google::protobuf::internal::kEmptyString) {
-        head_img_pos_->clear();
+    if (has_select_card_pos()) {
+      if (select_card_pos_ != &::google::protobuf::internal::kEmptyString) {
+        select_card_pos_->clear();
       }
     }
-    if (has_box_pos()) {
-      if (box_pos_ != &::google::protobuf::internal::kEmptyString) {
-        box_pos_->clear();
+    if (has_head_box_pos()) {
+      if (head_box_pos_ != &::google::protobuf::internal::kEmptyString) {
+        head_box_pos_->clear();
       }
     }
     if (has_str3()) {
@@ -304,24 +305,24 @@ void heroskin::Clear() {
         str7_->clear();
       }
     }
-    if (has_head_img_wh()) {
-      if (head_img_wh_ != &::google::protobuf::internal::kEmptyString) {
-        head_img_wh_->clear();
+    if (has_select_card_wh()) {
+      if (select_card_wh_ != &::google::protobuf::internal::kEmptyString) {
+        select_card_wh_->clear();
       }
     }
-    if (has_box_wh()) {
-      if (box_wh_ != &::google::protobuf::internal::kEmptyString) {
-        box_wh_->clear();
+    if (has_head_box_wh()) {
+      if (head_box_wh_ != &::google::protobuf::internal::kEmptyString) {
+        head_box_wh_->clear();
       }
     }
-    if (has_card_pos()) {
-      if (card_pos_ != &::google::protobuf::internal::kEmptyString) {
-        card_pos_->clear();
+    if (has_shop_card_pos()) {
+      if (shop_card_pos_ != &::google::protobuf::internal::kEmptyString) {
+        shop_card_pos_->clear();
       }
     }
-    if (has_card_wh()) {
-      if (card_wh_ != &::google::protobuf::internal::kEmptyString) {
-        card_wh_->clear();
+    if (has_shop_card_wh()) {
+      if (shop_card_wh_ != &::google::protobuf::internal::kEmptyString) {
+        shop_card_wh_->clear();
       }
     }
     unk_ = 0;
@@ -351,7 +352,7 @@ bool heroskin::MergePartialFromCodedStream(
         break;
       }
       
-      // optional int32 skin_index = 2;
+      // required int32 skin_index = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
@@ -367,7 +368,7 @@ bool heroskin::MergePartialFromCodedStream(
         break;
       }
       
-      // optional string resource = 3;
+      // required string resource = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
@@ -380,36 +381,36 @@ bool heroskin::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(66)) goto parse_head_img_pos;
+        if (input->ExpectTag(66)) goto parse_select_card_pos;
         break;
       }
       
-      // optional string head_img_pos = 8;
+      // optional string select_card_pos = 8;
       case 8: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
-         parse_head_img_pos:
+         parse_select_card_pos:
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_head_img_pos()));
+                input, this->mutable_select_card_pos()));
           ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-            this->head_img_pos().data(), this->head_img_pos().length(),
+            this->select_card_pos().data(), this->select_card_pos().length(),
             ::google::protobuf::internal::WireFormat::PARSE);
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(74)) goto parse_box_pos;
+        if (input->ExpectTag(74)) goto parse_head_box_pos;
         break;
       }
       
-      // optional string box_pos = 9;
+      // optional string head_box_pos = 9;
       case 9: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
-         parse_box_pos:
+         parse_head_box_pos:
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_box_pos()));
+                input, this->mutable_head_box_pos()));
           ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-            this->box_pos().data(), this->box_pos().length(),
+            this->head_box_pos().data(), this->head_box_pos().length(),
             ::google::protobuf::internal::WireFormat::PARSE);
         } else {
           goto handle_uninterpreted;
@@ -515,70 +516,70 @@ bool heroskin::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(130)) goto parse_head_img_wh;
+        if (input->ExpectTag(130)) goto parse_select_card_wh;
         break;
       }
       
-      // optional string head_img_wh = 16;
+      // optional string select_card_wh = 16;
       case 16: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
-         parse_head_img_wh:
+         parse_select_card_wh:
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_head_img_wh()));
+                input, this->mutable_select_card_wh()));
           ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-            this->head_img_wh().data(), this->head_img_wh().length(),
+            this->select_card_wh().data(), this->select_card_wh().length(),
             ::google::protobuf::internal::WireFormat::PARSE);
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(138)) goto parse_box_wh;
+        if (input->ExpectTag(138)) goto parse_head_box_wh;
         break;
       }
       
-      // optional string box_wh = 17;
+      // optional string head_box_wh = 17;
       case 17: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
-         parse_box_wh:
+         parse_head_box_wh:
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_box_wh()));
+                input, this->mutable_head_box_wh()));
           ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-            this->box_wh().data(), this->box_wh().length(),
+            this->head_box_wh().data(), this->head_box_wh().length(),
             ::google::protobuf::internal::WireFormat::PARSE);
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(146)) goto parse_card_pos;
+        if (input->ExpectTag(146)) goto parse_shop_card_pos;
         break;
       }
       
-      // optional string card_pos = 18;
+      // optional string shop_card_pos = 18;
       case 18: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
-         parse_card_pos:
+         parse_shop_card_pos:
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_card_pos()));
+                input, this->mutable_shop_card_pos()));
           ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-            this->card_pos().data(), this->card_pos().length(),
+            this->shop_card_pos().data(), this->shop_card_pos().length(),
             ::google::protobuf::internal::WireFormat::PARSE);
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(154)) goto parse_card_wh;
+        if (input->ExpectTag(154)) goto parse_shop_card_wh;
         break;
       }
       
-      // optional string card_wh = 19;
+      // optional string shop_card_wh = 19;
       case 19: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
-         parse_card_wh:
+         parse_shop_card_wh:
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_card_wh()));
+                input, this->mutable_shop_card_wh()));
           ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-            this->card_wh().data(), this->card_wh().length(),
+            this->shop_card_wh().data(), this->shop_card_wh().length(),
             ::google::protobuf::internal::WireFormat::PARSE);
         } else {
           goto handle_uninterpreted;
@@ -626,12 +627,12 @@ void heroskin::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->hero_index(), output);
   }
   
-  // optional int32 skin_index = 2;
+  // required int32 skin_index = 2;
   if (has_skin_index()) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->skin_index(), output);
   }
   
-  // optional string resource = 3;
+  // required string resource = 3;
   if (has_resource()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
       this->resource().data(), this->resource().length(),
@@ -640,22 +641,22 @@ void heroskin::SerializeWithCachedSizes(
       3, this->resource(), output);
   }
   
-  // optional string head_img_pos = 8;
-  if (has_head_img_pos()) {
+  // optional string select_card_pos = 8;
+  if (has_select_card_pos()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-      this->head_img_pos().data(), this->head_img_pos().length(),
+      this->select_card_pos().data(), this->select_card_pos().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     ::google::protobuf::internal::WireFormatLite::WriteString(
-      8, this->head_img_pos(), output);
+      8, this->select_card_pos(), output);
   }
   
-  // optional string box_pos = 9;
-  if (has_box_pos()) {
+  // optional string head_box_pos = 9;
+  if (has_head_box_pos()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-      this->box_pos().data(), this->box_pos().length(),
+      this->head_box_pos().data(), this->head_box_pos().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     ::google::protobuf::internal::WireFormatLite::WriteString(
-      9, this->box_pos(), output);
+      9, this->head_box_pos(), output);
   }
   
   // optional string str3 = 10;
@@ -708,40 +709,40 @@ void heroskin::SerializeWithCachedSizes(
       15, this->str7(), output);
   }
   
-  // optional string head_img_wh = 16;
-  if (has_head_img_wh()) {
+  // optional string select_card_wh = 16;
+  if (has_select_card_wh()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-      this->head_img_wh().data(), this->head_img_wh().length(),
+      this->select_card_wh().data(), this->select_card_wh().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     ::google::protobuf::internal::WireFormatLite::WriteString(
-      16, this->head_img_wh(), output);
+      16, this->select_card_wh(), output);
   }
   
-  // optional string box_wh = 17;
-  if (has_box_wh()) {
+  // optional string head_box_wh = 17;
+  if (has_head_box_wh()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-      this->box_wh().data(), this->box_wh().length(),
+      this->head_box_wh().data(), this->head_box_wh().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     ::google::protobuf::internal::WireFormatLite::WriteString(
-      17, this->box_wh(), output);
+      17, this->head_box_wh(), output);
   }
   
-  // optional string card_pos = 18;
-  if (has_card_pos()) {
+  // optional string shop_card_pos = 18;
+  if (has_shop_card_pos()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-      this->card_pos().data(), this->card_pos().length(),
+      this->shop_card_pos().data(), this->shop_card_pos().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     ::google::protobuf::internal::WireFormatLite::WriteString(
-      18, this->card_pos(), output);
+      18, this->shop_card_pos(), output);
   }
   
-  // optional string card_wh = 19;
-  if (has_card_wh()) {
+  // optional string shop_card_wh = 19;
+  if (has_shop_card_wh()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-      this->card_wh().data(), this->card_wh().length(),
+      this->shop_card_wh().data(), this->shop_card_wh().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     ::google::protobuf::internal::WireFormatLite::WriteString(
-      19, this->card_wh(), output);
+      19, this->shop_card_wh(), output);
   }
   
   // optional int32 unk = 20;
@@ -762,12 +763,12 @@ void heroskin::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->hero_index(), target);
   }
   
-  // optional int32 skin_index = 2;
+  // required int32 skin_index = 2;
   if (has_skin_index()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->skin_index(), target);
   }
   
-  // optional string resource = 3;
+  // required string resource = 3;
   if (has_resource()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
       this->resource().data(), this->resource().length(),
@@ -777,24 +778,24 @@ void heroskin::SerializeWithCachedSizes(
         3, this->resource(), target);
   }
   
-  // optional string head_img_pos = 8;
-  if (has_head_img_pos()) {
+  // optional string select_card_pos = 8;
+  if (has_select_card_pos()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-      this->head_img_pos().data(), this->head_img_pos().length(),
+      this->select_card_pos().data(), this->select_card_pos().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        8, this->head_img_pos(), target);
+        8, this->select_card_pos(), target);
   }
   
-  // optional string box_pos = 9;
-  if (has_box_pos()) {
+  // optional string head_box_pos = 9;
+  if (has_head_box_pos()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-      this->box_pos().data(), this->box_pos().length(),
+      this->head_box_pos().data(), this->head_box_pos().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        9, this->box_pos(), target);
+        9, this->head_box_pos(), target);
   }
   
   // optional string str3 = 10;
@@ -852,44 +853,44 @@ void heroskin::SerializeWithCachedSizes(
         15, this->str7(), target);
   }
   
-  // optional string head_img_wh = 16;
-  if (has_head_img_wh()) {
+  // optional string select_card_wh = 16;
+  if (has_select_card_wh()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-      this->head_img_wh().data(), this->head_img_wh().length(),
+      this->select_card_wh().data(), this->select_card_wh().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        16, this->head_img_wh(), target);
+        16, this->select_card_wh(), target);
   }
   
-  // optional string box_wh = 17;
-  if (has_box_wh()) {
+  // optional string head_box_wh = 17;
+  if (has_head_box_wh()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-      this->box_wh().data(), this->box_wh().length(),
+      this->head_box_wh().data(), this->head_box_wh().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        17, this->box_wh(), target);
+        17, this->head_box_wh(), target);
   }
   
-  // optional string card_pos = 18;
-  if (has_card_pos()) {
+  // optional string shop_card_pos = 18;
+  if (has_shop_card_pos()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-      this->card_pos().data(), this->card_pos().length(),
+      this->shop_card_pos().data(), this->shop_card_pos().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        18, this->card_pos(), target);
+        18, this->shop_card_pos(), target);
   }
   
-  // optional string card_wh = 19;
-  if (has_card_wh()) {
+  // optional string shop_card_wh = 19;
+  if (has_shop_card_wh()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8String(
-      this->card_wh().data(), this->card_wh().length(),
+      this->shop_card_wh().data(), this->shop_card_wh().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE);
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        19, this->card_wh(), target);
+        19, this->shop_card_wh(), target);
   }
   
   // optional int32 unk = 20;
@@ -915,32 +916,32 @@ int heroskin::ByteSize() const {
           this->hero_index());
     }
     
-    // optional int32 skin_index = 2;
+    // required int32 skin_index = 2;
     if (has_skin_index()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
           this->skin_index());
     }
     
-    // optional string resource = 3;
+    // required string resource = 3;
     if (has_resource()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->resource());
     }
     
-    // optional string head_img_pos = 8;
-    if (has_head_img_pos()) {
+    // optional string select_card_pos = 8;
+    if (has_select_card_pos()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->head_img_pos());
+          this->select_card_pos());
     }
     
-    // optional string box_pos = 9;
-    if (has_box_pos()) {
+    // optional string head_box_pos = 9;
+    if (has_head_box_pos()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->box_pos());
+          this->head_box_pos());
     }
     
     // optional string str3 = 10;
@@ -987,32 +988,32 @@ int heroskin::ByteSize() const {
           this->str7());
     }
     
-    // optional string head_img_wh = 16;
-    if (has_head_img_wh()) {
+    // optional string select_card_wh = 16;
+    if (has_select_card_wh()) {
       total_size += 2 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->head_img_wh());
+          this->select_card_wh());
     }
     
-    // optional string box_wh = 17;
-    if (has_box_wh()) {
+    // optional string head_box_wh = 17;
+    if (has_head_box_wh()) {
       total_size += 2 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->box_wh());
+          this->head_box_wh());
     }
     
-    // optional string card_pos = 18;
-    if (has_card_pos()) {
+    // optional string shop_card_pos = 18;
+    if (has_shop_card_pos()) {
       total_size += 2 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->card_pos());
+          this->shop_card_pos());
     }
     
-    // optional string card_wh = 19;
-    if (has_card_wh()) {
+    // optional string shop_card_wh = 19;
+    if (has_shop_card_wh()) {
       total_size += 2 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->card_wh());
+          this->shop_card_wh());
     }
     
     // optional int32 unk = 20;
@@ -1058,11 +1059,11 @@ void heroskin::MergeFrom(const heroskin& from) {
     if (from.has_resource()) {
       set_resource(from.resource());
     }
-    if (from.has_head_img_pos()) {
-      set_head_img_pos(from.head_img_pos());
+    if (from.has_select_card_pos()) {
+      set_select_card_pos(from.select_card_pos());
     }
-    if (from.has_box_pos()) {
-      set_box_pos(from.box_pos());
+    if (from.has_head_box_pos()) {
+      set_head_box_pos(from.head_box_pos());
     }
     if (from.has_str3()) {
       set_str3(from.str3());
@@ -1084,17 +1085,17 @@ void heroskin::MergeFrom(const heroskin& from) {
     if (from.has_str7()) {
       set_str7(from.str7());
     }
-    if (from.has_head_img_wh()) {
-      set_head_img_wh(from.head_img_wh());
+    if (from.has_select_card_wh()) {
+      set_select_card_wh(from.select_card_wh());
     }
-    if (from.has_box_wh()) {
-      set_box_wh(from.box_wh());
+    if (from.has_head_box_wh()) {
+      set_head_box_wh(from.head_box_wh());
     }
-    if (from.has_card_pos()) {
-      set_card_pos(from.card_pos());
+    if (from.has_shop_card_pos()) {
+      set_shop_card_pos(from.shop_card_pos());
     }
-    if (from.has_card_wh()) {
-      set_card_wh(from.card_wh());
+    if (from.has_shop_card_wh()) {
+      set_shop_card_wh(from.shop_card_wh());
     }
     if (from.has_unk()) {
       set_unk(from.unk());
@@ -1116,7 +1117,7 @@ void heroskin::CopyFrom(const heroskin& from) {
 }
 
 bool heroskin::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
+  if ((_has_bits_[0] & 0x00000007) != 0x00000007) return false;
   
   return true;
 }
@@ -1126,18 +1127,18 @@ void heroskin::Swap(heroskin* other) {
     std::swap(hero_index_, other->hero_index_);
     std::swap(skin_index_, other->skin_index_);
     std::swap(resource_, other->resource_);
-    std::swap(head_img_pos_, other->head_img_pos_);
-    std::swap(box_pos_, other->box_pos_);
+    std::swap(select_card_pos_, other->select_card_pos_);
+    std::swap(head_box_pos_, other->head_box_pos_);
     std::swap(str3_, other->str3_);
     std::swap(str4_, other->str4_);
     std::swap(type_, other->type_);
     std::swap(str5_, other->str5_);
     std::swap(str6_, other->str6_);
     std::swap(str7_, other->str7_);
-    std::swap(head_img_wh_, other->head_img_wh_);
-    std::swap(box_wh_, other->box_wh_);
-    std::swap(card_pos_, other->card_pos_);
-    std::swap(card_wh_, other->card_wh_);
+    std::swap(select_card_wh_, other->select_card_wh_);
+    std::swap(head_box_wh_, other->head_box_wh_);
+    std::swap(shop_card_pos_, other->shop_card_pos_);
+    std::swap(shop_card_wh_, other->shop_card_wh_);
     std::swap(unk_, other->unk_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);

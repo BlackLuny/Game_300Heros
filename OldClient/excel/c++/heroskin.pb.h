@@ -96,14 +96,14 @@ class heroskin : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 hero_index() const;
   inline void set_hero_index(::google::protobuf::int32 value);
   
-  // optional int32 skin_index = 2;
+  // required int32 skin_index = 2;
   inline bool has_skin_index() const;
   inline void clear_skin_index();
   static const int kSkinIndexFieldNumber = 2;
   inline ::google::protobuf::int32 skin_index() const;
   inline void set_skin_index(::google::protobuf::int32 value);
   
-  // optional string resource = 3;
+  // required string resource = 3;
   inline bool has_resource() const;
   inline void clear_resource();
   static const int kResourceFieldNumber = 3;
@@ -114,27 +114,27 @@ class heroskin : public ::google::protobuf::Message {
   inline ::std::string* mutable_resource();
   inline ::std::string* release_resource();
   
-  // optional string head_img_pos = 8;
-  inline bool has_head_img_pos() const;
-  inline void clear_head_img_pos();
-  static const int kHeadImgPosFieldNumber = 8;
-  inline const ::std::string& head_img_pos() const;
-  inline void set_head_img_pos(const ::std::string& value);
-  inline void set_head_img_pos(const char* value);
-  inline void set_head_img_pos(const char* value, size_t size);
-  inline ::std::string* mutable_head_img_pos();
-  inline ::std::string* release_head_img_pos();
+  // optional string select_card_pos = 8;
+  inline bool has_select_card_pos() const;
+  inline void clear_select_card_pos();
+  static const int kSelectCardPosFieldNumber = 8;
+  inline const ::std::string& select_card_pos() const;
+  inline void set_select_card_pos(const ::std::string& value);
+  inline void set_select_card_pos(const char* value);
+  inline void set_select_card_pos(const char* value, size_t size);
+  inline ::std::string* mutable_select_card_pos();
+  inline ::std::string* release_select_card_pos();
   
-  // optional string box_pos = 9;
-  inline bool has_box_pos() const;
-  inline void clear_box_pos();
-  static const int kBoxPosFieldNumber = 9;
-  inline const ::std::string& box_pos() const;
-  inline void set_box_pos(const ::std::string& value);
-  inline void set_box_pos(const char* value);
-  inline void set_box_pos(const char* value, size_t size);
-  inline ::std::string* mutable_box_pos();
-  inline ::std::string* release_box_pos();
+  // optional string head_box_pos = 9;
+  inline bool has_head_box_pos() const;
+  inline void clear_head_box_pos();
+  static const int kHeadBoxPosFieldNumber = 9;
+  inline const ::std::string& head_box_pos() const;
+  inline void set_head_box_pos(const ::std::string& value);
+  inline void set_head_box_pos(const char* value);
+  inline void set_head_box_pos(const char* value, size_t size);
+  inline ::std::string* mutable_head_box_pos();
+  inline ::std::string* release_head_box_pos();
   
   // optional string str3 = 10;
   inline bool has_str3() const;
@@ -198,49 +198,49 @@ class heroskin : public ::google::protobuf::Message {
   inline ::std::string* mutable_str7();
   inline ::std::string* release_str7();
   
-  // optional string head_img_wh = 16;
-  inline bool has_head_img_wh() const;
-  inline void clear_head_img_wh();
-  static const int kHeadImgWhFieldNumber = 16;
-  inline const ::std::string& head_img_wh() const;
-  inline void set_head_img_wh(const ::std::string& value);
-  inline void set_head_img_wh(const char* value);
-  inline void set_head_img_wh(const char* value, size_t size);
-  inline ::std::string* mutable_head_img_wh();
-  inline ::std::string* release_head_img_wh();
+  // optional string select_card_wh = 16;
+  inline bool has_select_card_wh() const;
+  inline void clear_select_card_wh();
+  static const int kSelectCardWhFieldNumber = 16;
+  inline const ::std::string& select_card_wh() const;
+  inline void set_select_card_wh(const ::std::string& value);
+  inline void set_select_card_wh(const char* value);
+  inline void set_select_card_wh(const char* value, size_t size);
+  inline ::std::string* mutable_select_card_wh();
+  inline ::std::string* release_select_card_wh();
   
-  // optional string box_wh = 17;
-  inline bool has_box_wh() const;
-  inline void clear_box_wh();
-  static const int kBoxWhFieldNumber = 17;
-  inline const ::std::string& box_wh() const;
-  inline void set_box_wh(const ::std::string& value);
-  inline void set_box_wh(const char* value);
-  inline void set_box_wh(const char* value, size_t size);
-  inline ::std::string* mutable_box_wh();
-  inline ::std::string* release_box_wh();
+  // optional string head_box_wh = 17;
+  inline bool has_head_box_wh() const;
+  inline void clear_head_box_wh();
+  static const int kHeadBoxWhFieldNumber = 17;
+  inline const ::std::string& head_box_wh() const;
+  inline void set_head_box_wh(const ::std::string& value);
+  inline void set_head_box_wh(const char* value);
+  inline void set_head_box_wh(const char* value, size_t size);
+  inline ::std::string* mutable_head_box_wh();
+  inline ::std::string* release_head_box_wh();
   
-  // optional string card_pos = 18;
-  inline bool has_card_pos() const;
-  inline void clear_card_pos();
-  static const int kCardPosFieldNumber = 18;
-  inline const ::std::string& card_pos() const;
-  inline void set_card_pos(const ::std::string& value);
-  inline void set_card_pos(const char* value);
-  inline void set_card_pos(const char* value, size_t size);
-  inline ::std::string* mutable_card_pos();
-  inline ::std::string* release_card_pos();
+  // optional string shop_card_pos = 18;
+  inline bool has_shop_card_pos() const;
+  inline void clear_shop_card_pos();
+  static const int kShopCardPosFieldNumber = 18;
+  inline const ::std::string& shop_card_pos() const;
+  inline void set_shop_card_pos(const ::std::string& value);
+  inline void set_shop_card_pos(const char* value);
+  inline void set_shop_card_pos(const char* value, size_t size);
+  inline ::std::string* mutable_shop_card_pos();
+  inline ::std::string* release_shop_card_pos();
   
-  // optional string card_wh = 19;
-  inline bool has_card_wh() const;
-  inline void clear_card_wh();
-  static const int kCardWhFieldNumber = 19;
-  inline const ::std::string& card_wh() const;
-  inline void set_card_wh(const ::std::string& value);
-  inline void set_card_wh(const char* value);
-  inline void set_card_wh(const char* value, size_t size);
-  inline ::std::string* mutable_card_wh();
-  inline ::std::string* release_card_wh();
+  // optional string shop_card_wh = 19;
+  inline bool has_shop_card_wh() const;
+  inline void clear_shop_card_wh();
+  static const int kShopCardWhFieldNumber = 19;
+  inline const ::std::string& shop_card_wh() const;
+  inline void set_shop_card_wh(const ::std::string& value);
+  inline void set_shop_card_wh(const char* value);
+  inline void set_shop_card_wh(const char* value, size_t size);
+  inline ::std::string* mutable_shop_card_wh();
+  inline ::std::string* release_shop_card_wh();
   
   // optional int32 unk = 20;
   inline bool has_unk() const;
@@ -257,10 +257,10 @@ class heroskin : public ::google::protobuf::Message {
   inline void clear_has_skin_index();
   inline void set_has_resource();
   inline void clear_has_resource();
-  inline void set_has_head_img_pos();
-  inline void clear_has_head_img_pos();
-  inline void set_has_box_pos();
-  inline void clear_has_box_pos();
+  inline void set_has_select_card_pos();
+  inline void clear_has_select_card_pos();
+  inline void set_has_head_box_pos();
+  inline void clear_has_head_box_pos();
   inline void set_has_str3();
   inline void clear_has_str3();
   inline void set_has_str4();
@@ -273,14 +273,14 @@ class heroskin : public ::google::protobuf::Message {
   inline void clear_has_str6();
   inline void set_has_str7();
   inline void clear_has_str7();
-  inline void set_has_head_img_wh();
-  inline void clear_has_head_img_wh();
-  inline void set_has_box_wh();
-  inline void clear_has_box_wh();
-  inline void set_has_card_pos();
-  inline void clear_has_card_pos();
-  inline void set_has_card_wh();
-  inline void clear_has_card_wh();
+  inline void set_has_select_card_wh();
+  inline void clear_has_select_card_wh();
+  inline void set_has_head_box_wh();
+  inline void clear_has_head_box_wh();
+  inline void set_has_shop_card_pos();
+  inline void clear_has_shop_card_pos();
+  inline void set_has_shop_card_wh();
+  inline void clear_has_shop_card_wh();
   inline void set_has_unk();
   inline void clear_has_unk();
   
@@ -289,19 +289,19 @@ class heroskin : public ::google::protobuf::Message {
   ::google::protobuf::int32 hero_index_;
   ::google::protobuf::int32 skin_index_;
   ::std::string* resource_;
-  ::std::string* head_img_pos_;
-  ::std::string* box_pos_;
+  ::std::string* select_card_pos_;
+  ::std::string* head_box_pos_;
   ::std::string* str3_;
   ::std::string* str4_;
   ::std::string* str5_;
   ::std::string* str6_;
   ::std::string* str7_;
-  ::std::string* head_img_wh_;
+  ::std::string* select_card_wh_;
   ::google::protobuf::int32 type_;
   ::google::protobuf::int32 unk_;
-  ::std::string* box_wh_;
-  ::std::string* card_pos_;
-  ::std::string* card_wh_;
+  ::std::string* head_box_wh_;
+  ::std::string* shop_card_pos_;
+  ::std::string* shop_card_wh_;
   
   mutable int _cached_size_;
   ::google::protobuf::uint32 _has_bits_[(16 + 31) / 32];
@@ -427,7 +427,7 @@ inline void heroskin::set_hero_index(::google::protobuf::int32 value) {
   hero_index_ = value;
 }
 
-// optional int32 skin_index = 2;
+// required int32 skin_index = 2;
 inline bool heroskin::has_skin_index() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -449,7 +449,7 @@ inline void heroskin::set_skin_index(::google::protobuf::int32 value) {
   skin_index_ = value;
 }
 
-// optional string resource = 3;
+// required string resource = 3;
 inline bool heroskin::has_resource() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -507,118 +507,118 @@ inline ::std::string* heroskin::release_resource() {
   }
 }
 
-// optional string head_img_pos = 8;
-inline bool heroskin::has_head_img_pos() const {
+// optional string select_card_pos = 8;
+inline bool heroskin::has_select_card_pos() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
-inline void heroskin::set_has_head_img_pos() {
+inline void heroskin::set_has_select_card_pos() {
   _has_bits_[0] |= 0x00000008u;
 }
-inline void heroskin::clear_has_head_img_pos() {
+inline void heroskin::clear_has_select_card_pos() {
   _has_bits_[0] &= ~0x00000008u;
 }
-inline void heroskin::clear_head_img_pos() {
-  if (head_img_pos_ != &::google::protobuf::internal::kEmptyString) {
-    head_img_pos_->clear();
+inline void heroskin::clear_select_card_pos() {
+  if (select_card_pos_ != &::google::protobuf::internal::kEmptyString) {
+    select_card_pos_->clear();
   }
-  clear_has_head_img_pos();
+  clear_has_select_card_pos();
 }
-inline const ::std::string& heroskin::head_img_pos() const {
-  return *head_img_pos_;
+inline const ::std::string& heroskin::select_card_pos() const {
+  return *select_card_pos_;
 }
-inline void heroskin::set_head_img_pos(const ::std::string& value) {
-  set_has_head_img_pos();
-  if (head_img_pos_ == &::google::protobuf::internal::kEmptyString) {
-    head_img_pos_ = new ::std::string;
+inline void heroskin::set_select_card_pos(const ::std::string& value) {
+  set_has_select_card_pos();
+  if (select_card_pos_ == &::google::protobuf::internal::kEmptyString) {
+    select_card_pos_ = new ::std::string;
   }
-  head_img_pos_->assign(value);
+  select_card_pos_->assign(value);
 }
-inline void heroskin::set_head_img_pos(const char* value) {
-  set_has_head_img_pos();
-  if (head_img_pos_ == &::google::protobuf::internal::kEmptyString) {
-    head_img_pos_ = new ::std::string;
+inline void heroskin::set_select_card_pos(const char* value) {
+  set_has_select_card_pos();
+  if (select_card_pos_ == &::google::protobuf::internal::kEmptyString) {
+    select_card_pos_ = new ::std::string;
   }
-  head_img_pos_->assign(value);
+  select_card_pos_->assign(value);
 }
-inline void heroskin::set_head_img_pos(const char* value, size_t size) {
-  set_has_head_img_pos();
-  if (head_img_pos_ == &::google::protobuf::internal::kEmptyString) {
-    head_img_pos_ = new ::std::string;
+inline void heroskin::set_select_card_pos(const char* value, size_t size) {
+  set_has_select_card_pos();
+  if (select_card_pos_ == &::google::protobuf::internal::kEmptyString) {
+    select_card_pos_ = new ::std::string;
   }
-  head_img_pos_->assign(reinterpret_cast<const char*>(value), size);
+  select_card_pos_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* heroskin::mutable_head_img_pos() {
-  set_has_head_img_pos();
-  if (head_img_pos_ == &::google::protobuf::internal::kEmptyString) {
-    head_img_pos_ = new ::std::string;
+inline ::std::string* heroskin::mutable_select_card_pos() {
+  set_has_select_card_pos();
+  if (select_card_pos_ == &::google::protobuf::internal::kEmptyString) {
+    select_card_pos_ = new ::std::string;
   }
-  return head_img_pos_;
+  return select_card_pos_;
 }
-inline ::std::string* heroskin::release_head_img_pos() {
-  clear_has_head_img_pos();
-  if (head_img_pos_ == &::google::protobuf::internal::kEmptyString) {
+inline ::std::string* heroskin::release_select_card_pos() {
+  clear_has_select_card_pos();
+  if (select_card_pos_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
   } else {
-    ::std::string* temp = head_img_pos_;
-    head_img_pos_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    ::std::string* temp = select_card_pos_;
+    select_card_pos_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
     return temp;
   }
 }
 
-// optional string box_pos = 9;
-inline bool heroskin::has_box_pos() const {
+// optional string head_box_pos = 9;
+inline bool heroskin::has_head_box_pos() const {
   return (_has_bits_[0] & 0x00000010u) != 0;
 }
-inline void heroskin::set_has_box_pos() {
+inline void heroskin::set_has_head_box_pos() {
   _has_bits_[0] |= 0x00000010u;
 }
-inline void heroskin::clear_has_box_pos() {
+inline void heroskin::clear_has_head_box_pos() {
   _has_bits_[0] &= ~0x00000010u;
 }
-inline void heroskin::clear_box_pos() {
-  if (box_pos_ != &::google::protobuf::internal::kEmptyString) {
-    box_pos_->clear();
+inline void heroskin::clear_head_box_pos() {
+  if (head_box_pos_ != &::google::protobuf::internal::kEmptyString) {
+    head_box_pos_->clear();
   }
-  clear_has_box_pos();
+  clear_has_head_box_pos();
 }
-inline const ::std::string& heroskin::box_pos() const {
-  return *box_pos_;
+inline const ::std::string& heroskin::head_box_pos() const {
+  return *head_box_pos_;
 }
-inline void heroskin::set_box_pos(const ::std::string& value) {
-  set_has_box_pos();
-  if (box_pos_ == &::google::protobuf::internal::kEmptyString) {
-    box_pos_ = new ::std::string;
+inline void heroskin::set_head_box_pos(const ::std::string& value) {
+  set_has_head_box_pos();
+  if (head_box_pos_ == &::google::protobuf::internal::kEmptyString) {
+    head_box_pos_ = new ::std::string;
   }
-  box_pos_->assign(value);
+  head_box_pos_->assign(value);
 }
-inline void heroskin::set_box_pos(const char* value) {
-  set_has_box_pos();
-  if (box_pos_ == &::google::protobuf::internal::kEmptyString) {
-    box_pos_ = new ::std::string;
+inline void heroskin::set_head_box_pos(const char* value) {
+  set_has_head_box_pos();
+  if (head_box_pos_ == &::google::protobuf::internal::kEmptyString) {
+    head_box_pos_ = new ::std::string;
   }
-  box_pos_->assign(value);
+  head_box_pos_->assign(value);
 }
-inline void heroskin::set_box_pos(const char* value, size_t size) {
-  set_has_box_pos();
-  if (box_pos_ == &::google::protobuf::internal::kEmptyString) {
-    box_pos_ = new ::std::string;
+inline void heroskin::set_head_box_pos(const char* value, size_t size) {
+  set_has_head_box_pos();
+  if (head_box_pos_ == &::google::protobuf::internal::kEmptyString) {
+    head_box_pos_ = new ::std::string;
   }
-  box_pos_->assign(reinterpret_cast<const char*>(value), size);
+  head_box_pos_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* heroskin::mutable_box_pos() {
-  set_has_box_pos();
-  if (box_pos_ == &::google::protobuf::internal::kEmptyString) {
-    box_pos_ = new ::std::string;
+inline ::std::string* heroskin::mutable_head_box_pos() {
+  set_has_head_box_pos();
+  if (head_box_pos_ == &::google::protobuf::internal::kEmptyString) {
+    head_box_pos_ = new ::std::string;
   }
-  return box_pos_;
+  return head_box_pos_;
 }
-inline ::std::string* heroskin::release_box_pos() {
-  clear_has_box_pos();
-  if (box_pos_ == &::google::protobuf::internal::kEmptyString) {
+inline ::std::string* heroskin::release_head_box_pos() {
+  clear_has_head_box_pos();
+  if (head_box_pos_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
   } else {
-    ::std::string* temp = box_pos_;
-    box_pos_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    ::std::string* temp = head_box_pos_;
+    head_box_pos_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
     return temp;
   }
 }
@@ -935,234 +935,234 @@ inline ::std::string* heroskin::release_str7() {
   }
 }
 
-// optional string head_img_wh = 16;
-inline bool heroskin::has_head_img_wh() const {
+// optional string select_card_wh = 16;
+inline bool heroskin::has_select_card_wh() const {
   return (_has_bits_[0] & 0x00000800u) != 0;
 }
-inline void heroskin::set_has_head_img_wh() {
+inline void heroskin::set_has_select_card_wh() {
   _has_bits_[0] |= 0x00000800u;
 }
-inline void heroskin::clear_has_head_img_wh() {
+inline void heroskin::clear_has_select_card_wh() {
   _has_bits_[0] &= ~0x00000800u;
 }
-inline void heroskin::clear_head_img_wh() {
-  if (head_img_wh_ != &::google::protobuf::internal::kEmptyString) {
-    head_img_wh_->clear();
+inline void heroskin::clear_select_card_wh() {
+  if (select_card_wh_ != &::google::protobuf::internal::kEmptyString) {
+    select_card_wh_->clear();
   }
-  clear_has_head_img_wh();
+  clear_has_select_card_wh();
 }
-inline const ::std::string& heroskin::head_img_wh() const {
-  return *head_img_wh_;
+inline const ::std::string& heroskin::select_card_wh() const {
+  return *select_card_wh_;
 }
-inline void heroskin::set_head_img_wh(const ::std::string& value) {
-  set_has_head_img_wh();
-  if (head_img_wh_ == &::google::protobuf::internal::kEmptyString) {
-    head_img_wh_ = new ::std::string;
+inline void heroskin::set_select_card_wh(const ::std::string& value) {
+  set_has_select_card_wh();
+  if (select_card_wh_ == &::google::protobuf::internal::kEmptyString) {
+    select_card_wh_ = new ::std::string;
   }
-  head_img_wh_->assign(value);
+  select_card_wh_->assign(value);
 }
-inline void heroskin::set_head_img_wh(const char* value) {
-  set_has_head_img_wh();
-  if (head_img_wh_ == &::google::protobuf::internal::kEmptyString) {
-    head_img_wh_ = new ::std::string;
+inline void heroskin::set_select_card_wh(const char* value) {
+  set_has_select_card_wh();
+  if (select_card_wh_ == &::google::protobuf::internal::kEmptyString) {
+    select_card_wh_ = new ::std::string;
   }
-  head_img_wh_->assign(value);
+  select_card_wh_->assign(value);
 }
-inline void heroskin::set_head_img_wh(const char* value, size_t size) {
-  set_has_head_img_wh();
-  if (head_img_wh_ == &::google::protobuf::internal::kEmptyString) {
-    head_img_wh_ = new ::std::string;
+inline void heroskin::set_select_card_wh(const char* value, size_t size) {
+  set_has_select_card_wh();
+  if (select_card_wh_ == &::google::protobuf::internal::kEmptyString) {
+    select_card_wh_ = new ::std::string;
   }
-  head_img_wh_->assign(reinterpret_cast<const char*>(value), size);
+  select_card_wh_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* heroskin::mutable_head_img_wh() {
-  set_has_head_img_wh();
-  if (head_img_wh_ == &::google::protobuf::internal::kEmptyString) {
-    head_img_wh_ = new ::std::string;
+inline ::std::string* heroskin::mutable_select_card_wh() {
+  set_has_select_card_wh();
+  if (select_card_wh_ == &::google::protobuf::internal::kEmptyString) {
+    select_card_wh_ = new ::std::string;
   }
-  return head_img_wh_;
+  return select_card_wh_;
 }
-inline ::std::string* heroskin::release_head_img_wh() {
-  clear_has_head_img_wh();
-  if (head_img_wh_ == &::google::protobuf::internal::kEmptyString) {
+inline ::std::string* heroskin::release_select_card_wh() {
+  clear_has_select_card_wh();
+  if (select_card_wh_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
   } else {
-    ::std::string* temp = head_img_wh_;
-    head_img_wh_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    ::std::string* temp = select_card_wh_;
+    select_card_wh_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
     return temp;
   }
 }
 
-// optional string box_wh = 17;
-inline bool heroskin::has_box_wh() const {
+// optional string head_box_wh = 17;
+inline bool heroskin::has_head_box_wh() const {
   return (_has_bits_[0] & 0x00001000u) != 0;
 }
-inline void heroskin::set_has_box_wh() {
+inline void heroskin::set_has_head_box_wh() {
   _has_bits_[0] |= 0x00001000u;
 }
-inline void heroskin::clear_has_box_wh() {
+inline void heroskin::clear_has_head_box_wh() {
   _has_bits_[0] &= ~0x00001000u;
 }
-inline void heroskin::clear_box_wh() {
-  if (box_wh_ != &::google::protobuf::internal::kEmptyString) {
-    box_wh_->clear();
+inline void heroskin::clear_head_box_wh() {
+  if (head_box_wh_ != &::google::protobuf::internal::kEmptyString) {
+    head_box_wh_->clear();
   }
-  clear_has_box_wh();
+  clear_has_head_box_wh();
 }
-inline const ::std::string& heroskin::box_wh() const {
-  return *box_wh_;
+inline const ::std::string& heroskin::head_box_wh() const {
+  return *head_box_wh_;
 }
-inline void heroskin::set_box_wh(const ::std::string& value) {
-  set_has_box_wh();
-  if (box_wh_ == &::google::protobuf::internal::kEmptyString) {
-    box_wh_ = new ::std::string;
+inline void heroskin::set_head_box_wh(const ::std::string& value) {
+  set_has_head_box_wh();
+  if (head_box_wh_ == &::google::protobuf::internal::kEmptyString) {
+    head_box_wh_ = new ::std::string;
   }
-  box_wh_->assign(value);
+  head_box_wh_->assign(value);
 }
-inline void heroskin::set_box_wh(const char* value) {
-  set_has_box_wh();
-  if (box_wh_ == &::google::protobuf::internal::kEmptyString) {
-    box_wh_ = new ::std::string;
+inline void heroskin::set_head_box_wh(const char* value) {
+  set_has_head_box_wh();
+  if (head_box_wh_ == &::google::protobuf::internal::kEmptyString) {
+    head_box_wh_ = new ::std::string;
   }
-  box_wh_->assign(value);
+  head_box_wh_->assign(value);
 }
-inline void heroskin::set_box_wh(const char* value, size_t size) {
-  set_has_box_wh();
-  if (box_wh_ == &::google::protobuf::internal::kEmptyString) {
-    box_wh_ = new ::std::string;
+inline void heroskin::set_head_box_wh(const char* value, size_t size) {
+  set_has_head_box_wh();
+  if (head_box_wh_ == &::google::protobuf::internal::kEmptyString) {
+    head_box_wh_ = new ::std::string;
   }
-  box_wh_->assign(reinterpret_cast<const char*>(value), size);
+  head_box_wh_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* heroskin::mutable_box_wh() {
-  set_has_box_wh();
-  if (box_wh_ == &::google::protobuf::internal::kEmptyString) {
-    box_wh_ = new ::std::string;
+inline ::std::string* heroskin::mutable_head_box_wh() {
+  set_has_head_box_wh();
+  if (head_box_wh_ == &::google::protobuf::internal::kEmptyString) {
+    head_box_wh_ = new ::std::string;
   }
-  return box_wh_;
+  return head_box_wh_;
 }
-inline ::std::string* heroskin::release_box_wh() {
-  clear_has_box_wh();
-  if (box_wh_ == &::google::protobuf::internal::kEmptyString) {
+inline ::std::string* heroskin::release_head_box_wh() {
+  clear_has_head_box_wh();
+  if (head_box_wh_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
   } else {
-    ::std::string* temp = box_wh_;
-    box_wh_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    ::std::string* temp = head_box_wh_;
+    head_box_wh_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
     return temp;
   }
 }
 
-// optional string card_pos = 18;
-inline bool heroskin::has_card_pos() const {
+// optional string shop_card_pos = 18;
+inline bool heroskin::has_shop_card_pos() const {
   return (_has_bits_[0] & 0x00002000u) != 0;
 }
-inline void heroskin::set_has_card_pos() {
+inline void heroskin::set_has_shop_card_pos() {
   _has_bits_[0] |= 0x00002000u;
 }
-inline void heroskin::clear_has_card_pos() {
+inline void heroskin::clear_has_shop_card_pos() {
   _has_bits_[0] &= ~0x00002000u;
 }
-inline void heroskin::clear_card_pos() {
-  if (card_pos_ != &::google::protobuf::internal::kEmptyString) {
-    card_pos_->clear();
+inline void heroskin::clear_shop_card_pos() {
+  if (shop_card_pos_ != &::google::protobuf::internal::kEmptyString) {
+    shop_card_pos_->clear();
   }
-  clear_has_card_pos();
+  clear_has_shop_card_pos();
 }
-inline const ::std::string& heroskin::card_pos() const {
-  return *card_pos_;
+inline const ::std::string& heroskin::shop_card_pos() const {
+  return *shop_card_pos_;
 }
-inline void heroskin::set_card_pos(const ::std::string& value) {
-  set_has_card_pos();
-  if (card_pos_ == &::google::protobuf::internal::kEmptyString) {
-    card_pos_ = new ::std::string;
+inline void heroskin::set_shop_card_pos(const ::std::string& value) {
+  set_has_shop_card_pos();
+  if (shop_card_pos_ == &::google::protobuf::internal::kEmptyString) {
+    shop_card_pos_ = new ::std::string;
   }
-  card_pos_->assign(value);
+  shop_card_pos_->assign(value);
 }
-inline void heroskin::set_card_pos(const char* value) {
-  set_has_card_pos();
-  if (card_pos_ == &::google::protobuf::internal::kEmptyString) {
-    card_pos_ = new ::std::string;
+inline void heroskin::set_shop_card_pos(const char* value) {
+  set_has_shop_card_pos();
+  if (shop_card_pos_ == &::google::protobuf::internal::kEmptyString) {
+    shop_card_pos_ = new ::std::string;
   }
-  card_pos_->assign(value);
+  shop_card_pos_->assign(value);
 }
-inline void heroskin::set_card_pos(const char* value, size_t size) {
-  set_has_card_pos();
-  if (card_pos_ == &::google::protobuf::internal::kEmptyString) {
-    card_pos_ = new ::std::string;
+inline void heroskin::set_shop_card_pos(const char* value, size_t size) {
+  set_has_shop_card_pos();
+  if (shop_card_pos_ == &::google::protobuf::internal::kEmptyString) {
+    shop_card_pos_ = new ::std::string;
   }
-  card_pos_->assign(reinterpret_cast<const char*>(value), size);
+  shop_card_pos_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* heroskin::mutable_card_pos() {
-  set_has_card_pos();
-  if (card_pos_ == &::google::protobuf::internal::kEmptyString) {
-    card_pos_ = new ::std::string;
+inline ::std::string* heroskin::mutable_shop_card_pos() {
+  set_has_shop_card_pos();
+  if (shop_card_pos_ == &::google::protobuf::internal::kEmptyString) {
+    shop_card_pos_ = new ::std::string;
   }
-  return card_pos_;
+  return shop_card_pos_;
 }
-inline ::std::string* heroskin::release_card_pos() {
-  clear_has_card_pos();
-  if (card_pos_ == &::google::protobuf::internal::kEmptyString) {
+inline ::std::string* heroskin::release_shop_card_pos() {
+  clear_has_shop_card_pos();
+  if (shop_card_pos_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
   } else {
-    ::std::string* temp = card_pos_;
-    card_pos_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    ::std::string* temp = shop_card_pos_;
+    shop_card_pos_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
     return temp;
   }
 }
 
-// optional string card_wh = 19;
-inline bool heroskin::has_card_wh() const {
+// optional string shop_card_wh = 19;
+inline bool heroskin::has_shop_card_wh() const {
   return (_has_bits_[0] & 0x00004000u) != 0;
 }
-inline void heroskin::set_has_card_wh() {
+inline void heroskin::set_has_shop_card_wh() {
   _has_bits_[0] |= 0x00004000u;
 }
-inline void heroskin::clear_has_card_wh() {
+inline void heroskin::clear_has_shop_card_wh() {
   _has_bits_[0] &= ~0x00004000u;
 }
-inline void heroskin::clear_card_wh() {
-  if (card_wh_ != &::google::protobuf::internal::kEmptyString) {
-    card_wh_->clear();
+inline void heroskin::clear_shop_card_wh() {
+  if (shop_card_wh_ != &::google::protobuf::internal::kEmptyString) {
+    shop_card_wh_->clear();
   }
-  clear_has_card_wh();
+  clear_has_shop_card_wh();
 }
-inline const ::std::string& heroskin::card_wh() const {
-  return *card_wh_;
+inline const ::std::string& heroskin::shop_card_wh() const {
+  return *shop_card_wh_;
 }
-inline void heroskin::set_card_wh(const ::std::string& value) {
-  set_has_card_wh();
-  if (card_wh_ == &::google::protobuf::internal::kEmptyString) {
-    card_wh_ = new ::std::string;
+inline void heroskin::set_shop_card_wh(const ::std::string& value) {
+  set_has_shop_card_wh();
+  if (shop_card_wh_ == &::google::protobuf::internal::kEmptyString) {
+    shop_card_wh_ = new ::std::string;
   }
-  card_wh_->assign(value);
+  shop_card_wh_->assign(value);
 }
-inline void heroskin::set_card_wh(const char* value) {
-  set_has_card_wh();
-  if (card_wh_ == &::google::protobuf::internal::kEmptyString) {
-    card_wh_ = new ::std::string;
+inline void heroskin::set_shop_card_wh(const char* value) {
+  set_has_shop_card_wh();
+  if (shop_card_wh_ == &::google::protobuf::internal::kEmptyString) {
+    shop_card_wh_ = new ::std::string;
   }
-  card_wh_->assign(value);
+  shop_card_wh_->assign(value);
 }
-inline void heroskin::set_card_wh(const char* value, size_t size) {
-  set_has_card_wh();
-  if (card_wh_ == &::google::protobuf::internal::kEmptyString) {
-    card_wh_ = new ::std::string;
+inline void heroskin::set_shop_card_wh(const char* value, size_t size) {
+  set_has_shop_card_wh();
+  if (shop_card_wh_ == &::google::protobuf::internal::kEmptyString) {
+    shop_card_wh_ = new ::std::string;
   }
-  card_wh_->assign(reinterpret_cast<const char*>(value), size);
+  shop_card_wh_->assign(reinterpret_cast<const char*>(value), size);
 }
-inline ::std::string* heroskin::mutable_card_wh() {
-  set_has_card_wh();
-  if (card_wh_ == &::google::protobuf::internal::kEmptyString) {
-    card_wh_ = new ::std::string;
+inline ::std::string* heroskin::mutable_shop_card_wh() {
+  set_has_shop_card_wh();
+  if (shop_card_wh_ == &::google::protobuf::internal::kEmptyString) {
+    shop_card_wh_ = new ::std::string;
   }
-  return card_wh_;
+  return shop_card_wh_;
 }
-inline ::std::string* heroskin::release_card_wh() {
-  clear_has_card_wh();
-  if (card_wh_ == &::google::protobuf::internal::kEmptyString) {
+inline ::std::string* heroskin::release_shop_card_wh() {
+  clear_has_shop_card_wh();
+  if (shop_card_wh_ == &::google::protobuf::internal::kEmptyString) {
     return NULL;
   } else {
-    ::std::string* temp = card_wh_;
-    card_wh_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
+    ::std::string* temp = shop_card_wh_;
+    shop_card_wh_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
     return temp;
   }
 }
