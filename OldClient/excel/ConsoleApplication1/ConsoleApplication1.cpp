@@ -24,29 +24,33 @@ string convert_to_dds(string org)
 }
 
 int main(int args, char* argv[]) {
-	fstream input("heroskin_c_new.dat", ios::in | ios::binary);
-	fstream input_old("heroskin_c_old.dat", ios::in | ios::binary);
+	fstream input("heroskin_c_newclient.dat", ios::in | ios::binary);
+	fstream input_oldclient("heroskin_c_oldclient.dat", ios::in | ios::binary);
 	fstream output("heroskin_c.dat", ios::out | ios::trunc | ios::binary);
-	heroskin_c skins, skins_old;
+	heroskin_c skins;
+	heroskin_c skins_oldclient;
 	skins.ParseFromIstream(&input);
-	skins_old.ParseFromIstream(&input_old);
+	skins_oldclient.ParseFromIstream(&input_oldclient);
 
-	for (int i = skins_old.skins_size(); i < skins.skins_size(); i++) {
-		heroskin* skin = skins_old.add_skins();
+	for (int i = skins_oldclient.skins_size(); i < skins.skins_size(); i++) {
+
+		heroskin* skin = skins_oldclient.add_skins();
+		skin->CopyFrom(skins.skins(i));
 
 		char temp[256];
-		strcpy_s(temp, skins.skins(i).resource().c_str());
+		strcpy_s(temp, skin->resource().c_str());
 		char* pos = strstr(temp, "_.png");
 		if (pos) {
 			strcpy_s(pos, sizeof(temp) - (pos - (char *)&temp), ".dds");
+		}else
+		{
+			continue;
 		}
 
-		skins.mutable_skins(i)->set_resource(temp);
-
-		skin->CopyFrom(skins.skins(i));
-
+		skin->set_resource(temp);
 		
 		cout << skin->DebugString() << endl;
+		//363 60  105 105
 
 		skin->set_select_card_pos(convert_to_dds(skin->select_card_pos()));
 		skin->set_select_card_wh(convert_to_dds(skin->select_card_wh()));
@@ -54,22 +58,19 @@ int main(int args, char* argv[]) {
 		skin->set_head_box_wh(convert_to_dds(skin->head_box_wh()));
 		skin->set_shop_card_pos(skin->select_card_pos());
 		skin->set_shop_card_wh(skin->select_card_wh());
-
-		if(skin->hero_index() == 168){
-			skin->set_head_box_pos("320;51");
-			skin->set_head_box_wh("118;118");
-		}
-
-		if(skin->hero_index() == 192){
-			skin->set_head_box_pos("470;100");
-			skin->set_head_box_wh("102;102");
-		}
-
-		//
-
 	}
 
-	if (!skins_old.SerializeToOstream(&output)) {
+	for(int i=0;i<skins_oldclient.skins_size();i++)
+	{
+		heroskin* skin = skins_oldclient.mutable_skins(i);
+		if(skin->hero_index() == 192)
+		{
+			skin->set_head_box_pos("363;60");
+			skin->set_head_box_wh("105;105");
+		}
+	}
+
+	if (!skins_oldclient.SerializeToOstream(&output)) {
 		cerr << "Failed to write msg." << endl;
 		return -1;
 	}
