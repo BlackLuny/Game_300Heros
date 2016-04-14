@@ -11,6 +11,7 @@ using namespace std;
 #include "../c++/item_item_c.pb.h"
 
 item_item hero_tpl;
+
 void add_hero(item_item_c& heros,int hero_id,std::string hero_ico,std::string heroName)
 {
 	item_item *new_hero = heros.add_items();
@@ -22,6 +23,9 @@ void add_hero(item_item_c& heros,int hero_id,std::string hero_ico,std::string he
 
 	cout << new_hero->DebugString() << endl;
 }
+
+
+
 int main(int args, char* argv[]) {
 	fstream input("item_item_c_n.dat", ios::in | ios::binary);
 	fstream input_merge("item_item_c_o.dat", ios::in | ios::binary);
@@ -32,75 +36,58 @@ int main(int args, char* argv[]) {
 	item_c_o.ParseFromIstream(&input_merge);
 
 	std::set<int> arrays;
-	std::set<string> old_infos;
+	std::set<string> new_veri_items;
+
+
 
 	for(int i=0;i<item_c_n.items_size();i++)
 	{
-		char sss[512];
-		char bbb[512] = {0};
-		strncpy(bbb,item_c_n.items(i).name().c_str(),item_c_n.items(i).name().length());
+		char temp[128];
+		item_item item = item_c_n.items(i);
 
-		sprintf(sss,"%d_%s_%s", item_c_n.items(i).item_id(),item_c_n.items(i).item_type().c_str(),bbb);
-		old_infos.insert(sss);
+		sprintf(temp,"%d_%s",item.item_id(),item.item_type().c_str());
+
+		if(item.has_name() && item.item_id() == 5292)
+		{
+			char debug_name[128] = {0};
+			strncpy(debug_name,item.name().c_str(),item.name().length());
+			cout << "itemName:" << debug_name << endl;
+		}
+		
+		new_veri_items.insert(temp);
 	}
+
 
 	for(int i=0;i<item_c_o.items_size();i++)
 	{
-		char sss[512];
-		char bbb[512] = {0};
-		strncpy(bbb,item_c_o.items(i).name().c_str(),item_c_o.items(i).name().length());
+		char temp[128];
+		item_item item = item_c_o.items(i);
 
-		sprintf(sss,"%d_%s_%s",item_c_o.items(i).item_id(),item_c_o.items(i).item_type().c_str(),bbb);
+		sprintf(temp,"%d_%s",item.item_id(),item.item_type().c_str());
 
-		if(old_infos.find(sss) == old_infos.end())
+		if(new_veri_items.find(temp) == new_veri_items.end())
 		{
-			item_item* x = item_c_n.add_items();
-			x->CopyFrom(item_c_o.items(i));
-			//cout << x->DebugString() << endl;
-		}
-	}
-	for(int i=0;i<item_c_n.items_size();i++)
-	{
-		if(item_c_n.items(i).has_name())
-		{
-			char name[512] = {0};
-			strncpy(name,item_c_n.items(i).name().c_str(),item_c_n.items(i).name().length());
-			
-			if(strncmp(name,"幻影天使",8)==0)
-			{cout << name << ":";
-				cout << item_c_n.items(i).DebugString() << endl;
+			if(item.has_name())
+			{
+				char debug_name[128] = {0};
+				strncpy(debug_name,item.name().c_str(),item.name().length());
+				cout << "Add => itemName:" << debug_name << ":" <<item.item_id() << endl;
+
+				item_item* pp = item_c_n.add_items();
+				pp->CopyFrom(item);
+				
+
+				//添加英雄部分
+				if(item.item_id() == 5291)
+				{
+					cout << pp->DebugString() << endl;
+					hero_tpl = item;
+				}
 			}
 		}
-		
 	}
 
-
-
-	////cout << item_c_n.items(0).DebugString() << endl;
-
-	//for(int i=0;i<item_c_n.items_size();i++)
-	//{
-	//	arrays.insert(item_c_n.items(i).item_id());
-	//}
-
-	//for(int i=0;i<item_c_o.items_size();i++)
-	//{
-	//	if(arrays.find(item_c_o.items(i).item_id()) == arrays.end()){
-	//		item_item* it = item_c_n.add_items();
-	//		cout << it->DebugString() << endl;
-	//		it->CopyFrom(item_c_o.items(i));
-	//	}
-	//}
-
-	//for(int i=0;i<item_c_n.items_size();i++)
-	//{
-	//	if(item_c_n.items(i).item_id() == 5291){
-	//		hero_tpl.CopyFrom(item_c_n.items(i));
-	//		
-	//	}
-	//}
-
-	//add_hero(item_c_n,5292,"\\UI\\Head\\role\\chara_0192.dds","牧濑红莉栖");
+	add_hero(item_c_n,5294,"\\UI\\Head\\role\\chara_0194.dds","栗山未来");
 
 	if (!item_c_n.SerializeToOstream(&output)) {
 		cerr << "Failed to write msg." << endl;
