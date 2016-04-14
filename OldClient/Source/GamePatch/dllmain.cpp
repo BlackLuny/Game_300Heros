@@ -205,31 +205,48 @@ __declspec(naked) void __asm_Receive()
 	}
 
 }
+BOOL bIsHooked = FALSE;
+DWORD WINAPI UpdateThread(LPVOID n)
+{
+	while (true)
+	{
+		BYTE check = 0;
+		ReadProcessMemory(GetCurrentProcess(), (LPVOID)0x00B407F0, &check, 1, NULL);
+
+		if (check == 0x55)
+		{
+			*(DWORD*)&pSendDestroyPacket = 0x00520130;
+			*(DWORD*)&pReceive = 0x004E1E40;
+			*(DWORD*)&pRecordwindowUIClass = 0x004DE438;
+
+			DetourTransactionBegin();
+			DetourAttach((void**)&pSendDestroyPacket, SendDestroyPacket);
+			DetourAttach((void**)&pReceive, __asm_Receive);
+			DetourAttach((void**)&pRecordwindowUIClass, __asm_RecordwindowUIClass);
+			DetourTransactionCommit();
+
+			LoadLibraryA("300camera.dll");
+			bIsHooked = TRUE;
+			return 0;
+		}
+		Sleep(10);
+	}
+	return 0;
+}
 void Initialize()
 {
-	return;
-
-	*(DWORD*)&pSendDestroyPacket = 0x00520130;
-	*(DWORD*)&pReceive = 0x004E1E40;
-	*(DWORD*)&pRecordwindowUIClass = 0x004DE438;
-
-	DetourTransactionBegin();
-	DetourAttach((void**)&pSendDestroyPacket, SendDestroyPacket);
-	DetourAttach((void**)&pReceive, __asm_Receive);
-	DetourAttach((void**)&pRecordwindowUIClass, __asm_RecordwindowUIClass);
-	DetourTransactionCommit();
-
-
-	LoadLibraryA("300camera.dll");
+	CloseHandle(CreateThread(NULL, NULL, UpdateThread, NULL, NULL, NULL));
 }
 
 void UnInitialize()
 {
-	return;
+	if (bIsHooked)
+	{
+		DetourTransactionBegin();
+		DetourDetach((void**)&pSendDestroyPacket, SendDestroyPacket);
+		DetourDetach((void**)&pReceive, __asm_Receive);
+		DetourDetach((void**)&pRecordwindowUIClass, __asm_RecordwindowUIClass);
+		DetourTransactionCommit();
+	}
 
-	DetourTransactionBegin();
-	DetourDetach((void**)&pSendDestroyPacket, SendDestroyPacket);
-	DetourDetach((void**)&pReceive, __asm_Receive);
-	DetourDetach((void**)&pRecordwindowUIClass, __asm_RecordwindowUIClass);
-	DetourTransactionCommit();
 }
