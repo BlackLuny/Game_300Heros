@@ -53,15 +53,15 @@ int main(int args, char* argv[]) {
 		heroskin* o_skin = skins_oldclient.mutable_skins(i);
 		heroskin n_skin;
 		//cout << o_skin->DebugString() << endl;
-		if(get_newclient_skin(skins,o_skin->hero_index(),o_skin->skin_index(),n_skin))
-		{
-			if(n_skin.has_str3()) o_skin->set_str3(n_skin.str3());
-			if(n_skin.has_str4()) o_skin->set_str4(n_skin.str4());
-			if(n_skin.has_str5()) o_skin->set_str5(n_skin.str5());
-			if(n_skin.has_str6()) o_skin->set_str6(n_skin.str6());
-			if(n_skin.has_str7()) o_skin->set_str7(n_skin.str7());
-			if(n_skin.has_unk()) o_skin->set_unk(n_skin.unk());
-		}
+// 		if(get_newclient_skin(skins,o_skin->hero_index(),o_skin->skin_index(),n_skin))
+// 		{
+// 			if(n_skin.has_str3()) o_skin->set_str3(n_skin.str3());
+// 			if(n_skin.has_str4()) o_skin->set_str4(n_skin.str4());
+// 			if(n_skin.has_str5()) o_skin->set_str5(n_skin.str5());
+// 			if(n_skin.has_str6()) o_skin->set_str6(n_skin.str6());
+// 			if(n_skin.has_str7()) o_skin->set_str7(n_skin.str7());
+// 			if(n_skin.has_unk()) o_skin->set_unk(n_skin.unk());
+// 		}
 	}
 
 	//append new skins to old client skins end

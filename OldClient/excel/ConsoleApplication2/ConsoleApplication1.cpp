@@ -67,8 +67,8 @@ int main(int args, char* argv[]) {
 
 		if(new_veri_items.find(temp) == new_veri_items.end())
 		{
-			if(item.has_name())
-			{
+			//if(item.has_name())
+			//{
 				char debug_name[128] = {0};
 				strncpy(debug_name,item.name().c_str(),item.name().length());
 				cout << "Add => itemName:" << debug_name << ":" <<item.item_id() << endl;
@@ -83,7 +83,7 @@ int main(int args, char* argv[]) {
 					cout << pp->DebugString() << endl;
 					hero_tpl = item;
 				}
-			}
+			//}
 		}
 	}
 
