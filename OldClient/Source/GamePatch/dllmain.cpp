@@ -1,6 +1,7 @@
 // dllmain.cpp : Defines the entry point for the DLL application.
 #include "stdafx.h"
 #include "detours.h"
+#include "HotKey.h"
 
 void Initialize();
 void UnInitialize();
@@ -155,14 +156,14 @@ void SetScreenNonBlock()
 
 void HeroDieCheck(net_header *hdr)
 {
-	unsigned char sig[] = { 0x00,0x0B,0x08,0xB1,0x24 };
-	if (hdr->idenfitier == 0x2B19)
-	{
-		if (memcmp(sig, &hdr[1], sizeof(sig)) == 0)
-		{
-			SetScreenNonBlock();
-		}
-	}
+// 	unsigned char sig[] = { 0x00,0x0B,0x08,0xB1,0x24 };
+// 	if (hdr->idenfitier == 0x2B19)
+// 	{
+// 		if (memcmp(sig, &hdr[1], sizeof(sig)) == 0)
+// 		{
+// 			SetScreenNonBlock();
+// 		}
+// 	}
 }
 
 void *pRecordwindowUIClass;
@@ -233,9 +234,22 @@ DWORD WINAPI UpdateThread(LPVOID n)
 	}
 	return 0;
 }
+VOID CALLBACK timerProc(HWND, UINT, UINT_PTR, DWORD)
+{
+	HotKey.Update();
+
+}
+
+void CloseDiedWindow()
+{
+	SetScreenNonBlock();
+}
+
 void Initialize()
 {
 	CloseHandle(CreateThread(NULL, NULL, UpdateThread, NULL, NULL, NULL));
+	SetTimer(NULL, 1000, 1, timerProc);
+	HotKey.AddMonitor(VK_F2, CloseDiedWindow);
 }
 
 void UnInitialize()
@@ -248,5 +262,4 @@ void UnInitialize()
 		DetourDetach((void**)&pRecordwindowUIClass, __asm_RecordwindowUIClass);
 		DetourTransactionCommit();
 	}
-
 }
