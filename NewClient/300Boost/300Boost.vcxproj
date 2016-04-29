@@ -19,7 +19,7 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v140_xp</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
@@ -91,11 +91,13 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <TargetMachine>MachineX86</TargetMachine>
       <AdditionalDependencies>d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>G:\《300英雄》\$(TargetName)$(TargetExt)</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="300Boost.cpp" />
     <ClCompile Include="creatwth.cpp" />
+    <ClCompile Include="CSigMngr.cpp" />
     <ClCompile Include="detours.cpp" />
     <ClCompile Include="disasm.cpp" />
     <ClCompile Include="dllmain.cpp">
@@ -114,6 +116,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CSigMngr.h" />
     <ClInclude Include="detours.h" />
     <ClInclude Include="detver.h" />
     <ClInclude Include="stdafx.h" />
