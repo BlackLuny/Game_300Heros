@@ -161,7 +161,11 @@ void __stdcall newLoadTexture(const char *pszFile, PVOID pUnknown)
 	if (texture_cache.find(pszFile) == texture_cache.end())
 	{
 		CallToLoadTexture(pTexture, pszFile, pUnknown);
-		CopyToTextureCache(pszFile, pTexture, pUnknown);
+		if (pTexture->pTexture != NULL)
+		{
+			CopyToTextureCache(pszFile, pTexture, pUnknown);
+		}
+		
 	}
 	else
 	{
