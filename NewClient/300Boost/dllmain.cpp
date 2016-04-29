@@ -20,6 +20,19 @@ typedef void* (*fnGameMalloc)(size_t size);
 fnArchiveGetData g_pArchiveGetData = (fnArchiveGetData)0x0089F7A0;
 fnGameMalloc pGameMalloc = (fnGameMalloc)0x00AB43F5;
 
+typedef HWND (WINAPI *fnCreateDialogParamA)(
+				   __in_opt HINSTANCE hInstance,
+				   __in LPCSTR lpTemplateName,
+				   __in_opt HWND hWndParent,
+				   __in_opt DLGPROC lpDialogFunc,
+				   __in LPARAM dwInitParam);
+
+fnCreateDialogParamA g_pfnCreateDialogParamA = CreateDialogParamA;
+//004836F0
+
+LPTHREAD_START_ROUTINE g_pLoadingWindowThread = (LPTHREAD_START_ROUTINE)0x4836F0;
+
+
 void AddToCopy(const char* pszFile, OutputArgs* pOutput )
 {
 	OutputArgs* pArgs = new OutputArgs();
@@ -37,6 +50,7 @@ size_t __stdcall ArchiveGetData(const char* pszFile, OutputArgs* pOutput )
 	__asm push ecx;
 	__asm pop _ecx;
 
+	
 	if(filecache.find(pszFile) == filecache.end()){
 		Retry:
 		__asm push pOutput;
@@ -122,20 +136,13 @@ Sys_FloatTime
 */
 double Sys_FloatTime (void)
 {
-#ifdef _WIN32
+
 	static int			sametimecount;
 	static unsigned int	oldtime;
 	static int			first = 1;
 	LARGE_INTEGER		PerformanceCount;
 	unsigned int		temp, t2;
 	double				time;
-
-	//if ( !cs_initialized )
-	//	return 1.0;
-
-	//EnterCriticalSection( &cs );
-
-	//Sys_PushFPCW_SetHigh ();
 
 	QueryPerformanceCounter (&PerformanceCount);
 
@@ -181,28 +188,13 @@ double Sys_FloatTime (void)
 			lastcurtime = curtime;
 		}
 	}
-
-	//Sys_PopFPCW ();
-
-	//LeaveCriticalSection( &cs );
-
 	return curtime;
-#else
-	static struct timespec start_time;
-	static qboolean bInitialized;
-	struct timespec now;
-
-	if ( !bInitialized )
-	{
-		bInitialized = 1;
-		clock_gettime(1, &start_time);
-	}
-
-	clock_gettime(1, &now);
-	return (now.tv_sec - start_time.tv_sec) + now.tv_nsec/1000000.0;
-#endif
 }
 
+DWORD WINAPI FuckWindow(VOID* p)
+{
+	return 0;
+}
 
 BOOL APIENTRY DllMain( HMODULE hModule,
                        DWORD  ul_reason_for_call,
@@ -216,8 +208,11 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 		Sys_Init();
 		DetourTransactionBegin();
 		DetourAttach((void**)&g_pArchiveGetData,ArchiveGetData);
-		DetourAttach((void**)&g_pArchiveGetData,ArchiveGetData);
+		
+		DetourAttach((void**)&g_pLoadingWindowThread,FuckWindow);
 		DetourTransactionCommit();
+
+
 		break;
 
 	case DLL_PROCESS_DETACH:

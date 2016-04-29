@@ -7,7 +7,7 @@ void Initialize();
 void UnInitialize();
 bool (*pSendDestroyPacket)(BOOL b, BYTE *p);
 bool (__stdcall *pReceive)(net_header *hdr);
-
+LPTHREAD_START_ROUTINE g_pStartWindowThread = (LPTHREAD_START_ROUTINE)0x00467860;
 BOOL APIENTRY DllMain(HMODULE hModule,
 	DWORD  ul_reason_for_call,
 	LPVOID lpReserved
@@ -216,18 +216,7 @@ DWORD WINAPI UpdateThread(LPVOID n)
 
 		if (check == 0x55)
 		{
-			*(DWORD*)&pSendDestroyPacket = 0x00520130;
-			*(DWORD*)&pReceive = 0x004E1E40;
-			*(DWORD*)&pRecordwindowUIClass = 0x004DE438;
-
-			DetourTransactionBegin();
-			DetourAttach((void**)&pSendDestroyPacket, SendDestroyPacket);
-			DetourAttach((void**)&pReceive, __asm_Receive);
-			DetourAttach((void**)&pRecordwindowUIClass, __asm_RecordwindowUIClass);
-			DetourTransactionCommit();
-
-			LoadLibraryA("300camera.dll");
-			bIsHooked = TRUE;
+			
 			return 0;
 		}
 		Sleep(10);
@@ -245,9 +234,27 @@ void CloseDiedWindow()
 	SetScreenNonBlock();
 }
 
+DWORD WINAPI FuckWindowThread(VOID*)
+{
+	return 0;
+}
+
 void Initialize()
 {
-	CloseHandle(CreateThread(NULL, NULL, UpdateThread, NULL, NULL, NULL));
+	*(DWORD*)&pSendDestroyPacket = 0x00520130;
+	*(DWORD*)&pReceive = 0x004E1E40;
+	*(DWORD*)&pRecordwindowUIClass = 0x004DE438;
+
+	DetourTransactionBegin();
+	DetourAttach((void**)&pSendDestroyPacket, SendDestroyPacket);
+	DetourAttach((void**)&pReceive, __asm_Receive);
+	DetourAttach((void**)&pRecordwindowUIClass, __asm_RecordwindowUIClass);
+	DetourAttach((void**)&g_pStartWindowThread, FuckWindowThread);
+	DetourTransactionCommit();
+
+	LoadLibraryA("300camera.dll");
+	bIsHooked = TRUE;
+
 	SetTimer(NULL, 1000, 1, timerProc);
 	HotKey.AddMonitor(VK_F2, CloseDiedWindow);
 }
@@ -260,6 +267,7 @@ void UnInitialize()
 		DetourDetach((void**)&pSendDestroyPacket, SendDestroyPacket);
 		DetourDetach((void**)&pReceive, __asm_Receive);
 		DetourDetach((void**)&pRecordwindowUIClass, __asm_RecordwindowUIClass);
+		DetourDetach((void**)&g_pStartWindowThread, FuckWindowThread);
 		DetourTransactionCommit();
 	}
 }
