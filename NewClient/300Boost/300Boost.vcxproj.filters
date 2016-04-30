@@ -66,4 +66,9 @@
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="export.def">
+      <Filter>源文件</Filter>
+    </None>
+  </ItemGroup>
 </Project>

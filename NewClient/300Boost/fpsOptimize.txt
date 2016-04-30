@@ -1,0 +1,184 @@
+0048F8C9    8B82 94000000   mov     eax, dword ptr [edx+0x94]
+0048F8CF    6A 00           push    0x0
+0048F8D1    8BCE            mov     ecx, esi
+0048F8D3    FFD0            call    eax
+0048F8D5    E8 B6653F00     call    00885E90
+0048F8DA    8B4C24 38       mov     ecx, dword ptr [esp+0x38]
+0048F8DE    51              push    ecx
+0048F8DF    A3 20FD8B01     mov     dword ptr [0x18BFD20], eax
+0048F8E4    E8 57A2FDFF     call    00469B40
+0048F8E9    8BC8            mov     ecx, eax
+0048F8EB    E8 10C74E00     call    0097C000
+0048F8F0    8B16            mov     edx, dword ptr [esi]
+0048F8F2    8B82 98000000   mov     eax, dword ptr [edx+0x98]
+0048F8F8    8BCE            mov     ecx, esi
+0048F8FA    FFD0            call    eax
+0048F8FC    8B16            mov     edx, dword ptr [esi]
+0048F8FE    8B82 8C000000   mov     eax, dword ptr [edx+0x8C]
+0048F904    8BCE            mov     ecx, esi
+0048F906    FFD0            call    eax
+0048F908    8B16            mov     edx, dword ptr [esi]
+0048F90A    8B82 94000000   mov     eax, dword ptr [edx+0x94]
+0048F910    6A 00           push    0x0
+0048F912    8BCE            mov     ecx, esi
+0048F914    FFD0            call    eax
+0048F916    6A 01           push    0x1
+0048F918    E8 B3E25400     call    009DDBD0
+0048F91D    8BC8            mov     ecx, eax
+0048F91F    E8 BCD25400     call    009DCBE0
+0048F924    E8 A7E25400     call    009DDBD0
+//Nop This
+0048F929    8BC8            mov     ecx, eax
+0048F92B    E8 F0D25400     call    009DCC20
+
+0048F930    8B16            mov     edx, dword ptr [esi]
+0048F932    8B82 98000000   mov     eax, dword ptr [edx+0x98]
+0048F938    8BCE            mov     ecx, esi
+0048F93A    FFD0            call    eax
+0048F93C    8B16            mov     edx, dword ptr [esi]
+0048F93E    8B82 8C000000   mov     eax, dword ptr [edx+0x8C]
+0048F944    8BCE            mov     ecx, esi
+0048F946    FFD0            call    eax
+0048F948    8B16            mov     edx, dword ptr [esi]
+0048F94A    8B82 94000000   mov     eax, dword ptr [edx+0x94]
+0048F950    6A 00           push    0x0
+0048F952    8BCE            mov     ecx, esi
+0048F954    FFD0            call    eax
+0048F956    84DB            test    bl, bl
+0048F958    75 24           jnz     short 0048F97E
+0048F95A    8B16            mov     edx, dword ptr [esi]
+0048F95C    8B42 20         mov     eax, dword ptr [edx+0x20]
+0048F95F    6A 00           push    0x0
+0048F961    6A 1C           push    0x1C
+0048F963    8BCE            mov     ecx, esi
+
+
+
+EnterFunc:
+
+009DCC20    51              push    ecx
+009DCC21    56              push    esi
+009DCC22    8BF1            mov     esi, ecx
+009DCC24    B9 2849BC01     mov     ecx, 01BC4928
+009DCC29    E8 42990900     call    00A76570
+009DCC2E    DB46 08         fild    dword ptr [esi+0x8]
+009DCC31    8B46 08         mov     eax, dword ptr [esi+0x8]
+009DCC34    83C6 08         add     esi, 0x8
+009DCC37    85C0            test    eax, eax
+009DCC39    7D 06           jge     short 009DCC41
+009DCC3B    DC05 1015C100   fadd    qword ptr [0xC11510]
+009DCC41    83EC 08         sub     esp, 0x8
+009DCC44    DD1C24          fstp    qword ptr [esp]
+009DCC47    68 4471C300     push    00C37144                         ; ASCII "Update"
+009DCC4C    B9 903D8C01     mov     ecx, 018C3D90
+009DCC51    E8 9A860000     call    009E52F0
+009DCC56    8B0E            mov     ecx, dword ptr [esi]
+009DCC58    5E              pop     esi
+009DCC59    83C4 04         add     esp, 0x4
+009DCC5C    E9 9F400800     jmp     00A60D00
+
+
+00A60D00    6A FF           push    -0x1
+00A60D02    68 3837BF00     push    00BF3738
+00A60D07    64:A1 00000000  mov     eax, dword ptr fs:[0]
+00A60D0D    50              push    eax
+00A60D0E    83EC 1C         sub     esp, 0x1C
+00A60D11    53              push    ebx
+00A60D12    55              push    ebp
+00A60D13    56              push    esi
+00A60D14    57              push    edi
+00A60D15    A1 EC4FDE00     mov     eax, dword ptr [0xDE4FEC]
+00A60D1A    33C4            xor     eax, esp
+00A60D1C    50              push    eax
+00A60D1D    8D4424 30       lea     eax, dword ptr [esp+0x30]
+00A60D21    64:A3 00000000  mov     dword ptr fs:[0], eax
+00A60D27    8BD9            mov     ebx, ecx
+00A60D29    E8 52BA0300     call    00A9C780
+00A60D2E    33ED            xor     ebp, ebp
+00A60D30    39AB A8000000   cmp     dword ptr [ebx+0xA8], ebp
+00A60D36    0F84 E2000000   je      00A60E1E
+00A60D3C    8D4C24 18       lea     ecx, dword ptr [esp+0x18]
+00A60D40    E8 EB17BAFF     call    00602530
+00A60D45    896C24 38       mov     dword ptr [esp+0x38], ebp
+00A60D49    8B83 A8000000   mov     eax, dword ptr [ebx+0xA8]
+00A60D4F    8B70 10         mov     esi, dword ptr [eax+0x10]
+00A60D52    2B70 0C         sub     esi, dword ptr [eax+0xC]
+00A60D55    C1FE 02         sar     esi, 0x2
+00A60D58    83EE 01         sub     esi, 0x1
+00A60D5B    78 45           js      short 00A60DA2
+00A60D5D    8D49 00         lea     ecx, dword ptr [ecx]
+00A60D60    8BBB A8000000   mov     edi, dword ptr [ebx+0xA8]
+00A60D66    8B47 10         mov     eax, dword ptr [edi+0x10]
+00A60D69    2B47 0C         sub     eax, dword ptr [edi+0xC]
+00A60D6C    C1F8 02         sar     eax, 0x2
+00A60D6F    3BF0            cmp     esi, eax
+00A60D71    72 05           jb      short 00A60D78
+00A60D73    E8 FF220500     call    00AB3077
+00A60D78    8B4F 0C         mov     ecx, dword ptr [edi+0xC]
+00A60D7B    8B3CB1          mov     edi, dword ptr [ecx+esi*4]
+00A60D7E    8BCF            mov     ecx, edi
+00A60D80    897C24 14       mov     dword ptr [esp+0x14], edi
+00A60D84    E8 77FFFFFF     call    00A60D00
+00A60D89    F647 74 10      test    byte ptr [edi+0x74], 0x10
+00A60D8D    74 0E           je      short 00A60D9D
+00A60D8F    8D5424 14       lea     edx, dword ptr [esp+0x14]
+00A60D93    52              push    edx
+00A60D94    8D4C24 1C       lea     ecx, dword ptr [esp+0x1C]
+00A60D98    E8 130DE4FF     call    008A1AB0
+00A60D9D    83EE 01         sub     esi, 0x1
+00A60DA0  ^ 79 BE           jns     short 00A60D60
+00A60DA2    8B4424 28       mov     eax, dword ptr [esp+0x28]
+00A60DA6    2B4424 24       sub     eax, dword ptr [esp+0x24]
+00A60DAA    33F6            xor     esi, esi
+00A60DAC    C1F8 02         sar     eax, 0x2
+00A60DAF    3BC5            cmp     eax, ebp
+00A60DB1    76 31           jbe     short 00A60DE4
+00A60DB3    3BF0            cmp     esi, eax
+00A60DB5    72 05           jb      short 00A60DBC
+00A60DB7    E8 BB220500     call    00AB3077
+00A60DBC    8B4424 24       mov     eax, dword ptr [esp+0x24]
+00A60DC0    8B3CB0          mov     edi, dword ptr [eax+esi*4]
+00A60DC3    57              push    edi
+00A60DC4    8BCB            mov     ecx, ebx
+00A60DC6    E8 D5E6FFFF     call    00A5F4A0
+00A60DCB    57              push    edi
+00A60DCC    E8 8FCBFFFF     call    00A5D960
+00A60DD1    8B4424 2C       mov     eax, dword ptr [esp+0x2C]
+00A60DD5    2B4424 28       sub     eax, dword ptr [esp+0x28]
+00A60DD9    46              inc     esi
+00A60DDA    C1F8 02         sar     eax, 0x2
+00A60DDD    83C4 04         add     esp, 0x4
+00A60DE0    3BF0            cmp     esi, eax
+00A60DE2  ^ 72 D8           jb      short 00A60DBC
+00A60DE4    C74424 38 01000>mov     dword ptr [esp+0x38], 0x1
+00A60DEC    8B4424 24       mov     eax, dword ptr [esp+0x24]
+00A60DF0    3BC5            cmp     eax, ebp
+00A60DF2    74 09           je      short 00A60DFD
+00A60DF4    50              push    eax
+00A60DF5    E8 8D1F0500     call    00AB2D87
+00A60DFA    83C4 04         add     esp, 0x4
+00A60DFD    896C24 24       mov     dword ptr [esp+0x24], ebp
+00A60E01    896C24 28       mov     dword ptr [esp+0x28], ebp
+00A60E05    896C24 2C       mov     dword ptr [esp+0x2C], ebp
+00A60E09    C74424 38 FFFFF>mov     dword ptr [esp+0x38], -0x1
+00A60E11    8B4C24 18       mov     ecx, dword ptr [esp+0x18]
+00A60E15    51              push    ecx
+00A60E16    E8 6C1F0500     call    00AB2D87
+00A60E1B    83C4 04         add     esp, 0x4
+00A60E1E    8B13            mov     edx, dword ptr [ebx]
+00A60E20    8B42 24         mov     eax, dword ptr [edx+0x24]
+00A60E23    8BCB            mov     ecx, ebx
+00A60E25    FFD0            call    eax
+00A60E27    6A 09           push    0x9
+00A60E29    8BCB            mov     ecx, ebx
+00A60E2B    E8 30C8FFFF     call    00A5D660
+00A60E30    8B4C24 30       mov     ecx, dword ptr [esp+0x30]
+00A60E34    64:890D 0000000>mov     dword ptr fs:[0], ecx
+00A60E3B    59              pop     ecx
+00A60E3C    5F              pop     edi
+00A60E3D    5E              pop     esi
+00A60E3E    5D              pop     ebp
+00A60E3F    5B              pop     ebx
+00A60E40    83C4 28         add     esp, 0x28
+00A60E43    C3              retn
+
