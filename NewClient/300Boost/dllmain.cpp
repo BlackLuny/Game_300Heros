@@ -400,7 +400,14 @@ double Sys_FloatTime(void)
 
 DWORD WINAPI FuckWindow(VOID* p)
 {
-	GarbageCollect(NULL);
+	static bool first = true;
+
+	if (first) {
+		MessageBoxA(NULL, "新版客户端加速器 \r\nBy201724\r\nQQ群：300英雄旧版客户端 528991906", "", MB_OK);
+		first = false;
+	}
+
+	//GarbageCollect(NULL);
 	return 0;
 }
 
@@ -777,7 +784,7 @@ BOOL APIENTRY DllMain(HMODULE hModule,
 			g_LoadBalancingThread[GetCurrentThreadId()] = 1;
 			FindAllAddress();
 			DetourTransactionBegin();
-			DetourAttach((void**)&g_pArchiveGetData, ArchiveGetData);
+			//DetourAttach((void**)&g_pArchiveGetData, ArchiveGetData);
 			DetourAttach((void**)&g_pLoadingWindowThread, FuckWindow);
 			DetourAttach((void**)&g_pfnLoadTexture, newLoadTexture);
 			DetourAttach((void**)&g_pProgramExit, __asm_ProgramExit);
@@ -791,7 +798,7 @@ BOOL APIENTRY DllMain(HMODULE hModule,
 		if (IsGameProcess())
 		{
 			DetourTransactionBegin();
-			DetourDetach((void**)&g_pArchiveGetData, ArchiveGetData);
+			//DetourDetach((void**)&g_pArchiveGetData, ArchiveGetData);
 			DetourDetach((void**)&g_pLoadingWindowThread, FuckWindow);
 			DetourDetach((void**)&g_pfnLoadTexture, newLoadTexture);
 			DetourDetach((void**)&g_pProgramExit, __asm_ProgramExit);

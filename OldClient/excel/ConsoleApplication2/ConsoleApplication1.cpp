@@ -87,7 +87,7 @@ int main(int args, char* argv[]) {
 		}
 	}
 
-	add_hero(item_c_n,5293,"\\UI\\Head\\role\\chara_0193.dds","раи╞");
+	//add_hero(item_c_n,5293,"\\UI\\Head\\role\\chara_0193.dds","раи╞");
 
 	if (!item_c_n.SerializeToOstream(&output)) {
 		cerr << "Failed to write msg." << endl;
