@@ -16,7 +16,7 @@ string convert_to_dds(string org)
 	sscanf(org.c_str(),"%d;%d",&x,&y);
 
 	x *= 0.8f;
-	y *= 0.96f;
+	y *= 0.8f;
 	
 	sprintf(ss,"%d;%d",x,y);
 	

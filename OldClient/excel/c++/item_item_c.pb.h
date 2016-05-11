@@ -96,42 +96,42 @@ class item_item : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 item_id() const;
   inline void set_item_id(::google::protobuf::int32 value);
   
-  // required bool unk_1 = 2;
+  // optional bool unk_1 = 2;
   inline bool has_unk_1() const;
   inline void clear_unk_1();
   static const int kUnk1FieldNumber = 2;
   inline bool unk_1() const;
   inline void set_unk_1(bool value);
   
-  // required bool unk_2 = 3;
+  // optional bool unk_2 = 3;
   inline bool has_unk_2() const;
   inline void clear_unk_2();
   static const int kUnk2FieldNumber = 3;
   inline bool unk_2() const;
   inline void set_unk_2(bool value);
   
-  // required bool unk_3 = 4;
+  // optional bool unk_3 = 4;
   inline bool has_unk_3() const;
   inline void clear_unk_3();
   static const int kUnk3FieldNumber = 4;
   inline bool unk_3() const;
   inline void set_unk_3(bool value);
   
-  // required bool unk_4 = 5;
+  // optional bool unk_4 = 5;
   inline bool has_unk_4() const;
   inline void clear_unk_4();
   static const int kUnk4FieldNumber = 5;
   inline bool unk_4() const;
   inline void set_unk_4(bool value);
   
-  // required bool unk_5 = 6;
+  // optional bool unk_5 = 6;
   inline bool has_unk_5() const;
   inline void clear_unk_5();
   static const int kUnk5FieldNumber = 6;
   inline bool unk_5() const;
   inline void set_unk_5(bool value);
   
-  // required bool unk_6 = 7;
+  // optional bool unk_6 = 7;
   inline bool has_unk_6() const;
   inline void clear_unk_6();
   static const int kUnk6FieldNumber = 7;
@@ -163,84 +163,84 @@ class item_item : public ::google::protobuf::Message {
   inline ::std::string* mutable_item_type();
   inline ::std::string* release_item_type();
   
-  // required bool unk_11 = 11;
+  // optional bool unk_11 = 11;
   inline bool has_unk_11() const;
   inline void clear_unk_11();
   static const int kUnk11FieldNumber = 11;
   inline bool unk_11() const;
   inline void set_unk_11(bool value);
   
-  // required bool unk_12 = 12;
+  // optional bool unk_12 = 12;
   inline bool has_unk_12() const;
   inline void clear_unk_12();
   static const int kUnk12FieldNumber = 12;
   inline bool unk_12() const;
   inline void set_unk_12(bool value);
   
-  // required bool unk_13 = 13;
+  // optional bool unk_13 = 13;
   inline bool has_unk_13() const;
   inline void clear_unk_13();
   static const int kUnk13FieldNumber = 13;
   inline bool unk_13() const;
   inline void set_unk_13(bool value);
   
-  // required bool unk_14 = 14;
+  // optional bool unk_14 = 14;
   inline bool has_unk_14() const;
   inline void clear_unk_14();
   static const int kUnk14FieldNumber = 14;
   inline bool unk_14() const;
   inline void set_unk_14(bool value);
   
-  // required bool unk_15 = 15;
+  // optional bool unk_15 = 15;
   inline bool has_unk_15() const;
   inline void clear_unk_15();
   static const int kUnk15FieldNumber = 15;
   inline bool unk_15() const;
   inline void set_unk_15(bool value);
   
-  // required bool unk_16 = 16;
+  // optional bool unk_16 = 16;
   inline bool has_unk_16() const;
   inline void clear_unk_16();
   static const int kUnk16FieldNumber = 16;
   inline bool unk_16() const;
   inline void set_unk_16(bool value);
   
-  // required bool unk_17 = 17;
+  // optional bool unk_17 = 17;
   inline bool has_unk_17() const;
   inline void clear_unk_17();
   static const int kUnk17FieldNumber = 17;
   inline bool unk_17() const;
   inline void set_unk_17(bool value);
   
-  // required bool unk_18 = 18;
+  // optional bool unk_18 = 18;
   inline bool has_unk_18() const;
   inline void clear_unk_18();
   static const int kUnk18FieldNumber = 18;
   inline bool unk_18() const;
   inline void set_unk_18(bool value);
   
-  // required bool unk_19 = 19;
+  // optional bool unk_19 = 19;
   inline bool has_unk_19() const;
   inline void clear_unk_19();
   static const int kUnk19FieldNumber = 19;
   inline bool unk_19() const;
   inline void set_unk_19(bool value);
   
-  // required bool unk_20 = 20;
+  // optional bool unk_20 = 20;
   inline bool has_unk_20() const;
   inline void clear_unk_20();
   static const int kUnk20FieldNumber = 20;
   inline bool unk_20() const;
   inline void set_unk_20(bool value);
   
-  // required bool unk_21 = 21;
+  // optional bool unk_21 = 21;
   inline bool has_unk_21() const;
   inline void clear_unk_21();
   static const int kUnk21FieldNumber = 21;
   inline bool unk_21() const;
   inline void set_unk_21(bool value);
   
-  // required bool unk_22 = 22;
+  // optional bool unk_22 = 22;
   inline bool has_unk_22() const;
   inline void clear_unk_22();
   static const int kUnk22FieldNumber = 22;
@@ -269,14 +269,14 @@ class item_item : public ::google::protobuf::Message {
   inline ::std::string* mutable_desc();
   inline ::std::string* release_desc();
   
-  // required bool unk_25 = 25;
+  // optional bool unk_25 = 25;
   inline bool has_unk_25() const;
   inline void clear_unk_25();
   static const int kUnk25FieldNumber = 25;
   inline bool unk_25() const;
   inline void set_unk_25(bool value);
   
-  // required string ico = 26;
+  // optional string ico = 26;
   inline bool has_ico() const;
   inline void clear_ico();
   static const int kIcoFieldNumber = 26;
@@ -287,7 +287,7 @@ class item_item : public ::google::protobuf::Message {
   inline ::std::string* mutable_ico();
   inline ::std::string* release_ico();
   
-  // required int32 unk_id = 28;
+  // optional int32 unk_id = 28;
   inline bool has_unk_id() const;
   inline void clear_unk_id();
   static const int kUnkIdFieldNumber = 28;
@@ -681,7 +681,7 @@ inline void item_item::set_item_id(::google::protobuf::int32 value) {
   item_id_ = value;
 }
 
-// required bool unk_1 = 2;
+// optional bool unk_1 = 2;
 inline bool item_item::has_unk_1() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -703,7 +703,7 @@ inline void item_item::set_unk_1(bool value) {
   unk_1_ = value;
 }
 
-// required bool unk_2 = 3;
+// optional bool unk_2 = 3;
 inline bool item_item::has_unk_2() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -725,7 +725,7 @@ inline void item_item::set_unk_2(bool value) {
   unk_2_ = value;
 }
 
-// required bool unk_3 = 4;
+// optional bool unk_3 = 4;
 inline bool item_item::has_unk_3() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -747,7 +747,7 @@ inline void item_item::set_unk_3(bool value) {
   unk_3_ = value;
 }
 
-// required bool unk_4 = 5;
+// optional bool unk_4 = 5;
 inline bool item_item::has_unk_4() const {
   return (_has_bits_[0] & 0x00000010u) != 0;
 }
@@ -769,7 +769,7 @@ inline void item_item::set_unk_4(bool value) {
   unk_4_ = value;
 }
 
-// required bool unk_5 = 6;
+// optional bool unk_5 = 6;
 inline bool item_item::has_unk_5() const {
   return (_has_bits_[0] & 0x00000020u) != 0;
 }
@@ -791,7 +791,7 @@ inline void item_item::set_unk_5(bool value) {
   unk_5_ = value;
 }
 
-// required bool unk_6 = 7;
+// optional bool unk_6 = 7;
 inline bool item_item::has_unk_6() const {
   return (_has_bits_[0] & 0x00000040u) != 0;
 }
@@ -915,7 +915,7 @@ inline ::std::string* item_item::release_item_type() {
   }
 }
 
-// required bool unk_11 = 11;
+// optional bool unk_11 = 11;
 inline bool item_item::has_unk_11() const {
   return (_has_bits_[0] & 0x00000400u) != 0;
 }
@@ -937,7 +937,7 @@ inline void item_item::set_unk_11(bool value) {
   unk_11_ = value;
 }
 
-// required bool unk_12 = 12;
+// optional bool unk_12 = 12;
 inline bool item_item::has_unk_12() const {
   return (_has_bits_[0] & 0x00000800u) != 0;
 }
@@ -959,7 +959,7 @@ inline void item_item::set_unk_12(bool value) {
   unk_12_ = value;
 }
 
-// required bool unk_13 = 13;
+// optional bool unk_13 = 13;
 inline bool item_item::has_unk_13() const {
   return (_has_bits_[0] & 0x00001000u) != 0;
 }
@@ -981,7 +981,7 @@ inline void item_item::set_unk_13(bool value) {
   unk_13_ = value;
 }
 
-// required bool unk_14 = 14;
+// optional bool unk_14 = 14;
 inline bool item_item::has_unk_14() const {
   return (_has_bits_[0] & 0x00002000u) != 0;
 }
@@ -1003,7 +1003,7 @@ inline void item_item::set_unk_14(bool value) {
   unk_14_ = value;
 }
 
-// required bool unk_15 = 15;
+// optional bool unk_15 = 15;
 inline bool item_item::has_unk_15() const {
   return (_has_bits_[0] & 0x00004000u) != 0;
 }
@@ -1025,7 +1025,7 @@ inline void item_item::set_unk_15(bool value) {
   unk_15_ = value;
 }
 
-// required bool unk_16 = 16;
+// optional bool unk_16 = 16;
 inline bool item_item::has_unk_16() const {
   return (_has_bits_[0] & 0x00008000u) != 0;
 }
@@ -1047,7 +1047,7 @@ inline void item_item::set_unk_16(bool value) {
   unk_16_ = value;
 }
 
-// required bool unk_17 = 17;
+// optional bool unk_17 = 17;
 inline bool item_item::has_unk_17() const {
   return (_has_bits_[0] & 0x00010000u) != 0;
 }
@@ -1069,7 +1069,7 @@ inline void item_item::set_unk_17(bool value) {
   unk_17_ = value;
 }
 
-// required bool unk_18 = 18;
+// optional bool unk_18 = 18;
 inline bool item_item::has_unk_18() const {
   return (_has_bits_[0] & 0x00020000u) != 0;
 }
@@ -1091,7 +1091,7 @@ inline void item_item::set_unk_18(bool value) {
   unk_18_ = value;
 }
 
-// required bool unk_19 = 19;
+// optional bool unk_19 = 19;
 inline bool item_item::has_unk_19() const {
   return (_has_bits_[0] & 0x00040000u) != 0;
 }
@@ -1113,7 +1113,7 @@ inline void item_item::set_unk_19(bool value) {
   unk_19_ = value;
 }
 
-// required bool unk_20 = 20;
+// optional bool unk_20 = 20;
 inline bool item_item::has_unk_20() const {
   return (_has_bits_[0] & 0x00080000u) != 0;
 }
@@ -1135,7 +1135,7 @@ inline void item_item::set_unk_20(bool value) {
   unk_20_ = value;
 }
 
-// required bool unk_21 = 21;
+// optional bool unk_21 = 21;
 inline bool item_item::has_unk_21() const {
   return (_has_bits_[0] & 0x00100000u) != 0;
 }
@@ -1157,7 +1157,7 @@ inline void item_item::set_unk_21(bool value) {
   unk_21_ = value;
 }
 
-// required bool unk_22 = 22;
+// optional bool unk_22 = 22;
 inline bool item_item::has_unk_22() const {
   return (_has_bits_[0] & 0x00200000u) != 0;
 }
@@ -1295,7 +1295,7 @@ inline ::std::string* item_item::release_desc() {
   }
 }
 
-// required bool unk_25 = 25;
+// optional bool unk_25 = 25;
 inline bool item_item::has_unk_25() const {
   return (_has_bits_[0] & 0x01000000u) != 0;
 }
@@ -1317,7 +1317,7 @@ inline void item_item::set_unk_25(bool value) {
   unk_25_ = value;
 }
 
-// required string ico = 26;
+// optional string ico = 26;
 inline bool item_item::has_ico() const {
   return (_has_bits_[0] & 0x02000000u) != 0;
 }
@@ -1375,7 +1375,7 @@ inline ::std::string* item_item::release_ico() {
   }
 }
 
-// required int32 unk_id = 28;
+// optional int32 unk_id = 28;
 inline bool item_item::has_unk_id() const {
   return (_has_bits_[0] & 0x04000000u) != 0;
 }

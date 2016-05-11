@@ -80,14 +80,14 @@ int main(int args, char* argv[]) {
 				//ÃÌº””¢–€≤ø∑÷
 				if(item.item_id() == 5291)
 				{
-					cout << pp->DebugString() << endl;
+					//cout << pp->DebugString() << endl;
 					hero_tpl = item;
 				}
 			//}
 		}
 	}
 
-	//add_hero(item_c_n,5293,"\\UI\\Head\\role\\chara_0193.dds","“¡…Ø");
+	add_hero(item_c_n,5295,"\\UI\\Head\\role\\chara_0195.dds","õgÃÔ∏Ÿº™");
 
 	if (!item_c_n.SerializeToOstream(&output)) {
 		cerr << "Failed to write msg." << endl;
