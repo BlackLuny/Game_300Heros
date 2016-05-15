@@ -29,3 +29,17 @@ L:\Game_300Heros\MythBox\MythBox\obj\x86\Release\MythBox.Properties.Resources.re
 L:\Game_300Heros\MythBox\MythBox\obj\x86\Release\MythBox.csproj.GenerateResource.Cache
 L:\Game_300Heros\MythBox\MythBox\obj\x86\Release\MythBox.exe
 L:\Game_300Heros\MythBox\MythBox\obj\x86\Release\MythBox.pdb
+D:\Game_300Heros\MythBox\MythBox\bin\Release\MythBox.exe.config
+D:\Game_300Heros\MythBox\MythBox\bin\Release\MythBox.exe
+D:\Game_300Heros\MythBox\MythBox\bin\Release\MythBox.pdb
+D:\Game_300Heros\MythBox\MythBox\bin\Release\Newtonsoft.Json.dll
+D:\Game_300Heros\MythBox\MythBox\bin\Release\System.Data.SQLite.dll
+D:\Game_300Heros\MythBox\MythBox\bin\Release\System.Data.SQLite.pdb
+D:\Game_300Heros\MythBox\MythBox\obj\x86\Release\MythBox.csprojResolveAssemblyReference.cache
+D:\Game_300Heros\MythBox\MythBox\obj\x86\Release\MythBox.View.Debug.Analysis.resources
+D:\Game_300Heros\MythBox\MythBox\obj\x86\Release\MythBox.View.Main.resources
+D:\Game_300Heros\MythBox\MythBox\obj\x86\Release\MythBox.View.Profile.resources
+D:\Game_300Heros\MythBox\MythBox\obj\x86\Release\MythBox.Properties.Resources.resources
+D:\Game_300Heros\MythBox\MythBox\obj\x86\Release\MythBox.csproj.GenerateResource.Cache
+D:\Game_300Heros\MythBox\MythBox\obj\x86\Release\MythBox.exe
+D:\Game_300Heros\MythBox\MythBox\obj\x86\Release\MythBox.pdb

@@ -131,7 +131,7 @@ namespace MythBox.Model
 
                 foreach (Process process in processList)
                 {
-                    if (process.ProcessName == "300")
+                    if (process.ProcessName == "300" || String.Compare(process.ProcessName, "300Hero",true) == 0)
                     {
                         bool isInjected = false;
                         foreach (ProcessModule module in process.Modules)

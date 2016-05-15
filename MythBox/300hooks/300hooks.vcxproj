@@ -76,7 +76,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <ModuleDefinitionFile>300hooks.def</ModuleDefinitionFile>
-      <OutputFile>L:\Game_300Heros\300Sharp\core.dll</OutputFile>
+      <OutputFile>$(OutDir)core$(TargetExt)</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

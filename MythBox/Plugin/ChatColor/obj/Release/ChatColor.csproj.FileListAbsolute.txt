@@ -13,3 +13,8 @@ C:\Game_300Heros\MythBox\Plugin\ChatColor\obj\Release\ChatColor.pdb
 C:\Users\201724\Desktop\300Sharp\SDK\Samples\ChatColor\obj\Release\ChatColor.csprojResolveAssemblyReference.cache
 C:\Users\201724\Desktop\300Sharp\SDK\Samples\ChatColor\obj\Release\ChatColor.dll
 C:\Users\201724\Desktop\300Sharp\SDK\Samples\ChatColor\obj\Release\ChatColor.pdb
+D:\Game_300Heros\MythBox\Plugin\ChatColor\obj\Release\ChatColor.csprojResolveAssemblyReference.cache
+D:\Game_300Heros\MythBox\Plugin\ChatColor\obj\Release\ChatColor.dll
+D:\Game_300Heros\MythBox\Plugin\ChatColor\obj\Release\ChatColor.pdb
+D:\Game_300Heros\plugins\ChatColor.dll
+D:\Game_300Heros\plugins\ChatColor.pdb

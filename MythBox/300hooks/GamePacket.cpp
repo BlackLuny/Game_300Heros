@@ -124,8 +124,9 @@ bool GamePacket::InvokePostReceiveMessage(net_packet_t* input)
 void GamePacket::Attach()
 {
 	m_pPreSendMessage = FIND_MEMORY(GAME_BASE_ADDRESS,SEND_MSG_SIG);
-	m_pPreRecvMessage = FIND_MEMORY(GAME_BASE_ADDRESS,RECV_MSG_SIG);
-	m_pGetNetInstance = FIND_MEMORY(GAME_BASE_ADDRESS,NET_INSTANCE_SIG);
+	//m_pPreRecvMessage = FIND_MEMORY(GAME_BASE_ADDRESS,RECV_MSG_SIG);
+	m_pPreRecvMessage  = (void*)0x004E1E40;
+	m_pGetNetInstance = (void*)0x0084CBE0;//FIND_MEMORY(GAME_BASE_ADDRESS,NET_INSTANCE_SIG);
 	m_pGetPlayerMngr = FindPlayerMngr();
 
 	DetourTransactionBegin();

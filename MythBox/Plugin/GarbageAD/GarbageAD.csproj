@@ -46,8 +46,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MythBox">
-      <HintPath>..\..\..\MythBox.exe</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\..\Users\201724\Desktop\300Sharp\MythBox.exe</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

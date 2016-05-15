@@ -58,6 +58,17 @@ void ExitInfo()
 	MessageBoxA(NULL, "请加群获取新版本：300英雄旧版客户端 528991906", "", MB_OK);
 	exit(0);
 }
+
+void ShowNotif()
+{
+	static bool first = true;
+
+	if (first) {
+		first = false;
+		MessageBoxA(NULL, "http://bbs.300yx.net", "", MB_OK);
+	}
+}
+
 void FindAllAddress()
 {
 	void* address_beg = (void*)0x401000;
@@ -165,6 +176,13 @@ void __stdcall newLoadTexture(const char *pszFile, PVOID pUnknown)
 
 	__asm push ecx;
 	__asm pop pTexture;
+
+	ShowNotif();
+
+	if (!pszFile || !*pszFile) {
+		CallToLoadTexture(pTexture, pszFile, pUnknown);
+		return;
+	}
 
 	EnterCriticalSection(&g_csCriticalSection);
 
@@ -400,12 +418,7 @@ double Sys_FloatTime(void)
 
 DWORD WINAPI FuckWindow(VOID* p)
 {
-	static bool first = true;
 
-	if (first) {
-		MessageBoxA(NULL, "新版客户端加速器 \r\nBy201724\r\nQQ群：300英雄旧版客户端 528991906", "", MB_OK);
-		first = false;
-	}
 
 	//GarbageCollect(NULL);
 	return 0;

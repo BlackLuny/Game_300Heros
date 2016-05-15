@@ -22,7 +22,7 @@ void Startup()
 	GamePacket::GetInstance()->Attach();
 	GameTimer::GetInstance()->Attach();
 	GameCamera::GetInstance()->Attach();
-	ChatFixer::GetInstance()->Attach();
+	//ChatFixer::GetInstance()->Attach();
 }
 __declspec(naked)void _asm_Startup()
 {
@@ -132,7 +132,7 @@ BOOL WINAPI DllMain(HMODULE hModule,DWORD dwReason,LPVOID lpReserved){
 		if(p)
 		{
 			p++;
-			if(stricmp(p,"300.exe") != 0)
+			if(stricmp(p,"300.exe") != 0 && stricmp(p,"300Hero.exe") != 0)
 			{
 				return TRUE;
 			}
