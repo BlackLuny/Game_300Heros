@@ -73,7 +73,7 @@ int main(int args, char* argv[]) {
 		//format to dds path
 		char temp[256];
 		strcpy_s(temp, add_skin->resource().c_str());
-		char* pos = strstr(temp, "_.png");
+		char* pos = strstr(temp, "_.bmp");
 		if (pos) {
 			strcpy_s(pos, sizeof(temp) - (pos - (char *)&temp), ".dds");
 		}else
@@ -92,8 +92,8 @@ int main(int args, char* argv[]) {
 		//hero head
 		if(add_skin->hero_index() == 194 && add_skin->skin_index() == 1)
 		{
-			add_skin->set_head_box_pos("324;89");
-			add_skin->set_head_box_wh("116;116");
+			add_skin->set_head_box_pos("294;57");
+			add_skin->set_head_box_wh("144;144");
 		}
 		
 
