@@ -138,16 +138,16 @@ void protobuf_AddDesc_item_5fitem_5fc_2eproto() {
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\021item_item_c.proto\"\261\005\n\titem_item\022\017\n\007ite"
-    "m_id\030\001 \002(\005\022\r\n\005unk_1\030\002 \001(\010\022\r\n\005unk_2\030\003 \001(\010"
-    "\022\r\n\005unk_3\030\004 \001(\010\022\r\n\005unk_4\030\005 \001(\010\022\r\n\005unk_5\030"
-    "\006 \001(\010\022\r\n\005unk_6\030\007 \001(\010\022\016\n\006unk_6x\030\010 \001(\010\022\017\n\007"
-    "unk_i_6\030\t \001(\010\022\021\n\titem_type\030\n \002(\t\022\016\n\006unk_"
-    "11\030\013 \001(\010\022\016\n\006unk_12\030\014 \001(\010\022\016\n\006unk_13\030\r \001(\010"
-    "\022\016\n\006unk_14\030\016 \001(\010\022\016\n\006unk_15\030\017 \001(\010\022\016\n\006unk_"
-    "16\030\020 \001(\010\022\016\n\006unk_17\030\021 \001(\010\022\016\n\006unk_18\030\022 \001(\010"
-    "\022\016\n\006unk_19\030\023 \001(\010\022\016\n\006unk_20\030\024 \001(\010\022\016\n\006unk_"
-    "21\030\025 \001(\010\022\016\n\006unk_22\030\026 \001(\010\022\014\n\004name\030\027 \001(\014\022\014"
-    "\n\004desc\030\030 \001(\014\022\016\n\006unk_25\030\031 \001(\010\022\013\n\003ico\030\032 \001("
+    "m_id\030\001 \002(\005\022\r\n\005unk_1\030\002 \001(\005\022\r\n\005unk_2\030\003 \001(\005"
+    "\022\r\n\005unk_3\030\004 \001(\005\022\r\n\005unk_4\030\005 \001(\005\022\r\n\005unk_5\030"
+    "\006 \001(\005\022\r\n\005unk_6\030\007 \001(\005\022\016\n\006unk_6x\030\010 \001(\005\022\017\n\007"
+    "unk_i_6\030\t \001(\005\022\021\n\titem_type\030\n \002(\t\022\016\n\006unk_"
+    "11\030\013 \001(\005\022\016\n\006unk_12\030\014 \001(\005\022\016\n\006unk_13\030\r \001(\005"
+    "\022\016\n\006unk_14\030\016 \001(\005\022\016\n\006unk_15\030\017 \001(\005\022\016\n\006unk_"
+    "16\030\020 \001(\005\022\016\n\006unk_17\030\021 \001(\005\022\016\n\006unk_18\030\022 \001(\005"
+    "\022\016\n\006unk_19\030\023 \001(\005\022\016\n\006unk_20\030\024 \001(\005\022\016\n\006unk_"
+    "21\030\025 \001(\005\022\016\n\006unk_22\030\026 \001(\005\022\014\n\004name\030\027 \001(\014\022\014"
+    "\n\004desc\030\030 \001(\014\022\016\n\006unk_25\030\031 \001(\005\022\013\n\003ico\030\032 \001("
     "\t\022\016\n\006unk_id\030\034 \001(\005\022\021\n\tshop_type\030\035 \001(\014\022\016\n\006"
     "unk_30\030\036 \001(\005\022\016\n\006unk_31\030\037 \001(\005\022\016\n\006unk_32\030 "
     " \001(\005\022\016\n\006unk_33\030! \001(\005\022\016\n\006unk_34\030\" \001(\005\022\016\n\006"
@@ -238,30 +238,30 @@ item_item::item_item(const item_item& from)
 void item_item::SharedCtor() {
   _cached_size_ = 0;
   item_id_ = 0;
-  unk_1_ = false;
-  unk_2_ = false;
-  unk_3_ = false;
-  unk_4_ = false;
-  unk_5_ = false;
-  unk_6_ = false;
-  unk_6x_ = false;
-  unk_i_6_ = false;
+  unk_1_ = 0;
+  unk_2_ = 0;
+  unk_3_ = 0;
+  unk_4_ = 0;
+  unk_5_ = 0;
+  unk_6_ = 0;
+  unk_6x_ = 0;
+  unk_i_6_ = 0;
   item_type_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-  unk_11_ = false;
-  unk_12_ = false;
-  unk_13_ = false;
-  unk_14_ = false;
-  unk_15_ = false;
-  unk_16_ = false;
-  unk_17_ = false;
-  unk_18_ = false;
-  unk_19_ = false;
-  unk_20_ = false;
-  unk_21_ = false;
-  unk_22_ = false;
+  unk_11_ = 0;
+  unk_12_ = 0;
+  unk_13_ = 0;
+  unk_14_ = 0;
+  unk_15_ = 0;
+  unk_16_ = 0;
+  unk_17_ = 0;
+  unk_18_ = 0;
+  unk_19_ = 0;
+  unk_20_ = 0;
+  unk_21_ = 0;
+  unk_22_ = 0;
   name_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   desc_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
-  unk_25_ = false;
+  unk_25_ = 0;
   ico_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
   unk_id_ = 0;
   shop_type_ = const_cast< ::std::string*>(&::google::protobuf::internal::kEmptyString);
@@ -339,35 +339,35 @@ item_item* item_item::New() const {
 void item_item::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     item_id_ = 0;
-    unk_1_ = false;
-    unk_2_ = false;
-    unk_3_ = false;
-    unk_4_ = false;
-    unk_5_ = false;
-    unk_6_ = false;
-    unk_6x_ = false;
+    unk_1_ = 0;
+    unk_2_ = 0;
+    unk_3_ = 0;
+    unk_4_ = 0;
+    unk_5_ = 0;
+    unk_6_ = 0;
+    unk_6x_ = 0;
   }
   if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
-    unk_i_6_ = false;
+    unk_i_6_ = 0;
     if (has_item_type()) {
       if (item_type_ != &::google::protobuf::internal::kEmptyString) {
         item_type_->clear();
       }
     }
-    unk_11_ = false;
-    unk_12_ = false;
-    unk_13_ = false;
-    unk_14_ = false;
-    unk_15_ = false;
-    unk_16_ = false;
+    unk_11_ = 0;
+    unk_12_ = 0;
+    unk_13_ = 0;
+    unk_14_ = 0;
+    unk_15_ = 0;
+    unk_16_ = 0;
   }
   if (_has_bits_[16 / 32] & (0xffu << (16 % 32))) {
-    unk_17_ = false;
-    unk_18_ = false;
-    unk_19_ = false;
-    unk_20_ = false;
-    unk_21_ = false;
-    unk_22_ = false;
+    unk_17_ = 0;
+    unk_18_ = 0;
+    unk_19_ = 0;
+    unk_20_ = 0;
+    unk_21_ = 0;
+    unk_22_ = 0;
     if (has_name()) {
       if (name_ != &::google::protobuf::internal::kEmptyString) {
         name_->clear();
@@ -380,7 +380,7 @@ void item_item::Clear() {
     }
   }
   if (_has_bits_[24 / 32] & (0xffu << (24 % 32))) {
-    unk_25_ = false;
+    unk_25_ = 0;
     if (has_ico()) {
       if (ico_ != &::google::protobuf::internal::kEmptyString) {
         ico_->clear();
@@ -449,13 +449,13 @@ bool item_item::MergePartialFromCodedStream(
         break;
       }
       
-      // optional bool unk_1 = 2;
+      // optional int32 unk_1 = 2;
       case 2: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_unk_1:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &unk_1_)));
           set_has_unk_1();
         } else {
@@ -465,13 +465,13 @@ bool item_item::MergePartialFromCodedStream(
         break;
       }
       
-      // optional bool unk_2 = 3;
+      // optional int32 unk_2 = 3;
       case 3: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_unk_2:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &unk_2_)));
           set_has_unk_2();
         } else {
@@ -481,13 +481,13 @@ bool item_item::MergePartialFromCodedStream(
         break;
       }
       
-      // optional bool unk_3 = 4;
+      // optional int32 unk_3 = 4;
       case 4: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_unk_3:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &unk_3_)));
           set_has_unk_3();
         } else {
@@ -497,13 +497,13 @@ bool item_item::MergePartialFromCodedStream(
         break;
       }
       
-      // optional bool unk_4 = 5;
+      // optional int32 unk_4 = 5;
       case 5: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_unk_4:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &unk_4_)));
           set_has_unk_4();
         } else {
@@ -513,13 +513,13 @@ bool item_item::MergePartialFromCodedStream(
         break;
       }
       
-      // optional bool unk_5 = 6;
+      // optional int32 unk_5 = 6;
       case 6: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_unk_5:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &unk_5_)));
           set_has_unk_5();
         } else {
@@ -529,13 +529,13 @@ bool item_item::MergePartialFromCodedStream(
         break;
       }
       
-      // optional bool unk_6 = 7;
+      // optional int32 unk_6 = 7;
       case 7: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_unk_6:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &unk_6_)));
           set_has_unk_6();
         } else {
@@ -545,13 +545,13 @@ bool item_item::MergePartialFromCodedStream(
         break;
       }
       
-      // optional bool unk_6x = 8;
+      // optional int32 unk_6x = 8;
       case 8: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_unk_6x:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &unk_6x_)));
           set_has_unk_6x();
         } else {
@@ -561,13 +561,13 @@ bool item_item::MergePartialFromCodedStream(
         break;
       }
       
-      // optional bool unk_i_6 = 9;
+      // optional int32 unk_i_6 = 9;
       case 9: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_unk_i_6:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &unk_i_6_)));
           set_has_unk_i_6();
         } else {
@@ -594,13 +594,13 @@ bool item_item::MergePartialFromCodedStream(
         break;
       }
       
-      // optional bool unk_11 = 11;
+      // optional int32 unk_11 = 11;
       case 11: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_unk_11:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &unk_11_)));
           set_has_unk_11();
         } else {
@@ -610,13 +610,13 @@ bool item_item::MergePartialFromCodedStream(
         break;
       }
       
-      // optional bool unk_12 = 12;
+      // optional int32 unk_12 = 12;
       case 12: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_unk_12:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &unk_12_)));
           set_has_unk_12();
         } else {
@@ -626,13 +626,13 @@ bool item_item::MergePartialFromCodedStream(
         break;
       }
       
-      // optional bool unk_13 = 13;
+      // optional int32 unk_13 = 13;
       case 13: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_unk_13:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &unk_13_)));
           set_has_unk_13();
         } else {
@@ -642,13 +642,13 @@ bool item_item::MergePartialFromCodedStream(
         break;
       }
       
-      // optional bool unk_14 = 14;
+      // optional int32 unk_14 = 14;
       case 14: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_unk_14:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &unk_14_)));
           set_has_unk_14();
         } else {
@@ -658,13 +658,13 @@ bool item_item::MergePartialFromCodedStream(
         break;
       }
       
-      // optional bool unk_15 = 15;
+      // optional int32 unk_15 = 15;
       case 15: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_unk_15:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &unk_15_)));
           set_has_unk_15();
         } else {
@@ -674,13 +674,13 @@ bool item_item::MergePartialFromCodedStream(
         break;
       }
       
-      // optional bool unk_16 = 16;
+      // optional int32 unk_16 = 16;
       case 16: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_unk_16:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &unk_16_)));
           set_has_unk_16();
         } else {
@@ -690,13 +690,13 @@ bool item_item::MergePartialFromCodedStream(
         break;
       }
       
-      // optional bool unk_17 = 17;
+      // optional int32 unk_17 = 17;
       case 17: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_unk_17:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &unk_17_)));
           set_has_unk_17();
         } else {
@@ -706,13 +706,13 @@ bool item_item::MergePartialFromCodedStream(
         break;
       }
       
-      // optional bool unk_18 = 18;
+      // optional int32 unk_18 = 18;
       case 18: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_unk_18:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &unk_18_)));
           set_has_unk_18();
         } else {
@@ -722,13 +722,13 @@ bool item_item::MergePartialFromCodedStream(
         break;
       }
       
-      // optional bool unk_19 = 19;
+      // optional int32 unk_19 = 19;
       case 19: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_unk_19:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &unk_19_)));
           set_has_unk_19();
         } else {
@@ -738,13 +738,13 @@ bool item_item::MergePartialFromCodedStream(
         break;
       }
       
-      // optional bool unk_20 = 20;
+      // optional int32 unk_20 = 20;
       case 20: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_unk_20:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &unk_20_)));
           set_has_unk_20();
         } else {
@@ -754,13 +754,13 @@ bool item_item::MergePartialFromCodedStream(
         break;
       }
       
-      // optional bool unk_21 = 21;
+      // optional int32 unk_21 = 21;
       case 21: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_unk_21:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &unk_21_)));
           set_has_unk_21();
         } else {
@@ -770,13 +770,13 @@ bool item_item::MergePartialFromCodedStream(
         break;
       }
       
-      // optional bool unk_22 = 22;
+      // optional int32 unk_22 = 22;
       case 22: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_unk_22:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &unk_22_)));
           set_has_unk_22();
         } else {
@@ -814,13 +814,13 @@ bool item_item::MergePartialFromCodedStream(
         break;
       }
       
-      // optional bool unk_25 = 25;
+      // optional int32 unk_25 = 25;
       case 25: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
          parse_unk_25:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &unk_25_)));
           set_has_unk_25();
         } else {
@@ -1143,44 +1143,44 @@ void item_item::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->item_id(), output);
   }
   
-  // optional bool unk_1 = 2;
+  // optional int32 unk_1 = 2;
   if (has_unk_1()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(2, this->unk_1(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->unk_1(), output);
   }
   
-  // optional bool unk_2 = 3;
+  // optional int32 unk_2 = 3;
   if (has_unk_2()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(3, this->unk_2(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->unk_2(), output);
   }
   
-  // optional bool unk_3 = 4;
+  // optional int32 unk_3 = 4;
   if (has_unk_3()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(4, this->unk_3(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->unk_3(), output);
   }
   
-  // optional bool unk_4 = 5;
+  // optional int32 unk_4 = 5;
   if (has_unk_4()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(5, this->unk_4(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->unk_4(), output);
   }
   
-  // optional bool unk_5 = 6;
+  // optional int32 unk_5 = 6;
   if (has_unk_5()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(6, this->unk_5(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(6, this->unk_5(), output);
   }
   
-  // optional bool unk_6 = 7;
+  // optional int32 unk_6 = 7;
   if (has_unk_6()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(7, this->unk_6(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(7, this->unk_6(), output);
   }
   
-  // optional bool unk_6x = 8;
+  // optional int32 unk_6x = 8;
   if (has_unk_6x()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(8, this->unk_6x(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(8, this->unk_6x(), output);
   }
   
-  // optional bool unk_i_6 = 9;
+  // optional int32 unk_i_6 = 9;
   if (has_unk_i_6()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(9, this->unk_i_6(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(9, this->unk_i_6(), output);
   }
   
   // required string item_type = 10;
@@ -1192,64 +1192,64 @@ void item_item::SerializeWithCachedSizes(
       10, this->item_type(), output);
   }
   
-  // optional bool unk_11 = 11;
+  // optional int32 unk_11 = 11;
   if (has_unk_11()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(11, this->unk_11(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(11, this->unk_11(), output);
   }
   
-  // optional bool unk_12 = 12;
+  // optional int32 unk_12 = 12;
   if (has_unk_12()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(12, this->unk_12(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(12, this->unk_12(), output);
   }
   
-  // optional bool unk_13 = 13;
+  // optional int32 unk_13 = 13;
   if (has_unk_13()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(13, this->unk_13(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(13, this->unk_13(), output);
   }
   
-  // optional bool unk_14 = 14;
+  // optional int32 unk_14 = 14;
   if (has_unk_14()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(14, this->unk_14(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(14, this->unk_14(), output);
   }
   
-  // optional bool unk_15 = 15;
+  // optional int32 unk_15 = 15;
   if (has_unk_15()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(15, this->unk_15(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(15, this->unk_15(), output);
   }
   
-  // optional bool unk_16 = 16;
+  // optional int32 unk_16 = 16;
   if (has_unk_16()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(16, this->unk_16(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(16, this->unk_16(), output);
   }
   
-  // optional bool unk_17 = 17;
+  // optional int32 unk_17 = 17;
   if (has_unk_17()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(17, this->unk_17(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(17, this->unk_17(), output);
   }
   
-  // optional bool unk_18 = 18;
+  // optional int32 unk_18 = 18;
   if (has_unk_18()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(18, this->unk_18(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(18, this->unk_18(), output);
   }
   
-  // optional bool unk_19 = 19;
+  // optional int32 unk_19 = 19;
   if (has_unk_19()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(19, this->unk_19(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(19, this->unk_19(), output);
   }
   
-  // optional bool unk_20 = 20;
+  // optional int32 unk_20 = 20;
   if (has_unk_20()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(20, this->unk_20(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(20, this->unk_20(), output);
   }
   
-  // optional bool unk_21 = 21;
+  // optional int32 unk_21 = 21;
   if (has_unk_21()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(21, this->unk_21(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(21, this->unk_21(), output);
   }
   
-  // optional bool unk_22 = 22;
+  // optional int32 unk_22 = 22;
   if (has_unk_22()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(22, this->unk_22(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(22, this->unk_22(), output);
   }
   
   // optional bytes name = 23;
@@ -1264,9 +1264,9 @@ void item_item::SerializeWithCachedSizes(
       24, this->desc(), output);
   }
   
-  // optional bool unk_25 = 25;
+  // optional int32 unk_25 = 25;
   if (has_unk_25()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(25, this->unk_25(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(25, this->unk_25(), output);
   }
   
   // optional string ico = 26;
@@ -1389,44 +1389,44 @@ void item_item::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->item_id(), target);
   }
   
-  // optional bool unk_1 = 2;
+  // optional int32 unk_1 = 2;
   if (has_unk_1()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(2, this->unk_1(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->unk_1(), target);
   }
   
-  // optional bool unk_2 = 3;
+  // optional int32 unk_2 = 3;
   if (has_unk_2()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(3, this->unk_2(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->unk_2(), target);
   }
   
-  // optional bool unk_3 = 4;
+  // optional int32 unk_3 = 4;
   if (has_unk_3()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(4, this->unk_3(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->unk_3(), target);
   }
   
-  // optional bool unk_4 = 5;
+  // optional int32 unk_4 = 5;
   if (has_unk_4()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(5, this->unk_4(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->unk_4(), target);
   }
   
-  // optional bool unk_5 = 6;
+  // optional int32 unk_5 = 6;
   if (has_unk_5()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(6, this->unk_5(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(6, this->unk_5(), target);
   }
   
-  // optional bool unk_6 = 7;
+  // optional int32 unk_6 = 7;
   if (has_unk_6()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(7, this->unk_6(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(7, this->unk_6(), target);
   }
   
-  // optional bool unk_6x = 8;
+  // optional int32 unk_6x = 8;
   if (has_unk_6x()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(8, this->unk_6x(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(8, this->unk_6x(), target);
   }
   
-  // optional bool unk_i_6 = 9;
+  // optional int32 unk_i_6 = 9;
   if (has_unk_i_6()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(9, this->unk_i_6(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(9, this->unk_i_6(), target);
   }
   
   // required string item_type = 10;
@@ -1439,64 +1439,64 @@ void item_item::SerializeWithCachedSizes(
         10, this->item_type(), target);
   }
   
-  // optional bool unk_11 = 11;
+  // optional int32 unk_11 = 11;
   if (has_unk_11()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(11, this->unk_11(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(11, this->unk_11(), target);
   }
   
-  // optional bool unk_12 = 12;
+  // optional int32 unk_12 = 12;
   if (has_unk_12()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(12, this->unk_12(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(12, this->unk_12(), target);
   }
   
-  // optional bool unk_13 = 13;
+  // optional int32 unk_13 = 13;
   if (has_unk_13()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(13, this->unk_13(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(13, this->unk_13(), target);
   }
   
-  // optional bool unk_14 = 14;
+  // optional int32 unk_14 = 14;
   if (has_unk_14()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(14, this->unk_14(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(14, this->unk_14(), target);
   }
   
-  // optional bool unk_15 = 15;
+  // optional int32 unk_15 = 15;
   if (has_unk_15()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(15, this->unk_15(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(15, this->unk_15(), target);
   }
   
-  // optional bool unk_16 = 16;
+  // optional int32 unk_16 = 16;
   if (has_unk_16()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(16, this->unk_16(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(16, this->unk_16(), target);
   }
   
-  // optional bool unk_17 = 17;
+  // optional int32 unk_17 = 17;
   if (has_unk_17()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(17, this->unk_17(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(17, this->unk_17(), target);
   }
   
-  // optional bool unk_18 = 18;
+  // optional int32 unk_18 = 18;
   if (has_unk_18()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(18, this->unk_18(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(18, this->unk_18(), target);
   }
   
-  // optional bool unk_19 = 19;
+  // optional int32 unk_19 = 19;
   if (has_unk_19()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(19, this->unk_19(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(19, this->unk_19(), target);
   }
   
-  // optional bool unk_20 = 20;
+  // optional int32 unk_20 = 20;
   if (has_unk_20()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(20, this->unk_20(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(20, this->unk_20(), target);
   }
   
-  // optional bool unk_21 = 21;
+  // optional int32 unk_21 = 21;
   if (has_unk_21()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(21, this->unk_21(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(21, this->unk_21(), target);
   }
   
-  // optional bool unk_22 = 22;
+  // optional int32 unk_22 = 22;
   if (has_unk_22()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(22, this->unk_22(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(22, this->unk_22(), target);
   }
   
   // optional bytes name = 23;
@@ -1513,9 +1513,9 @@ void item_item::SerializeWithCachedSizes(
         24, this->desc(), target);
   }
   
-  // optional bool unk_25 = 25;
+  // optional int32 unk_25 = 25;
   if (has_unk_25()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(25, this->unk_25(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(25, this->unk_25(), target);
   }
   
   // optional string ico = 26;
@@ -1648,46 +1648,62 @@ int item_item::ByteSize() const {
           this->item_id());
     }
     
-    // optional bool unk_1 = 2;
+    // optional int32 unk_1 = 2;
     if (has_unk_1()) {
-      total_size += 1 + 1;
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->unk_1());
     }
     
-    // optional bool unk_2 = 3;
+    // optional int32 unk_2 = 3;
     if (has_unk_2()) {
-      total_size += 1 + 1;
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->unk_2());
     }
     
-    // optional bool unk_3 = 4;
+    // optional int32 unk_3 = 4;
     if (has_unk_3()) {
-      total_size += 1 + 1;
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->unk_3());
     }
     
-    // optional bool unk_4 = 5;
+    // optional int32 unk_4 = 5;
     if (has_unk_4()) {
-      total_size += 1 + 1;
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->unk_4());
     }
     
-    // optional bool unk_5 = 6;
+    // optional int32 unk_5 = 6;
     if (has_unk_5()) {
-      total_size += 1 + 1;
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->unk_5());
     }
     
-    // optional bool unk_6 = 7;
+    // optional int32 unk_6 = 7;
     if (has_unk_6()) {
-      total_size += 1 + 1;
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->unk_6());
     }
     
-    // optional bool unk_6x = 8;
+    // optional int32 unk_6x = 8;
     if (has_unk_6x()) {
-      total_size += 1 + 1;
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->unk_6x());
     }
     
   }
   if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
-    // optional bool unk_i_6 = 9;
+    // optional int32 unk_i_6 = 9;
     if (has_unk_i_6()) {
-      total_size += 1 + 1;
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->unk_i_6());
     }
     
     // required string item_type = 10;
@@ -1697,66 +1713,90 @@ int item_item::ByteSize() const {
           this->item_type());
     }
     
-    // optional bool unk_11 = 11;
+    // optional int32 unk_11 = 11;
     if (has_unk_11()) {
-      total_size += 1 + 1;
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->unk_11());
     }
     
-    // optional bool unk_12 = 12;
+    // optional int32 unk_12 = 12;
     if (has_unk_12()) {
-      total_size += 1 + 1;
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->unk_12());
     }
     
-    // optional bool unk_13 = 13;
+    // optional int32 unk_13 = 13;
     if (has_unk_13()) {
-      total_size += 1 + 1;
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->unk_13());
     }
     
-    // optional bool unk_14 = 14;
+    // optional int32 unk_14 = 14;
     if (has_unk_14()) {
-      total_size += 1 + 1;
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->unk_14());
     }
     
-    // optional bool unk_15 = 15;
+    // optional int32 unk_15 = 15;
     if (has_unk_15()) {
-      total_size += 1 + 1;
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->unk_15());
     }
     
-    // optional bool unk_16 = 16;
+    // optional int32 unk_16 = 16;
     if (has_unk_16()) {
-      total_size += 2 + 1;
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->unk_16());
     }
     
   }
   if (_has_bits_[16 / 32] & (0xffu << (16 % 32))) {
-    // optional bool unk_17 = 17;
+    // optional int32 unk_17 = 17;
     if (has_unk_17()) {
-      total_size += 2 + 1;
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->unk_17());
     }
     
-    // optional bool unk_18 = 18;
+    // optional int32 unk_18 = 18;
     if (has_unk_18()) {
-      total_size += 2 + 1;
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->unk_18());
     }
     
-    // optional bool unk_19 = 19;
+    // optional int32 unk_19 = 19;
     if (has_unk_19()) {
-      total_size += 2 + 1;
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->unk_19());
     }
     
-    // optional bool unk_20 = 20;
+    // optional int32 unk_20 = 20;
     if (has_unk_20()) {
-      total_size += 2 + 1;
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->unk_20());
     }
     
-    // optional bool unk_21 = 21;
+    // optional int32 unk_21 = 21;
     if (has_unk_21()) {
-      total_size += 2 + 1;
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->unk_21());
     }
     
-    // optional bool unk_22 = 22;
+    // optional int32 unk_22 = 22;
     if (has_unk_22()) {
-      total_size += 2 + 1;
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->unk_22());
     }
     
     // optional bytes name = 23;
@@ -1775,9 +1815,11 @@ int item_item::ByteSize() const {
     
   }
   if (_has_bits_[24 / 32] & (0xffu << (24 % 32))) {
-    // optional bool unk_25 = 25;
+    // optional int32 unk_25 = 25;
     if (has_unk_25()) {
-      total_size += 2 + 1;
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->unk_25());
     }
     
     // optional string ico = 26;

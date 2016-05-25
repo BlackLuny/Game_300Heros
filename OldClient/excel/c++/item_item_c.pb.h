@@ -96,61 +96,61 @@ class item_item : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 item_id() const;
   inline void set_item_id(::google::protobuf::int32 value);
   
-  // optional bool unk_1 = 2;
+  // optional int32 unk_1 = 2;
   inline bool has_unk_1() const;
   inline void clear_unk_1();
   static const int kUnk1FieldNumber = 2;
-  inline bool unk_1() const;
-  inline void set_unk_1(bool value);
+  inline ::google::protobuf::int32 unk_1() const;
+  inline void set_unk_1(::google::protobuf::int32 value);
   
-  // optional bool unk_2 = 3;
+  // optional int32 unk_2 = 3;
   inline bool has_unk_2() const;
   inline void clear_unk_2();
   static const int kUnk2FieldNumber = 3;
-  inline bool unk_2() const;
-  inline void set_unk_2(bool value);
+  inline ::google::protobuf::int32 unk_2() const;
+  inline void set_unk_2(::google::protobuf::int32 value);
   
-  // optional bool unk_3 = 4;
+  // optional int32 unk_3 = 4;
   inline bool has_unk_3() const;
   inline void clear_unk_3();
   static const int kUnk3FieldNumber = 4;
-  inline bool unk_3() const;
-  inline void set_unk_3(bool value);
+  inline ::google::protobuf::int32 unk_3() const;
+  inline void set_unk_3(::google::protobuf::int32 value);
   
-  // optional bool unk_4 = 5;
+  // optional int32 unk_4 = 5;
   inline bool has_unk_4() const;
   inline void clear_unk_4();
   static const int kUnk4FieldNumber = 5;
-  inline bool unk_4() const;
-  inline void set_unk_4(bool value);
+  inline ::google::protobuf::int32 unk_4() const;
+  inline void set_unk_4(::google::protobuf::int32 value);
   
-  // optional bool unk_5 = 6;
+  // optional int32 unk_5 = 6;
   inline bool has_unk_5() const;
   inline void clear_unk_5();
   static const int kUnk5FieldNumber = 6;
-  inline bool unk_5() const;
-  inline void set_unk_5(bool value);
+  inline ::google::protobuf::int32 unk_5() const;
+  inline void set_unk_5(::google::protobuf::int32 value);
   
-  // optional bool unk_6 = 7;
+  // optional int32 unk_6 = 7;
   inline bool has_unk_6() const;
   inline void clear_unk_6();
   static const int kUnk6FieldNumber = 7;
-  inline bool unk_6() const;
-  inline void set_unk_6(bool value);
+  inline ::google::protobuf::int32 unk_6() const;
+  inline void set_unk_6(::google::protobuf::int32 value);
   
-  // optional bool unk_6x = 8;
+  // optional int32 unk_6x = 8;
   inline bool has_unk_6x() const;
   inline void clear_unk_6x();
   static const int kUnk6XFieldNumber = 8;
-  inline bool unk_6x() const;
-  inline void set_unk_6x(bool value);
+  inline ::google::protobuf::int32 unk_6x() const;
+  inline void set_unk_6x(::google::protobuf::int32 value);
   
-  // optional bool unk_i_6 = 9;
+  // optional int32 unk_i_6 = 9;
   inline bool has_unk_i_6() const;
   inline void clear_unk_i_6();
   static const int kUnkI6FieldNumber = 9;
-  inline bool unk_i_6() const;
-  inline void set_unk_i_6(bool value);
+  inline ::google::protobuf::int32 unk_i_6() const;
+  inline void set_unk_i_6(::google::protobuf::int32 value);
   
   // required string item_type = 10;
   inline bool has_item_type() const;
@@ -163,89 +163,89 @@ class item_item : public ::google::protobuf::Message {
   inline ::std::string* mutable_item_type();
   inline ::std::string* release_item_type();
   
-  // optional bool unk_11 = 11;
+  // optional int32 unk_11 = 11;
   inline bool has_unk_11() const;
   inline void clear_unk_11();
   static const int kUnk11FieldNumber = 11;
-  inline bool unk_11() const;
-  inline void set_unk_11(bool value);
+  inline ::google::protobuf::int32 unk_11() const;
+  inline void set_unk_11(::google::protobuf::int32 value);
   
-  // optional bool unk_12 = 12;
+  // optional int32 unk_12 = 12;
   inline bool has_unk_12() const;
   inline void clear_unk_12();
   static const int kUnk12FieldNumber = 12;
-  inline bool unk_12() const;
-  inline void set_unk_12(bool value);
+  inline ::google::protobuf::int32 unk_12() const;
+  inline void set_unk_12(::google::protobuf::int32 value);
   
-  // optional bool unk_13 = 13;
+  // optional int32 unk_13 = 13;
   inline bool has_unk_13() const;
   inline void clear_unk_13();
   static const int kUnk13FieldNumber = 13;
-  inline bool unk_13() const;
-  inline void set_unk_13(bool value);
+  inline ::google::protobuf::int32 unk_13() const;
+  inline void set_unk_13(::google::protobuf::int32 value);
   
-  // optional bool unk_14 = 14;
+  // optional int32 unk_14 = 14;
   inline bool has_unk_14() const;
   inline void clear_unk_14();
   static const int kUnk14FieldNumber = 14;
-  inline bool unk_14() const;
-  inline void set_unk_14(bool value);
+  inline ::google::protobuf::int32 unk_14() const;
+  inline void set_unk_14(::google::protobuf::int32 value);
   
-  // optional bool unk_15 = 15;
+  // optional int32 unk_15 = 15;
   inline bool has_unk_15() const;
   inline void clear_unk_15();
   static const int kUnk15FieldNumber = 15;
-  inline bool unk_15() const;
-  inline void set_unk_15(bool value);
+  inline ::google::protobuf::int32 unk_15() const;
+  inline void set_unk_15(::google::protobuf::int32 value);
   
-  // optional bool unk_16 = 16;
+  // optional int32 unk_16 = 16;
   inline bool has_unk_16() const;
   inline void clear_unk_16();
   static const int kUnk16FieldNumber = 16;
-  inline bool unk_16() const;
-  inline void set_unk_16(bool value);
+  inline ::google::protobuf::int32 unk_16() const;
+  inline void set_unk_16(::google::protobuf::int32 value);
   
-  // optional bool unk_17 = 17;
+  // optional int32 unk_17 = 17;
   inline bool has_unk_17() const;
   inline void clear_unk_17();
   static const int kUnk17FieldNumber = 17;
-  inline bool unk_17() const;
-  inline void set_unk_17(bool value);
+  inline ::google::protobuf::int32 unk_17() const;
+  inline void set_unk_17(::google::protobuf::int32 value);
   
-  // optional bool unk_18 = 18;
+  // optional int32 unk_18 = 18;
   inline bool has_unk_18() const;
   inline void clear_unk_18();
   static const int kUnk18FieldNumber = 18;
-  inline bool unk_18() const;
-  inline void set_unk_18(bool value);
+  inline ::google::protobuf::int32 unk_18() const;
+  inline void set_unk_18(::google::protobuf::int32 value);
   
-  // optional bool unk_19 = 19;
+  // optional int32 unk_19 = 19;
   inline bool has_unk_19() const;
   inline void clear_unk_19();
   static const int kUnk19FieldNumber = 19;
-  inline bool unk_19() const;
-  inline void set_unk_19(bool value);
+  inline ::google::protobuf::int32 unk_19() const;
+  inline void set_unk_19(::google::protobuf::int32 value);
   
-  // optional bool unk_20 = 20;
+  // optional int32 unk_20 = 20;
   inline bool has_unk_20() const;
   inline void clear_unk_20();
   static const int kUnk20FieldNumber = 20;
-  inline bool unk_20() const;
-  inline void set_unk_20(bool value);
+  inline ::google::protobuf::int32 unk_20() const;
+  inline void set_unk_20(::google::protobuf::int32 value);
   
-  // optional bool unk_21 = 21;
+  // optional int32 unk_21 = 21;
   inline bool has_unk_21() const;
   inline void clear_unk_21();
   static const int kUnk21FieldNumber = 21;
-  inline bool unk_21() const;
-  inline void set_unk_21(bool value);
+  inline ::google::protobuf::int32 unk_21() const;
+  inline void set_unk_21(::google::protobuf::int32 value);
   
-  // optional bool unk_22 = 22;
+  // optional int32 unk_22 = 22;
   inline bool has_unk_22() const;
   inline void clear_unk_22();
   static const int kUnk22FieldNumber = 22;
-  inline bool unk_22() const;
-  inline void set_unk_22(bool value);
+  inline ::google::protobuf::int32 unk_22() const;
+  inline void set_unk_22(::google::protobuf::int32 value);
   
   // optional bytes name = 23;
   inline bool has_name() const;
@@ -269,12 +269,12 @@ class item_item : public ::google::protobuf::Message {
   inline ::std::string* mutable_desc();
   inline ::std::string* release_desc();
   
-  // optional bool unk_25 = 25;
+  // optional int32 unk_25 = 25;
   inline bool has_unk_25() const;
   inline void clear_unk_25();
   static const int kUnk25FieldNumber = 25;
-  inline bool unk_25() const;
-  inline void set_unk_25(bool value);
+  inline ::google::protobuf::int32 unk_25() const;
+  inline void set_unk_25(::google::protobuf::int32 value);
   
   // optional string ico = 26;
   inline bool has_ico() const;
@@ -514,33 +514,33 @@ class item_item : public ::google::protobuf::Message {
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
   
   ::google::protobuf::int32 item_id_;
-  bool unk_1_;
-  bool unk_2_;
-  bool unk_3_;
-  bool unk_4_;
+  ::google::protobuf::int32 unk_1_;
+  ::google::protobuf::int32 unk_2_;
+  ::google::protobuf::int32 unk_3_;
+  ::google::protobuf::int32 unk_4_;
+  ::google::protobuf::int32 unk_5_;
+  ::google::protobuf::int32 unk_6_;
+  ::google::protobuf::int32 unk_6x_;
   ::std::string* item_type_;
-  bool unk_5_;
-  bool unk_6_;
-  bool unk_6x_;
-  bool unk_i_6_;
-  bool unk_11_;
-  bool unk_12_;
-  bool unk_13_;
-  bool unk_14_;
-  bool unk_15_;
-  bool unk_16_;
-  bool unk_17_;
-  bool unk_18_;
-  bool unk_19_;
-  bool unk_20_;
-  bool unk_21_;
-  bool unk_22_;
+  ::google::protobuf::int32 unk_i_6_;
+  ::google::protobuf::int32 unk_11_;
+  ::google::protobuf::int32 unk_12_;
+  ::google::protobuf::int32 unk_13_;
+  ::google::protobuf::int32 unk_14_;
+  ::google::protobuf::int32 unk_15_;
+  ::google::protobuf::int32 unk_16_;
+  ::google::protobuf::int32 unk_17_;
+  ::google::protobuf::int32 unk_18_;
+  ::google::protobuf::int32 unk_19_;
+  ::google::protobuf::int32 unk_20_;
+  ::google::protobuf::int32 unk_21_;
   ::std::string* name_;
+  ::google::protobuf::int32 unk_22_;
+  ::google::protobuf::int32 unk_25_;
   ::std::string* desc_;
   ::std::string* ico_;
-  bool unk_25_;
-  ::google::protobuf::int32 unk_id_;
   ::std::string* shop_type_;
+  ::google::protobuf::int32 unk_id_;
   ::google::protobuf::int32 unk_30_;
   ::google::protobuf::int32 unk_31_;
   ::google::protobuf::int32 unk_32_;
@@ -549,11 +549,11 @@ class item_item : public ::google::protobuf::Message {
   ::google::protobuf::int32 unk_35_;
   ::google::protobuf::int32 unk_36_;
   ::google::protobuf::int32 unk_37_;
+  ::google::protobuf::int32 unk_39_;
   ::std::string* scene_;
   ::std::string* unk_40_;
-  ::google::protobuf::int32 unk_39_;
-  ::google::protobuf::int32 unk_41_;
   ::std::string* ff_;
+  ::google::protobuf::int32 unk_41_;
   ::google::protobuf::int32 unk_43_;
   ::google::protobuf::int32 unk_44_;
   
@@ -681,7 +681,7 @@ inline void item_item::set_item_id(::google::protobuf::int32 value) {
   item_id_ = value;
 }
 
-// optional bool unk_1 = 2;
+// optional int32 unk_1 = 2;
 inline bool item_item::has_unk_1() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -692,18 +692,18 @@ inline void item_item::clear_has_unk_1() {
   _has_bits_[0] &= ~0x00000002u;
 }
 inline void item_item::clear_unk_1() {
-  unk_1_ = false;
+  unk_1_ = 0;
   clear_has_unk_1();
 }
-inline bool item_item::unk_1() const {
+inline ::google::protobuf::int32 item_item::unk_1() const {
   return unk_1_;
 }
-inline void item_item::set_unk_1(bool value) {
+inline void item_item::set_unk_1(::google::protobuf::int32 value) {
   set_has_unk_1();
   unk_1_ = value;
 }
 
-// optional bool unk_2 = 3;
+// optional int32 unk_2 = 3;
 inline bool item_item::has_unk_2() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
@@ -714,18 +714,18 @@ inline void item_item::clear_has_unk_2() {
   _has_bits_[0] &= ~0x00000004u;
 }
 inline void item_item::clear_unk_2() {
-  unk_2_ = false;
+  unk_2_ = 0;
   clear_has_unk_2();
 }
-inline bool item_item::unk_2() const {
+inline ::google::protobuf::int32 item_item::unk_2() const {
   return unk_2_;
 }
-inline void item_item::set_unk_2(bool value) {
+inline void item_item::set_unk_2(::google::protobuf::int32 value) {
   set_has_unk_2();
   unk_2_ = value;
 }
 
-// optional bool unk_3 = 4;
+// optional int32 unk_3 = 4;
 inline bool item_item::has_unk_3() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -736,18 +736,18 @@ inline void item_item::clear_has_unk_3() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void item_item::clear_unk_3() {
-  unk_3_ = false;
+  unk_3_ = 0;
   clear_has_unk_3();
 }
-inline bool item_item::unk_3() const {
+inline ::google::protobuf::int32 item_item::unk_3() const {
   return unk_3_;
 }
-inline void item_item::set_unk_3(bool value) {
+inline void item_item::set_unk_3(::google::protobuf::int32 value) {
   set_has_unk_3();
   unk_3_ = value;
 }
 
-// optional bool unk_4 = 5;
+// optional int32 unk_4 = 5;
 inline bool item_item::has_unk_4() const {
   return (_has_bits_[0] & 0x00000010u) != 0;
 }
@@ -758,18 +758,18 @@ inline void item_item::clear_has_unk_4() {
   _has_bits_[0] &= ~0x00000010u;
 }
 inline void item_item::clear_unk_4() {
-  unk_4_ = false;
+  unk_4_ = 0;
   clear_has_unk_4();
 }
-inline bool item_item::unk_4() const {
+inline ::google::protobuf::int32 item_item::unk_4() const {
   return unk_4_;
 }
-inline void item_item::set_unk_4(bool value) {
+inline void item_item::set_unk_4(::google::protobuf::int32 value) {
   set_has_unk_4();
   unk_4_ = value;
 }
 
-// optional bool unk_5 = 6;
+// optional int32 unk_5 = 6;
 inline bool item_item::has_unk_5() const {
   return (_has_bits_[0] & 0x00000020u) != 0;
 }
@@ -780,18 +780,18 @@ inline void item_item::clear_has_unk_5() {
   _has_bits_[0] &= ~0x00000020u;
 }
 inline void item_item::clear_unk_5() {
-  unk_5_ = false;
+  unk_5_ = 0;
   clear_has_unk_5();
 }
-inline bool item_item::unk_5() const {
+inline ::google::protobuf::int32 item_item::unk_5() const {
   return unk_5_;
 }
-inline void item_item::set_unk_5(bool value) {
+inline void item_item::set_unk_5(::google::protobuf::int32 value) {
   set_has_unk_5();
   unk_5_ = value;
 }
 
-// optional bool unk_6 = 7;
+// optional int32 unk_6 = 7;
 inline bool item_item::has_unk_6() const {
   return (_has_bits_[0] & 0x00000040u) != 0;
 }
@@ -802,18 +802,18 @@ inline void item_item::clear_has_unk_6() {
   _has_bits_[0] &= ~0x00000040u;
 }
 inline void item_item::clear_unk_6() {
-  unk_6_ = false;
+  unk_6_ = 0;
   clear_has_unk_6();
 }
-inline bool item_item::unk_6() const {
+inline ::google::protobuf::int32 item_item::unk_6() const {
   return unk_6_;
 }
-inline void item_item::set_unk_6(bool value) {
+inline void item_item::set_unk_6(::google::protobuf::int32 value) {
   set_has_unk_6();
   unk_6_ = value;
 }
 
-// optional bool unk_6x = 8;
+// optional int32 unk_6x = 8;
 inline bool item_item::has_unk_6x() const {
   return (_has_bits_[0] & 0x00000080u) != 0;
 }
@@ -824,18 +824,18 @@ inline void item_item::clear_has_unk_6x() {
   _has_bits_[0] &= ~0x00000080u;
 }
 inline void item_item::clear_unk_6x() {
-  unk_6x_ = false;
+  unk_6x_ = 0;
   clear_has_unk_6x();
 }
-inline bool item_item::unk_6x() const {
+inline ::google::protobuf::int32 item_item::unk_6x() const {
   return unk_6x_;
 }
-inline void item_item::set_unk_6x(bool value) {
+inline void item_item::set_unk_6x(::google::protobuf::int32 value) {
   set_has_unk_6x();
   unk_6x_ = value;
 }
 
-// optional bool unk_i_6 = 9;
+// optional int32 unk_i_6 = 9;
 inline bool item_item::has_unk_i_6() const {
   return (_has_bits_[0] & 0x00000100u) != 0;
 }
@@ -846,13 +846,13 @@ inline void item_item::clear_has_unk_i_6() {
   _has_bits_[0] &= ~0x00000100u;
 }
 inline void item_item::clear_unk_i_6() {
-  unk_i_6_ = false;
+  unk_i_6_ = 0;
   clear_has_unk_i_6();
 }
-inline bool item_item::unk_i_6() const {
+inline ::google::protobuf::int32 item_item::unk_i_6() const {
   return unk_i_6_;
 }
-inline void item_item::set_unk_i_6(bool value) {
+inline void item_item::set_unk_i_6(::google::protobuf::int32 value) {
   set_has_unk_i_6();
   unk_i_6_ = value;
 }
@@ -915,7 +915,7 @@ inline ::std::string* item_item::release_item_type() {
   }
 }
 
-// optional bool unk_11 = 11;
+// optional int32 unk_11 = 11;
 inline bool item_item::has_unk_11() const {
   return (_has_bits_[0] & 0x00000400u) != 0;
 }
@@ -926,18 +926,18 @@ inline void item_item::clear_has_unk_11() {
   _has_bits_[0] &= ~0x00000400u;
 }
 inline void item_item::clear_unk_11() {
-  unk_11_ = false;
+  unk_11_ = 0;
   clear_has_unk_11();
 }
-inline bool item_item::unk_11() const {
+inline ::google::protobuf::int32 item_item::unk_11() const {
   return unk_11_;
 }
-inline void item_item::set_unk_11(bool value) {
+inline void item_item::set_unk_11(::google::protobuf::int32 value) {
   set_has_unk_11();
   unk_11_ = value;
 }
 
-// optional bool unk_12 = 12;
+// optional int32 unk_12 = 12;
 inline bool item_item::has_unk_12() const {
   return (_has_bits_[0] & 0x00000800u) != 0;
 }
@@ -948,18 +948,18 @@ inline void item_item::clear_has_unk_12() {
   _has_bits_[0] &= ~0x00000800u;
 }
 inline void item_item::clear_unk_12() {
-  unk_12_ = false;
+  unk_12_ = 0;
   clear_has_unk_12();
 }
-inline bool item_item::unk_12() const {
+inline ::google::protobuf::int32 item_item::unk_12() const {
   return unk_12_;
 }
-inline void item_item::set_unk_12(bool value) {
+inline void item_item::set_unk_12(::google::protobuf::int32 value) {
   set_has_unk_12();
   unk_12_ = value;
 }
 
-// optional bool unk_13 = 13;
+// optional int32 unk_13 = 13;
 inline bool item_item::has_unk_13() const {
   return (_has_bits_[0] & 0x00001000u) != 0;
 }
@@ -970,18 +970,18 @@ inline void item_item::clear_has_unk_13() {
   _has_bits_[0] &= ~0x00001000u;
 }
 inline void item_item::clear_unk_13() {
-  unk_13_ = false;
+  unk_13_ = 0;
   clear_has_unk_13();
 }
-inline bool item_item::unk_13() const {
+inline ::google::protobuf::int32 item_item::unk_13() const {
   return unk_13_;
 }
-inline void item_item::set_unk_13(bool value) {
+inline void item_item::set_unk_13(::google::protobuf::int32 value) {
   set_has_unk_13();
   unk_13_ = value;
 }
 
-// optional bool unk_14 = 14;
+// optional int32 unk_14 = 14;
 inline bool item_item::has_unk_14() const {
   return (_has_bits_[0] & 0x00002000u) != 0;
 }
@@ -992,18 +992,18 @@ inline void item_item::clear_has_unk_14() {
   _has_bits_[0] &= ~0x00002000u;
 }
 inline void item_item::clear_unk_14() {
-  unk_14_ = false;
+  unk_14_ = 0;
   clear_has_unk_14();
 }
-inline bool item_item::unk_14() const {
+inline ::google::protobuf::int32 item_item::unk_14() const {
   return unk_14_;
 }
-inline void item_item::set_unk_14(bool value) {
+inline void item_item::set_unk_14(::google::protobuf::int32 value) {
   set_has_unk_14();
   unk_14_ = value;
 }
 
-// optional bool unk_15 = 15;
+// optional int32 unk_15 = 15;
 inline bool item_item::has_unk_15() const {
   return (_has_bits_[0] & 0x00004000u) != 0;
 }
@@ -1014,18 +1014,18 @@ inline void item_item::clear_has_unk_15() {
   _has_bits_[0] &= ~0x00004000u;
 }
 inline void item_item::clear_unk_15() {
-  unk_15_ = false;
+  unk_15_ = 0;
   clear_has_unk_15();
 }
-inline bool item_item::unk_15() const {
+inline ::google::protobuf::int32 item_item::unk_15() const {
   return unk_15_;
 }
-inline void item_item::set_unk_15(bool value) {
+inline void item_item::set_unk_15(::google::protobuf::int32 value) {
   set_has_unk_15();
   unk_15_ = value;
 }
 
-// optional bool unk_16 = 16;
+// optional int32 unk_16 = 16;
 inline bool item_item::has_unk_16() const {
   return (_has_bits_[0] & 0x00008000u) != 0;
 }
@@ -1036,18 +1036,18 @@ inline void item_item::clear_has_unk_16() {
   _has_bits_[0] &= ~0x00008000u;
 }
 inline void item_item::clear_unk_16() {
-  unk_16_ = false;
+  unk_16_ = 0;
   clear_has_unk_16();
 }
-inline bool item_item::unk_16() const {
+inline ::google::protobuf::int32 item_item::unk_16() const {
   return unk_16_;
 }
-inline void item_item::set_unk_16(bool value) {
+inline void item_item::set_unk_16(::google::protobuf::int32 value) {
   set_has_unk_16();
   unk_16_ = value;
 }
 
-// optional bool unk_17 = 17;
+// optional int32 unk_17 = 17;
 inline bool item_item::has_unk_17() const {
   return (_has_bits_[0] & 0x00010000u) != 0;
 }
@@ -1058,18 +1058,18 @@ inline void item_item::clear_has_unk_17() {
   _has_bits_[0] &= ~0x00010000u;
 }
 inline void item_item::clear_unk_17() {
-  unk_17_ = false;
+  unk_17_ = 0;
   clear_has_unk_17();
 }
-inline bool item_item::unk_17() const {
+inline ::google::protobuf::int32 item_item::unk_17() const {
   return unk_17_;
 }
-inline void item_item::set_unk_17(bool value) {
+inline void item_item::set_unk_17(::google::protobuf::int32 value) {
   set_has_unk_17();
   unk_17_ = value;
 }
 
-// optional bool unk_18 = 18;
+// optional int32 unk_18 = 18;
 inline bool item_item::has_unk_18() const {
   return (_has_bits_[0] & 0x00020000u) != 0;
 }
@@ -1080,18 +1080,18 @@ inline void item_item::clear_has_unk_18() {
   _has_bits_[0] &= ~0x00020000u;
 }
 inline void item_item::clear_unk_18() {
-  unk_18_ = false;
+  unk_18_ = 0;
   clear_has_unk_18();
 }
-inline bool item_item::unk_18() const {
+inline ::google::protobuf::int32 item_item::unk_18() const {
   return unk_18_;
 }
-inline void item_item::set_unk_18(bool value) {
+inline void item_item::set_unk_18(::google::protobuf::int32 value) {
   set_has_unk_18();
   unk_18_ = value;
 }
 
-// optional bool unk_19 = 19;
+// optional int32 unk_19 = 19;
 inline bool item_item::has_unk_19() const {
   return (_has_bits_[0] & 0x00040000u) != 0;
 }
@@ -1102,18 +1102,18 @@ inline void item_item::clear_has_unk_19() {
   _has_bits_[0] &= ~0x00040000u;
 }
 inline void item_item::clear_unk_19() {
-  unk_19_ = false;
+  unk_19_ = 0;
   clear_has_unk_19();
 }
-inline bool item_item::unk_19() const {
+inline ::google::protobuf::int32 item_item::unk_19() const {
   return unk_19_;
 }
-inline void item_item::set_unk_19(bool value) {
+inline void item_item::set_unk_19(::google::protobuf::int32 value) {
   set_has_unk_19();
   unk_19_ = value;
 }
 
-// optional bool unk_20 = 20;
+// optional int32 unk_20 = 20;
 inline bool item_item::has_unk_20() const {
   return (_has_bits_[0] & 0x00080000u) != 0;
 }
@@ -1124,18 +1124,18 @@ inline void item_item::clear_has_unk_20() {
   _has_bits_[0] &= ~0x00080000u;
 }
 inline void item_item::clear_unk_20() {
-  unk_20_ = false;
+  unk_20_ = 0;
   clear_has_unk_20();
 }
-inline bool item_item::unk_20() const {
+inline ::google::protobuf::int32 item_item::unk_20() const {
   return unk_20_;
 }
-inline void item_item::set_unk_20(bool value) {
+inline void item_item::set_unk_20(::google::protobuf::int32 value) {
   set_has_unk_20();
   unk_20_ = value;
 }
 
-// optional bool unk_21 = 21;
+// optional int32 unk_21 = 21;
 inline bool item_item::has_unk_21() const {
   return (_has_bits_[0] & 0x00100000u) != 0;
 }
@@ -1146,18 +1146,18 @@ inline void item_item::clear_has_unk_21() {
   _has_bits_[0] &= ~0x00100000u;
 }
 inline void item_item::clear_unk_21() {
-  unk_21_ = false;
+  unk_21_ = 0;
   clear_has_unk_21();
 }
-inline bool item_item::unk_21() const {
+inline ::google::protobuf::int32 item_item::unk_21() const {
   return unk_21_;
 }
-inline void item_item::set_unk_21(bool value) {
+inline void item_item::set_unk_21(::google::protobuf::int32 value) {
   set_has_unk_21();
   unk_21_ = value;
 }
 
-// optional bool unk_22 = 22;
+// optional int32 unk_22 = 22;
 inline bool item_item::has_unk_22() const {
   return (_has_bits_[0] & 0x00200000u) != 0;
 }
@@ -1168,13 +1168,13 @@ inline void item_item::clear_has_unk_22() {
   _has_bits_[0] &= ~0x00200000u;
 }
 inline void item_item::clear_unk_22() {
-  unk_22_ = false;
+  unk_22_ = 0;
   clear_has_unk_22();
 }
-inline bool item_item::unk_22() const {
+inline ::google::protobuf::int32 item_item::unk_22() const {
   return unk_22_;
 }
-inline void item_item::set_unk_22(bool value) {
+inline void item_item::set_unk_22(::google::protobuf::int32 value) {
   set_has_unk_22();
   unk_22_ = value;
 }
@@ -1295,7 +1295,7 @@ inline ::std::string* item_item::release_desc() {
   }
 }
 
-// optional bool unk_25 = 25;
+// optional int32 unk_25 = 25;
 inline bool item_item::has_unk_25() const {
   return (_has_bits_[0] & 0x01000000u) != 0;
 }
@@ -1306,13 +1306,13 @@ inline void item_item::clear_has_unk_25() {
   _has_bits_[0] &= ~0x01000000u;
 }
 inline void item_item::clear_unk_25() {
-  unk_25_ = false;
+  unk_25_ = 0;
   clear_has_unk_25();
 }
-inline bool item_item::unk_25() const {
+inline ::google::protobuf::int32 item_item::unk_25() const {
   return unk_25_;
 }
-inline void item_item::set_unk_25(bool value) {
+inline void item_item::set_unk_25(::google::protobuf::int32 value) {
   set_has_unk_25();
   unk_25_ = value;
 }

@@ -39,6 +39,34 @@ int main(int args, char* argv[]) {
 	std::set<string> new_veri_items;
 
 
+	for(int i=0;i<item_c_n.items_size();i++)
+	{
+		if(item_c_n.items(i).item_type() == "skill")
+		{
+			if(item_c_n.items(i).name().find("誓约胜利之剑") != string::npos)
+			{
+				cout << item_c_n.items(i).name() << endl;
+				cout << item_c_n.items(i).DebugString() << endl;
+			}
+
+		}
+	}
+
+	for(int i=0;i<item_c_o.items_size();i++)
+	{
+		if(item_c_o.items(i).item_type() == "skill")
+		{
+			if(item_c_o.items(i).name().find("誓约胜利之剑") != string::npos)
+			{
+				cout << item_c_o.items(i).name() << endl;
+				cout << item_c_o.items(i).DebugString() << endl;
+			}
+
+		}
+	}
+
+
+#if 0
 
 	for(int i=0;i<item_c_n.items_size();i++)
 	{
@@ -97,5 +125,5 @@ int main(int args, char* argv[]) {
 	cout << "Write to file: " << "item_item_c.dat" << " successfully" << endl; 
 
 	output.flush();
-	
+#endif
 }
