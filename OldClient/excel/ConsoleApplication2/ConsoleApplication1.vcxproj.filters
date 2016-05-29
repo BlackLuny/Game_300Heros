@@ -24,7 +24,7 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\c++\item_item_c.pb.h">
+    <ClInclude Include="..\c++\Item.pb.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -35,7 +35,7 @@
     <ClCompile Include="ConsoleApplication1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\c++\item_item_c.pb.cc">
+    <ClCompile Include="..\c++\Item.pb.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

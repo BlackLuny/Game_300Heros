@@ -387,6 +387,71 @@ __declspec(naked)void __asm__LeaveSkillFunc()
 		jmp g_pLeaveSkillFunc;
 	}
 }
+void *g_pGetSkillDesc = (void *)0x00807BE0;
+std::set<int> g_vHasSkillSkins;
+unsigned int (*get_skill_class)() = (unsigned int (__cdecl *)(void))0x008223A0;
+
+unsigned char* __stdcall GetSkillDesc(int SkillId)
+{
+	unsigned char* result;
+	char uipath[256];
+	unsigned int _this;
+	bool modify_ico = false;
+
+	__asm push ecx;
+	__asm pop _this;
+
+	if(_this != get_skill_class())
+	{
+		__asm
+		{
+			push SkillId;
+			mov ecx,_this;
+			call g_pGetSkillDesc;
+			mov result,eax;
+		}
+		return result;
+	}
+
+	__asm
+	{
+		push SkillId;
+		mov ecx,_this;
+		call g_pGetSkillDesc;
+		mov result,eax;
+	}
+
+	if(g_vHasSkillSkins.find(SkillId) == g_vHasSkillSkins.end())
+	{
+		for(int i=1;i<10;i++)
+		{
+			sprintf(uipath,"..\\ui\\icon\\skill\\ico_%d._skin%d.dds",SkillId,i);
+			if (g_FileSet.find(uipath) != g_FileSet.end())
+			{
+				g_vHasSkillSkins.insert(SkillId);
+				modify_ico = true;
+				break;
+			}
+		}
+	}
+	else
+	{
+		modify_ico=true;
+	}
+
+
+	if(modify_ico)
+	{
+		*(WORD*)&result[0x18] = 0x4;
+		*(WORD*)&result[0x14] = 0x2;
+	}
+
+
+
+
+
+	return result;
+}
 
 void Initialize()
 {
@@ -408,7 +473,10 @@ void Initialize()
 	DetourAttach((void**)&pRecordwindowUIClass, __asm_RecordwindowUIClass);
 	DetourAttach((void**)&g_pStartWindowThread, FuckWindowThread);
 
+
+	
 	DetourAttach((void**)&g_pIsSkinExHero, IsSkinExHero);
+	DetourAttach((void**)&g_pGetSkillDesc, GetSkillDesc);
 	DetourAttach((void**)&g_pEnterSkillFunc, __asm__EnterSkillFunc);
 	DetourAttach((void**)&g_pLeaveSkillFunc, __asm__LeaveSkillFunc);
 	DetourAttach((void**)&g_pGetLoadName, __asm__GetLoadName);
@@ -435,6 +503,7 @@ void UnInitialize()
 		DetourDetach((void**)&g_pStartWindowThread, FuckWindowThread);
 
 		DetourDetach((void**)&g_pIsSkinExHero, IsSkinExHero);
+		DetourDetach((void**)&g_pGetSkillDesc, GetSkillDesc);
 		DetourDetach((void**)&g_pEnterSkillFunc, __asm__EnterSkillFunc);
 		DetourDetach((void**)&g_pLeaveSkillFunc, __asm__LeaveSkillFunc);
 		DetourDetach((void**)&g_pGetLoadName, __asm__GetLoadName);

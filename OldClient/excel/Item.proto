@@ -1,0 +1,53 @@
+message SItem_Item
+{
+	optional uint32 nID = 1;
+	optional int32 nUseTime = 2;
+	optional int32 nCanDrop = 3;
+	optional int32 nBill = 4;
+	optional int32 nMedals = 5;
+	optional int32 nValueType = 6;
+	optional int32 nValue = 7;
+	optional int32 nReserveMoneyFlag = 8;
+	optional int32 nQuality = 9;
+	optional bytes strItemType = 10;
+	optional int32 nUseSingTime = 11;
+	optional int32 nUserTarget = 12;
+	optional int32 nCanMoved = 13;
+	optional int32 nCanDeleted = 14;
+	optional int32 nCanTrade = 15;
+	optional int32 nCanSold = 16;
+	optional int32 nCanStored = 17;
+	optional int32 nCanBound = 18;
+	optional int32 nIsExclusive = 19;
+	optional int32 nIsExpendable = 20;
+	optional int32 nColdDownType = 21;
+	optional int32 nColdDownTime = 22;
+	optional bytes strItemName = 23;
+	optional bytes strDescription = 24;
+	optional int32 nItemLevel = 25;
+	optional bytes strIconFile = 26;
+	optional bytes strUsingItemSound = 27;
+	optional int32 nDropItemModel = 28;
+	optional bytes strRare = 29;
+	optional int32 nIfShowEqipEffect = 30;
+	optional int32 nCanLocked = 31;
+	optional bytes strCastEffectPath = 32;
+	optional bytes strFireEffectPath = 33;
+	optional bytes strHitEffectPath = 34;
+	optional int32 nIconID = 35;
+	optional int32 nCanSplit = 36;
+	optional int32 nprocessTime = 37;
+	optional bytes strModelPath = 38;
+	optional int32 nCanDrag = 39;
+	optional bytes strDisableMapID = 40;
+	optional int32 nIsRaise = 41;
+	optional bytes strSedSkillID = 42;
+	optional int32 nAlchemyType = 43;
+	optional int32 nUseType = 44;
+}
+
+
+message SItem_ItemDataPool
+{
+	repeated SItem_Item data = 1;
+}

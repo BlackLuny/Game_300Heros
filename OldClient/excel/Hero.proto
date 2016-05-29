@@ -1,0 +1,29 @@
+message SHeroSkin
+{
+	optional uint32 nHeroID = 1;
+	optional uint32 nSkinID = 2;
+	optional bytes SelectPic = 3;
+	optional string sCMapSkill = 4;
+	optional string sSmapSkill = 5;
+	optional string sMapOtherAppearance = 6;
+	optional string sSmapOther = 7;
+	optional string sBeginXY = 8;
+	optional string sHeadBeginXY = 9;
+	optional string sbIsChangeVoice = 10;
+	optional string sChagenSkillId = 11;
+	optional uint32 nSkinLevel = 12;
+	optional string sChangebulletEffectId = 13;
+	optional string sChangeStatusEffectId = 14;
+	optional string sChangeVoiceEffect = 15;
+	optional string sSkinwideAndHight = 16;
+	optional string sHeadwideAndHight = 17;
+	optional string sbackgroundBeginWideHight = 18;
+	optional string sbackgroundendWideHight = 19;
+	optional uint32 uModelScale = 20;
+	optional uint32 uIsChangeIcon = 21;
+}
+
+message SHeroSkinDataPool
+{
+	repeated SHeroSkin data = 1;
+};
