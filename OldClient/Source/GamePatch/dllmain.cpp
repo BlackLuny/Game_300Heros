@@ -337,23 +337,30 @@ bool IsSkinExHero(unsigned char* pHero)
 	if (g_bIsEnterFunc && g_pszPathName && GetSkinID(pHero) > 0)
 	{
 		strcpy(szSkinSkillPath, g_pszPathName);
-		char* p = strstr(szSkinSkillPath, "..");
-		if (p) {
-			sprintf(p, "._skin%d.dds", GetSkinID(pHero));
-		}
-
 		strlwr(szSkinSkillPath);
-
-		std::string file = "..";
-		file += szSkinSkillPath;
-		if (g_FileSet.find(file) != g_FileSet.end())
+		if(strstr(szSkinSkillPath,"ui\\icon\\skill") != NULL)
 		{
-			if(hero_info.find(hinfo) == hero_info.end())
-			{
-				hero_info.insert(hinfo);
+			char* p = strstr(szSkinSkillPath, "..");
+			if (p) {
+				sprintf(p, "._skin%d.dds", GetSkinID(pHero));
+
+				strlwr(szSkinSkillPath);
+
+				std::string file = "..";
+				file += szSkinSkillPath;
+				if (g_FileSet.find(file) != g_FileSet.end())
+				{
+					if(hero_info.find(hinfo) == hero_info.end())
+					{
+						hero_info.insert(hinfo);
+					}
+					return true;
+				}
 			}
-			return true;
 		}
+		
+
+		
 	}
 
 
