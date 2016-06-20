@@ -3,16 +3,25 @@
 
 #include "GamePacket.h"
 
-#define SEND_MSG_SIG "\x56\x8B\x74\x24\x08\x57\x8B\xF9\x85\xF6\x75\x17\x68\x2A\x2A\x2A\x2A\x8D\x44\x24\x10\x50"
-#define SEND_MSG_SIG_BYTES sizeof(SEND_MSG_SIG)-1
+/*
+receive:
+8D 49 00 56 8B CB E8 ?? ?? ?? ?? 8B 06 03 F8 03 F0 3B 7C 24 3C
+getPlayer:
+(80 B8 BD 28 00 00 00 75 6D)(size) => CALL
+netClass:
+(8B 00 8B CE FF D0 8B 7F 2D)(size) => CALL
+Virtual: 0xC => SendMessage
 
-#define RECV_MSG_SIG "\x55\x8B\xEC\x83\xE4\xF8\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x81\xEC\xF0\x02\x00\x00\xA1"
+*/
+
+//fix
+#define RECV_MSG_SIG "\x8D\x49\x00\x56\x8B\xCB\xE8\x2A\x2A\x2A\x2A\x8B\x06\x03\xF8\x03\xF0\x3B\x7C\x24\x3C"
 #define RECV_MSG_SIG_BYTES sizeof(RECV_MSG_SIG)-1
 
-#define NET_INSTANCE_SIG "\x6A\xFF\x68\x2A\x2A\x2A\x2A\x64\xA1\x00\x00\x00\x00\x50\x51\xA1\x2A\x2A\x2A\x2A\x33\xC4\x50\x8D\x44\x24\x08\x64\xA3\x00\x00\x00\x00\xA1\x2A\x2A\x2A\x2A\x85\xC0\x75\x3C\x6A\x01"
+#define NET_INSTANCE_SIG "\xB8\xE6\x32\x00\x00\xC6\x44\x24\x0A\x00\x66\x89\x44\x24\x08\xC7\x04\x24\x0B\x00\x00\x00"
 #define NET_INSTANCE_SIG_BYTES sizeof(NET_INSTANCE_SIG)-1
 
-#define SYS_PLAYERMNGR_SIG "\x6A\x01\x50\x51\x52\x83\xEC\x08\xD9\x5C\x24\x04\xD9\x44\x24\x1C\xD9\x1C\x24"
+#define SYS_PLAYERMNGR_SIG "\x80\xB8\xBD\x28\x00\x00\x00\x75\x6D"
 #define SYS_PLAYERMNGR_SIG_BYTES sizeof(SYS_PLAYERMNGR_SIG)-1
 
 GamePacket::GamePacket(void)
@@ -23,25 +32,83 @@ GamePacket::GamePacket(void)
 GamePacket::~GamePacket(void)
 {
 }
-
-void* GamePacket::FindPlayerMngr()
+PVOID GamePacket::GetCNetwork()
 {
-	unsigned char* p = (unsigned char*)FIND_MEMORY(GAME_BASE_ADDRESS,SYS_PLAYERMNGR_SIG);
-	if(p)
-	{
-		p = &p[0x13];
-		return  p + *(unsigned long*)&p[1] + 5;
+	static void* pCNetwork = NULL;
+
+	if(pCNetwork){
+		return pCNetwork;
 	}
-	return 0;
+
+	unsigned char *p = (unsigned char*)FIND_MEMORY(GAME_BASE_ADDRESS,NET_INSTANCE_SIG);
+
+	if( p )
+	{
+		p += NET_INSTANCE_SIG_BYTES;
+		if(*p == 0xE8){
+			pCNetwork = p + *(DWORD*)(p + 0x1) + 0x5;
+		}
+	}
+
+	return pCNetwork;
+}
+PVOID GamePacket::GetCPlayerMngr()
+{
+	static void* pCPlayerMngr = NULL;
+
+	if(pCPlayerMngr){
+		return pCPlayerMngr;
+	}
+	unsigned char *p = (unsigned char*)FIND_MEMORY(GAME_BASE_ADDRESS,SYS_PLAYERMNGR_SIG);
+
+	if( p )
+	{
+		p += SYS_PLAYERMNGR_SIG_BYTES;
+		if(*p == 0xE8){
+			pCPlayerMngr = p + *(DWORD*)(p + 0x1) + 0x5;
+		}
+	}
+
+	return pCPlayerMngr;
+}
+PVOID GamePacket::GetSendFunc()
+{
+	PVOID pGetCNetwork = GetCNetwork();
+	PVOID pC;
+	__asm{
+		call pGetCNetwork;
+		mov pC,eax;
+	}
+
+	return (PVOID)*(DWORD*)((*(DWORD*)pC) + 0xC);
+}
+PVOID GamePacket::GetReceiveFunc()
+{
+	static void* pReceive = NULL;
+
+	if(pReceive){
+		return pReceive;
+	}
+	unsigned char *p = (unsigned char*)FIND_MEMORY(GAME_BASE_ADDRESS,RECV_MSG_SIG);
+
+	if( p )
+	{
+		p += 0x6;
+		if(*p == 0xE8){
+			pReceive = p + *(DWORD*)(p + 0x1) + 0x5;
+		}
+	}
+
+	return pReceive;
 }
 void GamePacket::Attach()
 {
-	m_pPreSendMessage = FIND_MEMORY(GAME_BASE_ADDRESS,SEND_MSG_SIG);
-	m_pPreRecvMessage = FIND_MEMORY(GAME_BASE_ADDRESS,RECV_MSG_SIG);
-	m_pGetNetInstance = FIND_MEMORY(GAME_BASE_ADDRESS,NET_INSTANCE_SIG);
-	m_pGetPlayerMngr = FindPlayerMngr();
+	m_pPreSendMessage = GetSendFunc();
+	m_pPreRecvMessage = GetReceiveFunc();
+	m_pGetPlayerMngr = GetCPlayerMngr();
+	m_pGetNetInstance = GetCNetwork();
 
-
+	
 	DetourTransactionBegin();
 	DetourAttach((void**)&m_pPreSendMessage,PreSendMessage);
 	DetourTransactionCommit();

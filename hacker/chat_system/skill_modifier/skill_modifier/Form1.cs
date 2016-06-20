@@ -306,7 +306,7 @@ namespace skill_modifier
                 buf.Write(textBox1.Text);   //发送的内容
                 buf.Write(new byte[] { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 });
 
-                SendBuffer(buf.GetBuffer(), 1);
+                SendBuffer(buf.GetBuffer(), 0);
             }
             catch
             {

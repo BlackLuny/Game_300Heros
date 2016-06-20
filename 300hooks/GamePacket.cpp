@@ -2,6 +2,7 @@
 #include "CSigMngr.h"
 
 #include "GamePacket.h"
+#include <Psapi.h>
 
 /*
 receive:
@@ -15,6 +16,8 @@ Virtual: 0xC => SendMessage
 */
 
 //fix
+
+#pragma comment(lib,"psapi.lib")
 #define RECV_MSG_SIG "\x8D\x49\x00\x56\x8B\xCB\xE8\x2A\x2A\x2A\x2A\x8B\x06\x03\xF8\x03\xF0\x3B\x7C\x24\x3C"
 #define RECV_MSG_SIG_BYTES sizeof(RECV_MSG_SIG)-1
 
@@ -55,19 +58,50 @@ PVOID GamePacket::GetCNetwork()
 PVOID GamePacket::GetCPlayerMngr()
 {
 	static void* pCPlayerMngr = NULL;
+	MODULEINFO info;
+	char s[] = "Create CPlayerMgr";
+	char buf[100];
+	unsigned char *resolv_func = NULL;
+	void*(*func)();
 
-	if(pCPlayerMngr){
-		return pCPlayerMngr;
-	}
-	unsigned char *p = (unsigned char*)FIND_MEMORY(GAME_BASE_ADDRESS,SYS_PLAYERMNGR_SIG);
-
-	if( p )
+	if(pCPlayerMngr == NULL)
 	{
-		p += SYS_PLAYERMNGR_SIG_BYTES;
-		if(*p == 0xE8){
-			pCPlayerMngr = p + *(DWORD*)(p + 0x1) + 0x5;
+		HMODULE hModule = GetModuleHandleA(NULL);
+
+		GetModuleInformation(GetCurrentProcess(), hModule,&info,sizeof(info));
+		unsigned char *p = (unsigned char *)info.lpBaseOfDll;
+
+		for(DWORD i=0;i<(info.SizeOfImage - 0x1000);i++)
+		{
+			if(p[i] == 0x68){
+				unsigned char *push_val = *(unsigned char**)&p[i+1];
+
+				if(push_val > p && push_val < p + info.SizeOfImage){
+					ReadProcessMemory(GetCurrentProcess(),push_val,buf,sizeof(s),NULL);
+
+					if(memcmp(buf,s,sizeof(s)) == 0){
+						resolv_func = &p[i];
+						break;
+					}
+				}
+			}
+		}
+
+
+		if(resolv_func){
+			for(int i=0;i<0x100;i++)
+			{
+				unsigned char *p = resolv_func - i;
+				if(p[0] == 0x6a && p[1] == 0xff){
+					func = (void*(*)())p;
+					pCPlayerMngr = func;
+					break;
+				}
+			}
+
 		}
 	}
+
 
 	return pCPlayerMngr;
 }
@@ -103,9 +137,10 @@ PVOID GamePacket::GetReceiveFunc()
 }
 void GamePacket::Attach()
 {
+	m_pGetPlayerMngr = GetCPlayerMngr();
 	m_pPreSendMessage = GetSendFunc();
 	m_pPreRecvMessage = GetReceiveFunc();
-	m_pGetPlayerMngr = GetCPlayerMngr();
+	
 	m_pGetNetInstance = GetCNetwork();
 
 	
