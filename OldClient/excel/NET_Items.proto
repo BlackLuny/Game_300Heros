@@ -1,0 +1,63 @@
+message SItem_Item
+{
+	optional uint32 nID1 = 1;
+	optional uint32 nID2 = 2;
+	optional uint32 nID3 = 3;
+	optional uint32 nID4 = 4;
+	optional uint32 nID5 = 5;
+	optional uint32 nID6 = 6;
+	optional uint32 nID7 = 7;
+	optional uint32 nID8 = 8;
+	optional uint32 nID9 = 9;
+	optional uint32 nID10 = 10;
+	optional uint32 nID11 = 11;
+	optional uint32 nID12 = 12;
+	optional uint32 nID13 = 13;
+	optional uint32 nID14 = 14;
+	optional uint32 nID15 = 15;
+	optional uint32 nID16 = 16;
+	optional uint32 nID17 = 17;
+	optional uint32 nID18 = 18;
+	optional uint32 nID19 = 19;
+	optional uint32 nID20 = 20;
+	optional uint32 nID21 = 21;
+	optional uint32 nID22 = 22;
+	optional uint32 nID23 = 23;
+	optional uint32 nID24 = 24;
+	optional uint32 nID25 = 25;
+	optional uint32 nID26 = 26;
+	optional uint32 nID27 = 27;
+	optional uint32 nID28 = 28;
+	optional uint32 nID29 = 29;
+	optional uint32 nID30 = 30;
+	optional uint32 nID31 = 31;
+	optional uint32 nID32 = 32;
+	optional uint32 nID33 = 33;
+	optional uint32 nID34 = 34;
+	optional uint32 nID35 = 35;
+	optional uint32 nID36 = 36;
+	optional uint32 nID37 = 37;
+	optional uint32 nID38 = 38;
+	optional uint32 nID39 = 39;
+	optional uint32 nID40 = 40;
+	optional uint32 nID41 = 41;
+	optional uint32 nID42 = 42;
+	optional uint32 nID43 = 43;
+	optional uint32 nID44 = 44;
+	optional uint32 nID45 = 45;
+	optional uint32 nID46 = 46;
+	optional uint32 nID47 = 47;
+	optional uint32 nID48 = 48;
+	optional uint32 nID49 = 49;
+	optional uint32 nID50 = 50;
+	optional uint32 nID51 = 51;
+	optional uint32 nID52 = 52;
+	optional uint32 nID53 = 53;
+	optional uint32 nID54 = 54;
+}
+
+
+message SItem_ItemDataPool
+{
+	repeated SItem_Item data = 1;
+}
