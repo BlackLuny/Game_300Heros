@@ -128,7 +128,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ModuleDefinitionFile>Source.def</ModuleDefinitionFile>
-      <OutputFile>D:\300英雄旧版客户端P16\$(TargetName)$(TargetExt)</OutputFile>
+      <OutputFile>C:\300英雄旧版客户端P16\$(TargetName)$(TargetExt)</OutputFile>
       <GenerateMapFile>true</GenerateMapFile>
     </Link>
   </ItemDefinitionGroup>

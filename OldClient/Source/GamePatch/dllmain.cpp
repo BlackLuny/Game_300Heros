@@ -512,11 +512,11 @@ void Initialize()
 	GetModuleFileNameA(NULL,filename,sizeof(filename));
 	md5file(md5,filename);
 
-	if(strcmp(md5,/*00FA52F1ECA84DCBE4D3D8EBFA8FA4CA*/XorStr<0x7F,33,0xA75CA3CD>("\x4F\xB0\xC7\xC3\xB6\xB6\xC3\xB7\xC2\xCB\xC8\xB2\xBF\xC8\xCE\xCC\xCA\xA4\xD5\xA1\xD7\xAC\xD0\xD4\xD1\xD9\xA1\xDC\xDA\xA8\xDE\xDF"+0xA75CA3CD).s) != 0)
-	{
-		MessageBoxA(NULL,/*300Hero.exe文件不正确*/XorStr<0xBD,22,0x45D61C0D>("\x8E\x8E\x8F\x88\xA4\xB0\xAC\xEA\xA0\xBE\xA2\x06\x0D\x76\x35\x7E\x76\x1B\x32\x18\x66"+0x45D61C0D).s,/*http://bbs.300yx.net/*/XorStr<0xDE,22,0xB3CB6DB7>("\xB6\xAB\x94\x91\xD8\xCC\xCB\x87\x84\x94\xC6\xDA\xDA\xDB\x95\x95\xC0\x81\x95\x85\xDD"+0xB3CB6DB7).s,MB_OK);
-		return;
-	}
+	//if(strcmp(md5,/*00FA52F1ECA84DCBE4D3D8EBFA8FA4CA*/XorStr<0x7F,33,0xA75CA3CD>("\x4F\xB0\xC7\xC3\xB6\xB6\xC3\xB7\xC2\xCB\xC8\xB2\xBF\xC8\xCE\xCC\xCA\xA4\xD5\xA1\xD7\xAC\xD0\xD4\xD1\xD9\xA1\xDC\xDA\xA8\xDE\xDF"+0xA75CA3CD).s) != 0)
+	//{
+	//	MessageBoxA(NULL,/*300Hero.exe文件不正确*/XorStr<0xBD,22,0x45D61C0D>("\x8E\x8E\x8F\x88\xA4\xB0\xAC\xEA\xA0\xBE\xA2\x06\x0D\x76\x35\x7E\x76\x1B\x32\x18\x66"+0x45D61C0D).s,/*http://bbs.300yx.net/*/XorStr<0xDE,22,0xB3CB6DB7>("\xB6\xAB\x94\x91\xD8\xCC\xCB\x87\x84\x94\xC6\xDA\xDA\xDB\x95\x95\xC0\x81\x95\x85\xDD"+0xB3CB6DB7).s,MB_OK);
+	//	return;
+	//}
 
 	LoadDataFile();
 
@@ -531,18 +531,18 @@ void Initialize()
 	*(DWORD*)&g_pGetLoadName = 0x0095BF7D;
 	
 	DetourTransactionBegin();
-	DetourAttach((void**)&pSendDestroyPacket, SendDestroyPacket);
-	DetourAttach((void**)&pReceive, __asm_Receive);
-	DetourAttach((void**)&pRecordwindowUIClass, __asm_RecordwindowUIClass);
+	//DetourAttach((void**)&pSendDestroyPacket, SendDestroyPacket);
+	//DetourAttach((void**)&pReceive, __asm_Receive);
+	//DetourAttach((void**)&pRecordwindowUIClass, __asm_RecordwindowUIClass);
 	DetourAttach((void**)&g_pStartWindowThread, FuckWindowThread);
 
 
 	
-	DetourAttach((void**)&g_pIsSkinExHero, IsSkinExHero);
-	DetourAttach((void**)&g_pGetSkillDesc, GetSkillDesc);
-	DetourAttach((void**)&g_pEnterSkillFunc, __asm__EnterSkillFunc);
-	DetourAttach((void**)&g_pLeaveSkillFunc, __asm__LeaveSkillFunc);
-	DetourAttach((void**)&g_pGetLoadName, __asm__GetLoadName);
+	//DetourAttach((void**)&g_pIsSkinExHero, IsSkinExHero);
+	//DetourAttach((void**)&g_pGetSkillDesc, GetSkillDesc);
+	//DetourAttach((void**)&g_pEnterSkillFunc, __asm__EnterSkillFunc);
+	//DetourAttach((void**)&g_pLeaveSkillFunc, __asm__LeaveSkillFunc);
+	//DetourAttach((void**)&g_pGetLoadName, __asm__GetLoadName);
 	DetourTransactionCommit();
 
 
@@ -560,7 +560,7 @@ void UnInitialize()
 	if (bIsHooked)
 	{
 		DetourTransactionBegin();
-		DetourDetach((void**)&pSendDestroyPacket, SendDestroyPacket);
+		/*DetourDetach((void**)&pSendDestroyPacket, SendDestroyPacket);
 		DetourDetach((void**)&pReceive, __asm_Receive);
 		DetourDetach((void**)&pRecordwindowUIClass, __asm_RecordwindowUIClass);
 		DetourDetach((void**)&g_pStartWindowThread, FuckWindowThread);
@@ -570,7 +570,7 @@ void UnInitialize()
 		DetourDetach((void**)&g_pEnterSkillFunc, __asm__EnterSkillFunc);
 		DetourDetach((void**)&g_pLeaveSkillFunc, __asm__LeaveSkillFunc);
 		DetourDetach((void**)&g_pGetLoadName, __asm__GetLoadName);
-
+*/
 		DetourTransactionCommit();
 	}
 }
