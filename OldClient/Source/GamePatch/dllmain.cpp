@@ -251,6 +251,37 @@ __declspec(naked) void __asm_RecordwindowUIClass()
 	}
 }
 
+
+void UpdateItemUpdater(net_header *hdr)
+{
+	if (hdr->idenfitier == 0x426C)
+	{
+		unsigned char *p = (unsigned char *)hdr;
+		int count = *(unsigned short*)&p[0xD];
+		unsigned char *buf = (unsigned char*)calloc(count, 0xB5);
+
+		for (int i = 0; i < count; i++)
+		{
+			unsigned char *src = (p + 0xe) + i * 0xC4;
+			unsigned char *dst = (p + 0xe) + i * 0xb5;
+			memcpy(dst, src, 0xb5);
+		}
+
+		hdr->length = count * 0xb5 + 0xe;
+		memcpy(&p[0xe], buf, count * 0xb5);
+		free(buf);
+	}
+}
+
+
+void FixLoginPacket(net_header *hdr)
+{
+
+}
+void UpdatePacket(net_header *hdr)
+{
+	UpdateItemUpdater(hdr);
+}
 __declspec(naked) void __asm_Receive()
 {
 	__asm
@@ -263,6 +294,7 @@ __declspec(naked) void __asm_Receive()
 
 		push dword ptr[ebp + 8];
 		call HeroDieCheck;
+		call UpdatePacket;
 		add esp, 4;
 
 		popad;
@@ -531,18 +563,18 @@ void Initialize()
 	*(DWORD*)&g_pGetLoadName = 0x0095BF7D;
 	
 	DetourTransactionBegin();
-	//DetourAttach((void**)&pSendDestroyPacket, SendDestroyPacket);
-	//DetourAttach((void**)&pReceive, __asm_Receive);
-	//DetourAttach((void**)&pRecordwindowUIClass, __asm_RecordwindowUIClass);
+	DetourAttach((void**)&pSendDestroyPacket, SendDestroyPacket);
+	DetourAttach((void**)&pReceive, __asm_Receive);
+	DetourAttach((void**)&pRecordwindowUIClass, __asm_RecordwindowUIClass);
 	DetourAttach((void**)&g_pStartWindowThread, FuckWindowThread);
 
 
 	
-	//DetourAttach((void**)&g_pIsSkinExHero, IsSkinExHero);
-	//DetourAttach((void**)&g_pGetSkillDesc, GetSkillDesc);
-	//DetourAttach((void**)&g_pEnterSkillFunc, __asm__EnterSkillFunc);
-	//DetourAttach((void**)&g_pLeaveSkillFunc, __asm__LeaveSkillFunc);
-	//DetourAttach((void**)&g_pGetLoadName, __asm__GetLoadName);
+	DetourAttach((void**)&g_pIsSkinExHero, IsSkinExHero);
+	DetourAttach((void**)&g_pGetSkillDesc, GetSkillDesc);
+	DetourAttach((void**)&g_pEnterSkillFunc, __asm__EnterSkillFunc);
+	DetourAttach((void**)&g_pLeaveSkillFunc, __asm__LeaveSkillFunc);
+	DetourAttach((void**)&g_pGetLoadName, __asm__GetLoadName);
 	DetourTransactionCommit();
 
 
@@ -560,7 +592,7 @@ void UnInitialize()
 	if (bIsHooked)
 	{
 		DetourTransactionBegin();
-		/*DetourDetach((void**)&pSendDestroyPacket, SendDestroyPacket);
+		DetourDetach((void**)&pSendDestroyPacket, SendDestroyPacket);
 		DetourDetach((void**)&pReceive, __asm_Receive);
 		DetourDetach((void**)&pRecordwindowUIClass, __asm_RecordwindowUIClass);
 		DetourDetach((void**)&g_pStartWindowThread, FuckWindowThread);
@@ -570,7 +602,7 @@ void UnInitialize()
 		DetourDetach((void**)&g_pEnterSkillFunc, __asm__EnterSkillFunc);
 		DetourDetach((void**)&g_pLeaveSkillFunc, __asm__LeaveSkillFunc);
 		DetourDetach((void**)&g_pGetLoadName, __asm__GetLoadName);
-*/
+
 		DetourTransactionCommit();
 	}
 }
