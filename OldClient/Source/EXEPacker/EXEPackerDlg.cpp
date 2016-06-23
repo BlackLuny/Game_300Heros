@@ -298,7 +298,7 @@ void CEXEPackerDlg::OnBnClickedButton1()
 	CFile MainFile;
 	CFile DllFile;
 
-	if(MainFile.Open("C:\\data\\games\\300英雄旧版客户端P16\\300Hero.exe",CFile::modeRead) == FALSE)
+	if(MainFile.Open("C:\\data\\games\\300英雄旧版客户端P16\\300.exe",CFile::modeRead) == FALSE)
 	{
 		AfxMessageBox("打开文件失败!");
 		return;
