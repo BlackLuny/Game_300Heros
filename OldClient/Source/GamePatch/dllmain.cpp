@@ -7,6 +7,8 @@
 #include <string>
 #include "md5_c.h"
 #include "xorstr.h"
+#include <vector>
+#include "SESDK.h"
 
 #pragma pack(1)
 
@@ -133,7 +135,7 @@ DWORD GetEncodePtr(DWORD valueA, DWORD valueB)
 	DWORD result = 0;
 	DWORD dwClassPtr = GetPlayerRole();
 	dwClassPtr += 0x8CC0;
-
+	SE_PROTECT_START_MUTATION;
 	__asm
 	{
 		pushad;
@@ -145,6 +147,7 @@ DWORD GetEncodePtr(DWORD valueA, DWORD valueB)
 		mov result, eax;
 		popad;
 	}
+	SE_PROTECT_END;
 	return result;
 }
 
@@ -153,6 +156,8 @@ VOID BuildDestroyPacket(uint8_t serial, uint8_t* index)
 	DWORD dwResult;
 
 	net_destroy_packet pkt = { 0 };
+
+	SE_PROTECT_START_MUTATION;
 
 	pkt.hdr.idenfitier = 0x426D;
 	pkt.hdr.length = sizeof(pkt);
@@ -170,6 +175,8 @@ VOID BuildDestroyPacket(uint8_t serial, uint8_t* index)
 	}
 
 	network()->send(&pkt.hdr);
+
+	SE_PROTECT_END;
 }
 unsigned char GetSerial()
 {
@@ -251,39 +258,455 @@ __declspec(naked) void __asm_RecordwindowUIClass()
 	}
 }
 
+struct OItemInfo
+{
+	unsigned char data[0xB5];
+};
+
+struct NItemInfo
+{
+	unsigned char data[0xc4];
+};
 
 void UpdateItemUpdater(net_header *hdr)
 {
+	SE_PROTECT_START_MUTATION;
 	if (hdr->idenfitier == 0x426C)
 	{
 		unsigned char *p = (unsigned char *)hdr;
 		int count = *(unsigned short*)&p[0xD];
-		unsigned char *buf = (unsigned char*)calloc(count, 0xB5);
+		unsigned char *buf = (unsigned char*)calloc(count, sizeof(struct OItemInfo));
 
 		for (int i = 0; i < count; i++)
 		{
-			unsigned char *src = (p + 0xe) + i * 0xC4;
-			unsigned char *dst = (p + 0xe) + i * 0xb5;
-			memcpy(dst, src, 0xb5);
+			unsigned char *src = (p + 0xe) + i * sizeof(struct NItemInfo);
+			unsigned char *dst = buf + i * sizeof(struct OItemInfo);
+			memcpy(dst, src, sizeof(struct OItemInfo));
 		}
 
-		hdr->length = count * 0xb5 + 0xe;
-		memcpy(&p[0xe], buf, count * 0xb5);
+		hdr->length = count * sizeof(struct OItemInfo) + 0xe;
+		memcpy(&p[0xe], buf, count * sizeof(struct OItemInfo));
 		free(buf);
 	}
+	SE_PROTECT_END;
 }
 
+void* g_UncompressAuth = (void*)0x0084CD30;
+int(*uncompress) (unsigned char *dest, unsigned int *destLen, const unsigned char *source, unsigned int sourceLen) = (int(*)(unsigned char *dest, unsigned int *destLen, const unsigned char *source, unsigned int sourceLen))0x009106E0;
+unsigned char g_AuthPkg[0x9687];
 
-void FixLoginPacket(net_header *hdr)
+struct net_header *compr_hdr;
+bool FixLoginAuthInfo(net_header *hdr)
 {
+	if (hdr->idenfitier != 0x3f5) return false;
 
+	SE_PROTECT_START_MUTATION;
+	unsigned int offset = 0;
+	unsigned char *buf = (unsigned char *)malloc(0x8C73);
+	unsigned char *src = (unsigned char*)hdr + 0x21;
+	unsigned char *dst = buf + 0x21;
+
+	memcpy(buf, hdr, 0x21);
+	offset += 0x21;
+
+	memcpy(dst, src, 0x10D5);
+	src += 0x10D5;
+	dst += 0x10D5;
+	offset += 0x10D5;
+
+	for (int i = 0; i < 0x16; i++)
+	{
+		unsigned char *from = src + i * (sizeof(struct NItemInfo) + 0x4);
+		unsigned char *to = dst + i * (sizeof(struct OItemInfo) + 0x4);
+		memcpy(to, from, (sizeof(struct OItemInfo) + 0x4));
+		offset += (sizeof(struct OItemInfo) + 0x4);
+	}
+
+	src += (sizeof(struct NItemInfo) + 0x4) * 0x16;
+	dst += (sizeof(struct OItemInfo) + 0x4) * 0x16;
+
+	memcpy(dst, src, 0x5);
+	dst += 0x5;
+	src += 0x5;
+
+	offset += 0x5;
+
+	for (int i = 0; i < 0x96; i++)
+	{
+		unsigned char *from = src + i * sizeof(struct NItemInfo);
+		unsigned char *to = dst + i * sizeof(struct OItemInfo);
+		memcpy(to, from, sizeof(struct OItemInfo));
+
+		offset += sizeof(struct OItemInfo);
+	}
+
+	src += sizeof(struct NItemInfo) * 0x96;
+	dst += sizeof(struct OItemInfo) * 0x96;
+
+	memcpy(dst, src, 0x1E);
+	dst += 0x1E;
+	src += 0x1E;
+
+	offset += 0x1E;
+
+	int size = hdr->length - (int)(src - (unsigned char*)hdr);
+
+	offset += size;
+
+	memcpy(dst, src, size);
+	dst += size;
+	src += size;
+
+	memcpy(hdr, buf, 0x8C73);
+	hdr->length = offset;
+
+
+	if(offset != 0x8C73)	MessageBoxA(NULL, "ÎÞÐ§µÄµÇÂ¼Êý¾Ý FixLoginAuthInfo", "", MB_ICONERROR);
+	SE_PROTECT_END;
+	return true;
 }
+
+
+int myuncompr(unsigned char *dest, unsigned int *destLen, const unsigned char *source, unsigned int sourceLen)
+{
+	SE_PROTECT_START_MUTATION;
+	unsigned int myDstLen = sizeof(g_AuthPkg);
+	int result = uncompress(g_AuthPkg, &myDstLen, source, sourceLen);
+
+	if (result == 0)
+	{
+		if (FixLoginAuthInfo((net_header *)&g_AuthPkg)) {
+			memcpy(dest, g_AuthPkg, 0x8C73);
+			*destLen = 0x8C73;
+		}
+	}
+	else
+	{
+		memcpy(dest, g_AuthPkg, *destLen);
+	}
+
+	SE_PROTECT_END;
+	return result;
+}
+
+__declspec(naked)void __asm__UnCompressAuth()
+{
+	SE_PROTECT_START_MUTATION;
+	__asm
+	{
+		push	ecx;
+		mov     eax, dword ptr[esp + 0x8];		//compress buffer
+		push    esi;
+		lea     esi, dword ptr[ecx + 0x8C82];
+		mov     ecx, 0x12D19;
+		sub     ecx, dword ptr[eax];
+		push	eax;
+		pop		compr_hdr;
+		add     eax, 0xB;						//eax == buffer
+		push    ecx;
+		push    eax;
+		lea     edx, dword ptr[esp + 0xC];
+		push    edx;
+		push    esi;
+		mov     dword ptr[esp + 0x14], 0x8C73;
+		call	myuncompr;
+		add     esp, 0x10;
+		xor     eax, eax;
+		cmp     dword ptr[esp + 0x4], 0x8C73;
+		setne   al;
+		dec     eax;
+		and     eax, esi;
+		pop     esi;
+		pop     ecx;
+		retn    0x4;
+	}
+
+	SE_PROTECT_END;
+}
+
+struct EString
+{
+	unsigned short len;
+	char n[1];
+};
+
+class StreamWriter
+{
+public:
+	BYTE* lpBuffer;
+	USHORT dwBufferLen;
+	USHORT dwDataLen;
+	StreamWriter()
+	{
+		lpBuffer = (BYTE *)malloc(0);
+		dwBufferLen = 0;
+		dwDataLen = 0;
+	}
+	~StreamWriter()
+	{
+		free(lpBuffer);
+	}
+	void AddBytesAndReallocate(unsigned short length)
+	{
+		lpBuffer = (BYTE*)realloc(lpBuffer, dwBufferLen + length);
+		dwBufferLen += length;
+	}
+	template <class templateType>
+	void __inline Write(const templateType &inTemplateVar)
+	{
+		AddBytesAndReallocate(sizeof(templateType));
+
+		memcpy(&lpBuffer[dwDataLen], &inTemplateVar, sizeof(templateType));
+
+		dwDataLen += sizeof(templateType);
+	}
+	void __inline Write(const wchar_t* lpszBuffer)
+	{
+		WORD usWriteLen = wcslen(lpszBuffer) + 1;
+		Write(usWriteLen);
+		Write((BYTE*)lpszBuffer, usWriteLen * sizeof(wchar_t));
+	}
+	void WriteString(std::string str)
+	{
+		unsigned char c = 0;
+
+		unsigned short length = str.length() + 0x1;
+		Write(length);
+		Write((const unsigned char*)str.c_str(), str.length());
+		Write(c);
+	}
+	void Write(const unsigned char* pbData, ULONG dwSize)
+	{
+		AddBytesAndReallocate(dwSize);
+		memcpy(&lpBuffer[dwDataLen], pbData, dwSize);
+		dwDataLen += dwSize;
+	}
+	BYTE* GetBuffer()
+	{
+		return lpBuffer;
+	}
+
+	DWORD GetLength()
+	{
+		return dwDataLen;
+	}
+};
+
+class StreamReader
+{
+public:
+	BYTE* _buf;
+	DWORD _pos;
+	DWORD _len;
+	StreamReader(BYTE* buf, DWORD len)
+	{
+		_buf = buf;
+		_pos = 0;
+		_len = len;
+	}
+	template <class templateType>
+	void __inline Read(templateType &inTemplateVar)
+	{
+		memcpy(&inTemplateVar,&_buf[_pos], sizeof(templateType));
+
+		_pos += sizeof(templateType);
+	}
+
+
+	void IgnoreBytes(int size)
+	{
+		_pos += size;
+	}
+
+	std::string ReadString()
+	{
+		char str[512];
+		unsigned short len;
+
+		Read(len);
+
+		memcpy(str, &_buf[_pos], len);
+		_pos += len;
+
+		return str;
+	}
+};
+
+#pragma pack(1)
+struct EMailInfo
+{
+	unsigned int a1;
+	unsigned int a2;
+	unsigned int a3;
+	unsigned int a4;
+	unsigned int a5;
+	unsigned int a6;
+	std::string unk;
+	std::string title;
+	std::string content;
+	unsigned char n1;
+	unsigned short unk3;
+	unsigned int a7, a8, a9;
+	unsigned char items_count;		//max 8
+	NItemInfo items[8];
+	unsigned char ne;
+};
+#pragma pack()
+
+void UpdateMailItem(net_header *hdr)
+{
+	SE_PROTECT_START_MUTATION;
+	if (hdr->idenfitier == 0x4F57)
+	{
+		int mail_cnt;
+		std::vector<EMailInfo> mails;
+		unsigned char *buf = (unsigned char *)hdr + sizeof(net_header)+ 0x1;
+		StreamReader reader(buf, hdr->length - (sizeof(net_header) + 0x1));
+		reader.Read(mail_cnt);
+
+		for (int i = 0; i < mail_cnt; i++)
+		{
+			EMailInfo info;
+			reader.Read(info.a1);
+			reader.Read(info.a2);
+			reader.Read(info.a3);
+			reader.Read(info.a4);
+			reader.Read(info.a5);
+			reader.Read(info.a6);
+			info.unk = reader.ReadString();
+			info.title = reader.ReadString();
+			info.content = reader.ReadString();
+
+			reader.Read(info.n1);
+			reader.Read(info.unk3);
+			reader.Read(info.a7);
+			reader.Read(info.a8);
+			reader.Read(info.a9);
+			reader.Read(info.items_count);
+
+			for (int i = 0; i < info.items_count; i++)
+			{
+				reader.Read(info.items[i]);
+			}
+
+			reader.Read(info.ne);
+
+			mails.push_back(info);
+		}
+
+		StreamWriter sw;
+		sw.Write(mail_cnt);
+		for (int i = 0; i < mail_cnt; i++)
+		{
+			EMailInfo info = mails[i];
+			sw.Write(info.a1);
+			sw.Write(info.a2);
+			sw.Write(info.a3);
+			sw.Write(info.a4);
+			sw.Write(info.a5);
+			sw.Write(info.a6);
+
+			sw.WriteString(info.unk);
+			sw.WriteString(info.title);
+			sw.WriteString(info.content);
+
+
+			sw.Write(info.n1);
+			sw.Write(info.unk3);
+			sw.Write(info.a7);
+			sw.Write(info.a8);
+			sw.Write(info.a9);
+			sw.Write(info.items_count);
+			for (int i = 0; i < info.items_count; i++)
+			{
+				OItemInfo oi;
+				memcpy(&oi, &info.items[i], sizeof(oi));
+				sw.Write(oi);
+			}
+
+			sw.Write(info.ne);
+		}
+
+		memcpy(buf, sw.GetBuffer(), sw.GetLength());
+		hdr->length = sizeof(net_header) + 0x1 + sw.GetLength();
+	}
+
+
+	if (hdr->idenfitier == 0x4f54)
+	{
+		unsigned char *buf = (unsigned char *)hdr + sizeof(net_header) + 0x1;
+		StreamReader reader(buf, hdr->length - (sizeof(net_header) + 0x1));
+		StreamWriter sw;
+		EMailInfo info;
+		reader.Read(info.a1);
+		reader.Read(info.a2);
+		reader.Read(info.a3);
+		reader.Read(info.a4);
+		reader.Read(info.a5);
+		reader.Read(info.a6);
+		info.unk = reader.ReadString();
+		info.title = reader.ReadString();
+		info.content = reader.ReadString();
+
+		reader.Read(info.n1);
+		reader.Read(info.unk3);
+		reader.Read(info.a7);
+		reader.Read(info.a8);
+		reader.Read(info.a9);
+		reader.Read(info.items_count);
+
+		for (int i = 0; i < info.items_count; i++)
+		{
+			reader.Read(info.items[i]);
+		}
+
+		reader.Read(info.ne);
+
+
+		sw.Write(info.a1);
+		sw.Write(info.a2);
+		sw.Write(info.a3);
+		sw.Write(info.a4);
+		sw.Write(info.a5);
+		sw.Write(info.a6);
+
+		sw.WriteString(info.unk);
+		sw.WriteString(info.title);
+		sw.WriteString(info.content);
+
+
+		sw.Write(info.n1);
+		sw.Write(info.unk3);
+		sw.Write(info.a7);
+		sw.Write(info.a8);
+		sw.Write(info.a9);
+		sw.Write(info.items_count);
+		for (int i = 0; i < info.items_count; i++)
+		{
+			OItemInfo oi;
+			memcpy(&oi, &info.items[i], sizeof(oi));
+			sw.Write(oi);
+		}
+
+		sw.Write(info.ne);
+
+		memcpy(buf, sw.GetBuffer(), sw.GetLength());
+		hdr->length = sizeof(net_header) + 0x1 + sw.GetLength();
+	}
+
+	SE_PROTECT_END;
+}
+
 void UpdatePacket(net_header *hdr)
 {
+	SE_PROTECT_START_MUTATION;
 	UpdateItemUpdater(hdr);
+	UpdateMailItem(hdr);
+	SE_PROTECT_END;
 }
 __declspec(naked) void __asm_Receive()
 {
+	SE_PROTECT_START_MUTATION;
 	__asm
 	{
 		push ebp;
@@ -305,8 +728,47 @@ __declspec(naked) void __asm_Receive()
 		pop ebp;
 		jmp pReceive;
 	}
-
+	SE_PROTECT_END;
 }
+
+void* g_ReadBytes = (void*)0x00AC3EF0;
+
+void* g_FixScoreReadItemDataA = (void*)0x004D2DA6;
+void* g_FixScoreReadItemDataB = (void*)0x004D2DBD;
+
+void __stdcall FakeReadData(unsigned char *stream)
+{
+	SE_PROTECT_START_MUTATION;
+	unsigned char data[0xf];
+	__asm
+	{
+		push 0xf;
+		lea eax, data;
+		push eax;
+		mov ecx, stream;
+		call g_ReadBytes;
+	}
+	SE_PROTECT_END;
+}
+
+__declspec(naked)void __asm_FixScore()
+{
+	SE_PROTECT_START_MUTATION;
+	__asm
+	{
+		pushad;
+		push edi;
+		call FakeReadData;
+		popad;
+		pop edi;
+		pop esi;
+		retn 0x4
+	}
+
+	SE_PROTECT_END;
+}
+
+
 BOOL bIsHooked = FALSE;
 DWORD WINAPI UpdateThread(LPVOID n)
 {
@@ -336,7 +798,7 @@ void CloseDiedWindow()
 
 DWORD WINAPI FuckWindowThread(VOID*)
 {
-	MessageBoxA(NULL,/*http://bbs.300yx.net/*/XorStr<0x5D,22,0x95902684>("\x35\x2A\x2B\x10\x5B\x4D\x4C\x06\x07\x15\x49\x5B\x59\x5A\x12\x14\x43\x00\x0A\x04\x5E"+0x95902684).s,/*300Ó¢ÐÛ¿Í»§¶Ë-ºÚÍ«°æ*/XorStr<0xC6,21,0x270C707D>("\xF5\xF7\xF8\x1A\x68\x1B\x17\x72\x03\x74\x77\x67\x19\xFE\x6E\x0F\x1B\x7C\x68\x3F"+0x270C707D).s,MB_OK);
+	//MessageBoxA(NULL,/*http://bbs.300yx.net/*/XorStr<0x5D,22,0x95902684>("\x35\x2A\x2B\x10\x5B\x4D\x4C\x06\x07\x15\x49\x5B\x59\x5A\x12\x14\x43\x00\x0A\x04\x5E"+0x95902684).s,/*300Ó¢ÐÛ¿Í»§¶Ë-ºÚÍ«°æ*/XorStr<0xC6,21,0x270C707D>("\xF5\xF7\xF8\x1A\x68\x1B\x17\x72\x03\x74\x77\x67\x19\xFE\x6E\x0F\x1B\x7C\x68\x3F"+0x270C707D).s,MB_OK);
 	return 0;
 }
 
@@ -483,6 +945,7 @@ unsigned char* __stdcall GetSkillDesc(int SkillId)
 	__asm push ecx;
 	__asm pop _this;
 
+
 	if(_this != get_skill_class())
 	{
 		__asm
@@ -495,6 +958,7 @@ unsigned char* __stdcall GetSkillDesc(int SkillId)
 		return result;
 	}
 
+	SE_PROTECT_START_MUTATION;
 	__asm
 	{
 		push SkillId;
@@ -534,11 +998,13 @@ unsigned char* __stdcall GetSkillDesc(int SkillId)
 		*(WORD*)&result[0x14] = 0x2;
 	}
 
+	SE_PROTECT_END;
 	return result;
 }
 
 void Initialize()
 {
+	SE_PROTECT_START_MUTATION;
 	char md5[64] = {0};
 	char filename[MAX_PATH];
 	GetModuleFileNameA(NULL,filename,sizeof(filename));
@@ -567,14 +1033,16 @@ void Initialize()
 	DetourAttach((void**)&pReceive, __asm_Receive);
 	DetourAttach((void**)&pRecordwindowUIClass, __asm_RecordwindowUIClass);
 	DetourAttach((void**)&g_pStartWindowThread, FuckWindowThread);
-
-
-	
 	DetourAttach((void**)&g_pIsSkinExHero, IsSkinExHero);
 	DetourAttach((void**)&g_pGetSkillDesc, GetSkillDesc);
 	DetourAttach((void**)&g_pEnterSkillFunc, __asm__EnterSkillFunc);
 	DetourAttach((void**)&g_pLeaveSkillFunc, __asm__LeaveSkillFunc);
 	DetourAttach((void**)&g_pGetLoadName, __asm__GetLoadName);
+
+	DetourAttach((void**)&g_UncompressAuth, __asm__UnCompressAuth);
+	DetourAttach((void**)&g_FixScoreReadItemDataA, __asm_FixScore);
+	DetourAttach((void**)&g_FixScoreReadItemDataB, __asm_FixScore);
+	//
 	DetourTransactionCommit();
 
 
@@ -585,10 +1053,13 @@ void Initialize()
 
 	SetTimer(NULL, 1000, 1, timerProc);
 	HotKey.AddMonitor(VK_F2, CloseDiedWindow);
+
+	SE_PROTECT_END;
 }
 
 void UnInitialize()
 {
+	SE_PROTECT_START_MUTATION;
 	if (bIsHooked)
 	{
 		DetourTransactionBegin();
@@ -603,6 +1074,11 @@ void UnInitialize()
 		DetourDetach((void**)&g_pLeaveSkillFunc, __asm__LeaveSkillFunc);
 		DetourDetach((void**)&g_pGetLoadName, __asm__GetLoadName);
 
+		DetourDetach((void**)&g_UncompressAuth, __asm__UnCompressAuth);
+		DetourDetach((void**)&g_FixScoreReadItemDataA, __asm_FixScore);
+		DetourDetach((void**)&g_FixScoreReadItemDataB, __asm_FixScore);
+
 		DetourTransactionCommit();
 	}
+	SE_PROTECT_END;
 }

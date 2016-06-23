@@ -4,3 +4,11 @@ C:\Game_300Heros\GameKit\obj\x86\Debug\GameKit.exe
 C:\Game_300Heros\GameKit\obj\x86\Debug\GameKit.pdb
 C:\Game_300Heros\GameKit\obj\x86\Debug\GameKit.Form1.resources
 C:\Game_300Heros\GameKit\obj\x86\Debug\GameKit.csproj.GenerateResource.Cache
+C:\data\code\Game_300Heros\GameKit\obj\x86\Debug\GameKit.exe
+C:\data\code\Game_300Heros\GameKit\obj\x86\Debug\GameKit.pdb
+C:\data\code\Game_300Heros\GameKit\bin\Debug\GameKit.exe
+C:\data\code\Game_300Heros\GameKit\bin\Debug\GameKit.pdb
+C:\data\code\Game_300Heros\GameKit\obj\x86\Debug\GameKit.Form1.resources
+C:\data\code\Game_300Heros\GameKit\obj\x86\Debug\GameKit.Form2.resources
+C:\data\code\Game_300Heros\GameKit\obj\x86\Debug\GameKit.csproj.GenerateResource.Cache
+C:\data\code\Game_300Heros\GameKit\obj\x86\Debug\GameKit.csprojResolveAssemblyReference.cache

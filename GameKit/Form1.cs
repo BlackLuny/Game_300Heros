@@ -60,9 +60,9 @@ namespace GameKit
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Console.Title = "GameKit";
-			ts.Start();
-			ts2.Start();
+           // Console.Title = "GameKit";
+			//ts.Start();
+			//ts2.Start();
 
         }
 
@@ -154,7 +154,7 @@ namespace GameKit
                 MessageData.buffer = bufs;
                 MessageData.type = cds.dwData;
 
-				//AddPackets(MessageData);
+				AddPackets(MessageData);
             }
             base.DefWndProc(ref m);
         }
@@ -164,15 +164,15 @@ namespace GameKit
             listView1.Items.Clear();
         }
 
-		//private void timer1_Tick(object sender, EventArgs e)
-		//{
-		//    //listView1.BeginUpdate();
-		//    while (MessageDataQueue.Count > 0)
-		//    {
-		//        AddPackets(MessageDataQueue.Dequeue());
-		//    }
-		//    //listView1.EndUpdate();
-		//}
+        //private void timer1_Tick(object sender, EventArgs e)
+        //{
+        //    //listView1.BeginUpdate();
+        //    while (MessageDataQueue.Count > 0)
+        //    {
+        //        AddPackets(MessageDataQueue.Dequeue());
+        //    }
+        //    //listView1.EndUpdate();
+        //}
 
         private void 复制ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -392,8 +392,7 @@ namespace GameKit
 
 		public void mystart()
 		{
-			Form2 f = new Form2();
-			f.ShowDialog();
+			
 		}
 
 		public void queueMsg()
@@ -417,5 +416,21 @@ namespace GameKit
 			
 		}
 
-	}
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void 批量屏蔽RECVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(listView1.SelectedItems != null)
+            {
+                foreach(ListViewItem i in listView1.SelectedItems)
+                {
+                    listBox2.Items.Add(i.SubItems[2].Text);
+                    
+                }
+            }
+        }
+    }
 }
