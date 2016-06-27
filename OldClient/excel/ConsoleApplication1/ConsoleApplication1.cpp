@@ -96,10 +96,10 @@ int main(int args, char* argv[]) {
 		add_skin->set_sbackgroundendwidehight(add_skin->sskinwideandhight());
 		
 		//hero head
-		if(add_skin->nheroid() == 142 && add_skin->nskinid() == 2)
+		if(add_skin->nheroid() == 196 && add_skin->nskinid() == 1)
 		{
-			add_skin->set_sheadbeginxy("294;57");
-			add_skin->set_sheadwideandhight("144;144");
+			add_skin->set_sheadbeginxy("375;70");
+			add_skin->set_sheadwideandhight("137;137");
 		}
 		
 

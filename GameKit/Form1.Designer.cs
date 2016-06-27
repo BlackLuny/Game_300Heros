@@ -32,6 +32,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.复制ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.复制IDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.批量屏蔽RECVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
@@ -53,7 +54,6 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.批量屏蔽RECVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listView1 = new GameKit.ListViewNF();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -86,6 +86,13 @@
             this.复制IDToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.复制IDToolStripMenuItem.Text = "复制ID";
             this.复制IDToolStripMenuItem.Click += new System.EventHandler(this.复制IDToolStripMenuItem_Click);
+            // 
+            // 批量屏蔽RECVToolStripMenuItem
+            // 
+            this.批量屏蔽RECVToolStripMenuItem.Name = "批量屏蔽RECVToolStripMenuItem";
+            this.批量屏蔽RECVToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.批量屏蔽RECVToolStripMenuItem.Text = "批量屏蔽RECV";
+            this.批量屏蔽RECVToolStripMenuItem.Click += new System.EventHandler(this.批量屏蔽RECVToolStripMenuItem_Click);
             // 
             // button1
             // 
@@ -248,6 +255,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(12, 557);
+            this.textBox3.MaxLength = 10000000;
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(923, 134);
@@ -272,13 +280,6 @@
             this.button7.Text = "send";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // 批量屏蔽RECVToolStripMenuItem
-            // 
-            this.批量屏蔽RECVToolStripMenuItem.Name = "批量屏蔽RECVToolStripMenuItem";
-            this.批量屏蔽RECVToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
-            this.批量屏蔽RECVToolStripMenuItem.Text = "批量屏蔽RECV";
-            this.批量屏蔽RECVToolStripMenuItem.Click += new System.EventHandler(this.批量屏蔽RECVToolStripMenuItem_Click);
             // 
             // listView1
             // 

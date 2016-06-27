@@ -298,13 +298,13 @@ void CEXEPackerDlg::OnBnClickedButton1()
 	CFile MainFile;
 	CFile DllFile;
 
-	if(MainFile.Open("C:\\data\\games\\300英雄旧版客户端P16\\300.exe",CFile::modeRead) == FALSE)
+	if(MainFile.Open("C:\\data\\code\\Game_300Heros\\OldClient\\newPatch\\300Hero.exe",CFile::modeRead) == FALSE)
 	{
 		AfxMessageBox("打开文件失败!");
 		return;
 	}
 
-	if(DllFile.Open("C:\\data\\games\\300英雄旧版客户端P16\\GamePatch.dll",CFile::modeRead) == FALSE)
+	if(DllFile.Open("C:\\data\\code\\Game_300Heros\\OldClient\\Source\\GamePatch\\Release\\GamePatch.dll",CFile::modeRead) == FALSE)
 	{
 		AfxMessageBox("打开文件失败!");
 		return;
@@ -552,7 +552,7 @@ void CEXEPackerDlg::OnBnClickedButton1()
 	NTHeaders_New->OptionalHeader.SizeOfImage = NewImageSize;
 	NTHeaders_New->OptionalHeader.AddressOfEntryPoint = SectionHeader_New[NTHeaders_New->FileHeader.NumberOfSections - 1].VirtualAddress;
 	CFile NewTest;
-	if(NewTest.Open("C:\\data\\games\\300英雄旧版客户端P16\\New.exe",CFile::modeCreate|CFile::modeReadWrite))
+	if(NewTest.Open("C:\\data\\games\\300英雄旧版客户端P16\\300.exe",CFile::modeCreate|CFile::modeReadWrite))
 	{
 		NewTest.Write(pNewExeBuf,SizeOfExe + DllAppendData + LoadCodeLen);
 	}
